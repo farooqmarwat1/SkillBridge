@@ -1,0 +1,5 @@
+import Image from "next/image";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { industries } from "@/data/home";
+
+export function Industries() { return <section id="industries" className="section-pad scroll-mt-24 bg-mist"><div className="container-sb"><SectionHeading eyebrow="Industries We Support" title="Experience Across Saudi Arabia's Essential Sectors" /><div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">{industries.map((industry) => <article key={industry.name} className="group relative aspect-square overflow-hidden rounded-[10px]"><Image src={industry.image} alt="" fill className="object-cover transition duration-500 group-hover:scale-110" sizes="(max-width:640px) 50vw, 25vw" /><div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/15 to-transparent" /><div className="absolute inset-x-0 bottom-0 flex items-center gap-2 p-4"><span className="h-0.5 w-5 bg-gold"/><h3 className="font-display text-base font-bold text-white">{industry.name}</h3></div></article>)}</div></div></section>; }

@@ -1,0 +1,5 @@
+import Image from "next/image";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { reasons } from "@/data/home";
+
+export function WhyChoose() { return <section className="section-pad overflow-hidden bg-navy"><div className="container-sb grid items-center gap-14 lg:grid-cols-2"><div><SectionHeading light eyebrow="Why Choose Skill Bridge" title="Built Around Reliability, Safety and Performance" /><div className="space-y-5">{reasons.map((reason) => <div key={reason.title} className="flex gap-4"><span className="grid size-[38px] shrink-0 place-items-center rounded-lg bg-brand/15 font-bold text-brand">✓</span><div><h3 className="font-display text-lg font-bold text-white">{reason.title}</h3><p className="mt-1 text-[14.5px] leading-relaxed text-white/60">{reason.description}</p></div></div>)}</div></div><div className="relative aspect-[4/5] max-h-[650px] overflow-hidden rounded-xl shadow-2xl"><Image src="https://images.unsplash.com/photo-1516937941344-00b4e0337589?auto=format&fit=crop&q=80&w=1000" alt="Industrial facility" fill className="object-cover" sizes="(max-width:1024px) 100vw, 50vw" /></div></div></section>; }
