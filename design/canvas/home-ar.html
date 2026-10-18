@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>سكل بريدج الرئيسية</title>
+<link rel="stylesheet" href="sb-home.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Sans+Arabic:wght@400;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#0a72a6}a:hover{color:#085b85}
+.sbh svg.i{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+</style>
+</helmet>
+<div class="sbh-wrap" dir="rtl" lang="ar" style="font-family: 'IBM Plex Sans', system-ui, sans-serif; color: #0b1220">
+<div class="{{ rootClass }}">
+
+<sc-if value="{{ showHdr }}" hint-placeholder-val="{{ true }}">
+<!-- Utility bar -->
+<div class="util"><div class="c">
+  <div class="util__g"><span class="data">+966 53 905 1475</span><span class="data util__hide">+966 59 880 7429</span><span class="util__hide">المكتب الرئيسي في الجبيل</span></div>
+  <div class="util__g"><a class="util__hide" href="#">ملف الشركة (PDF)</a><span class="lang" aria-label="اللغة"><a href="home.html" lang="en">EN</a><a class="is-on" href="home-ar.html">عربي</a></span></div>
+</div></div>
+
+<!-- Header -->
+<header class="hdr">
+  <div class="c">
+    <a class="hdr__logo" href="#"><img src="../../src/assets/images/logo-skill-bridge.jpg" alt="سكل بريدج"></a>
+    <ul class="nav">
+      <li><a href="about.html">من نحن</a></li>
+      <li><a href="#services">الخدمات <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></a></li>
+      <li><a href="equipment-fleet.html">المعدات</a></li>
+      <li><a href="industries.html">القطاعات</a></li>
+      <li><a href="projects.html">المشاريع</a></li>
+      <li><a href="hse.html">السلامة</a></li>
+      <li><a href="careers.html">الوظائف</a></li>
+      <li><a href="contact.html">اتصل بنا</a></li>
+    </ul>
+    <div class="hdr__act">
+      <a class="btn hdr__quote" href="quote.html">اطلب عرض سعر</a>
+      <button class="burger" type="button" aria-label="{{ menuLabel }}" onClick="{{ toggleMenu }}">
+        <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></sc-if>
+        <sc-if value="{{ menuClosed }}" hint-placeholder-val="{{ true }}"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></sc-if>
+      </button>
+    </div>
+  </div>
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <nav class="drawer" aria-label="القائمة">
+      <a href="about.html">من نحن <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      <a href="#services">الخدمات <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      <a href="equipment-fleet.html">المعدات <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      <a href="industries.html">القطاعات <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      <a href="projects.html">المشاريع <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      <a href="hse.html">السلامة <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      <a href="careers.html">الوظائف <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      <a href="contact.html">اتصل بنا <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      <a class="btn btn--hivis btn--lg" href="quote.html">اطلب عرض سعر</a>
+    </nav>
+  </sc-if>
+</header>
+
+</sc-if>
+
+<sc-if value="{{ showA }}" hint-placeholder-val="{{ true }}">
+<!-- Hero -->
+<section class="hero">
+  <div class="hero__copy">
+    <span class="eyebrow">قوى عاملة · معدات · مقاولات</span>
+    <h1 class="display">
+      <span class="ln"><span>فرق ماهرة</span></span>
+      <span class="ln"><span>ومعدات ثقيلة،</span></span>
+      <span class="ln"><span><mark>من الجبيل</mark></span></span>
+    </h1>
+    <p class="lead fade">توريد القوى العاملة وتأجير المعدات وصيانة المصانع والتصنيع والخدمات اللوجستية لمواقع النفط والغاز والبتروكيماويات والإنشاءات في جميع أنحاء المملكة.</p>
+    <div class="hero__ctas fade2">
+      <a class="btn btn--lg" href="#quote">اطلب عرض سعر <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      <a class="btn btn--ghost btn--lg" href="#services">خدماتنا</a>
+    </div>
+    <div class="hero__facts fade2">
+      <span class="label"><b>39</b> حرفة وتخصصاً</span>
+      <span class="label"><b>29</b> نوعاً من المعدات</span>
+      <span class="label"><b>7</b> خطوط خدمة</span>
+    </div>
+  </div>
+  <div class="hero__media">
+    <video src="../../public/video/excavator-720.mp4" poster="../../public/video/excavator-poster.jpg" muted="{{ yes }}" loop="{{ yes }}" aria-hidden="true"></video>
+    <button class="vidbtn" type="button" onClick="{{ toggleVideo }}">
+      <sc-if value="{{ playing }}" hint-placeholder-val="{{ true }}"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14"></path></svg></sc-if>
+      <sc-if value="{{ paused }}" hint-placeholder-val="{{ false }}"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5l12 7-12 7z"></path></svg></sc-if>
+      {{ videoLabel }}
+    </button>
+    <div class="vidcap"><span class="label">أعمال ترابية</span></div>
+    <form class="quick" id="quick" onSubmit="{{ noSubmit }}">
+      <div class="quick__head"><strong>طلب سريع</strong><span class="label">3 حقول</span></div>
+      <div class="quick__body">
+        <div class="seg" role="group" aria-label="أحتاج">
+          <sc-for list="{{ segs }}" as="s" hint-placeholder-count="3">
+            <button type="button" aria-pressed="{{ s.pressed }}" onClick="{{ s.pick }}">{{ s.label }}</button>
+          </sc-for>
+        </div>
+        <div class="row2">
+          <div class="fld"><label for="q-site">الموقع</label><select id="q-site" class="inp"><option>الجبيل</option><option>الدمام</option><option>رأس تنورة</option><option>الرياض</option><option>نيوم</option></select></div>
+          <div class="fld"><label for="q-start">تاريخ البدء</label><input id="q-start" class="inp" type="date" value="2026-11-02"></div>
+        </div>
+        <button class="btn" type="submit">احصل على عرض سعر <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- Clients -->
+<div class="clients"><div class="c">
+  <span class="label clients__lbl">عملنا في مواقع</span>
+  <div class="clients__vp"><div class="clients__tr">
+    <span>كالباتارو إنترناشونال</span><span>سندان الدولية</span><span>لارسن آند توبرو</span><span>أرامكو السعودية</span><span>نيوم</span><span>سينوبك</span><span>هيونداي</span><span>البحر الأحمر الدولية</span><span>سايبم</span><span>نسما</span><span>معادن</span>
+    <span aria-hidden="true">كالباتارو إنترناشونال</span><span aria-hidden="true">سندان الدولية</span><span aria-hidden="true">لارسن آند توبرو</span><span aria-hidden="true">أرامكو السعودية</span><span aria-hidden="true">نيوم</span><span aria-hidden="true">سينوبك</span><span aria-hidden="true">هيونداي</span><span aria-hidden="true">البحر الأحمر الدولية</span><span aria-hidden="true">سايبم</span><span aria-hidden="true">نسما</span><span aria-hidden="true">معادن</span>
+  </div></div>
+</div></div>
+
+<!-- About + stats -->
+<section class="sec"><div class="c">
+  <div class="about">
+    <div class="about__media rv">
+      <img class="about__main rv-img" src="../../src/assets/images/site/team-fleet-desert.jpg" alt="فريق سكل بريدج أمام أسطول الشاحنات في موقع صحراوي">
+      <img class="about__sub" src="../../src/assets/images/site/toolbox-talk-sunrise.jpg" alt="اجتماع سلامة مع فريق يرتدي الخوذ والسترات العاكسة عند الشروق">
+      <div class="about__badge"><b>الجبيل</b><span>المقر الرئيسي · السعودية</span></div>
+    </div>
+    <div class="about__copy rv">
+      <span class="eyebrow">عن سكل بريدج</span>
+      <h2 class="h2">دعم صناعي متكامل من شريك واحد</h2>
+      <p class="lead">تورّد سكل بريدج للمقاولات الكوادر والمعدات للقطاع الصناعي والمقاولات العامة في جميع أنحاء المملكة العربية السعودية. ندعم مشغلي النفط والغاز والبتروكيماويات ومقاوليهم بالكوادر الماهرة ومعدات التأجير والصيانة والخدمات اللوجستية.</p>
+      <ul class="checks">
+        <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg><div><b>فرق مؤهلة ومدرّبة على السلامة</b><span>مختارة وفق حرف مشروعك وشهاداته المطلوبة.</span></div></li>
+        <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg><div><b>أسطول جاهز للموقع</b><span>معدات الحفر والرفع والطاقة والنقل ضمن عقد واحد.</span></div></li>
+        <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg><div><b>جهة مسؤولة واحدة</b><span>فريق واحد ينسّق القوى العاملة والمعدات والخدمات اللوجستية.</span></div></li>
+      </ul>
+      <a class="link" href="about.html">تعرّف على الشركة <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+    </div>
+  </div>
+  <div class="stats rv">
+    <div class="stat"><span class="stat__n" style="--to: 39" aria-label="39"></span><span class="label">حرفة وتخصص</span><p>من المهندسين إلى عمال الرفع وعمال السقالات المعتمدين من TÜV.</p></div>
+    <div class="stat"><span class="stat__n" style="--to: 29" aria-label="29"></span><span class="label">أنواع المعدات</span><p>حفر ورفع وطاقة وشحن ونقل.</p></div>
+    <div class="stat"><span class="stat__n" style="--to: 7" aria-label="7"></span><span class="label">خطوط الخدمة</span><p>كوادر ومعدات وأعمال موقع وتوريد.</p></div>
+    <div class="stat"><span class="stat__n" style="--to: 5" aria-label="5"></span><span class="label">قطاعات نخدمها</span><p>من النفط والغاز إلى المرافق العامة في أنحاء المملكة.</p></div>
+  </div>
+</div></section>
+
+<!-- Services -->
+<section class="sec alt" id="services"><div class="c">
+  <div class="head rv">
+    <div><span class="eyebrow">ماذا نقدّم</span><h2 class="h2">كوادر ومعدات وأعمال موقع ضمن عقد واحد</h2></div>
+    <p class="lead">سبعة خطوط خدمة يحتاجها موقع المشروع في آن واحد، تُدار من مقرنا الرئيسي في الجبيل.</p>
+  </div>
+  <div class="svcs rv">
+    <a class="svc" href="#"><span class="svc__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 18h20"></path><path d="M4 18v-3a8 8 0 0 1 16 0v3"></path><path d="M10 7.5V12"></path><path d="M14 7.5V12"></path></svg></span><span class="label">39 حرفة وتخصصاً</span><h3 class="h4">توريد القوى العاملة</h3><p>مهندسون وموظفون إداريون وحرفيون مهرة وفرق ميدانية، لفترات قصيرة أو طويلة.</p><span class="link">اعرف المزيد <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
+    <a class="svc" href="equipment-fleet.html"><span class="svc__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4h11"></path><path d="M5 4l4-2"></path><path d="M16 4v5"></path><path d="M14 9h4v3h-4z"></path><path d="M2 21h7"></path><path d="M5 9l5-5"></path></svg></span><span class="label">29 نوعاً من المعدات</span><h3 class="h4">تأجير المعدات</h3><p>رافعات ومعدات تحريك تربة ومولدات ومقطورات، مع مشغلين أو بدونهم.</p><span class="link">اعرف المزيد <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
+    <a class="svc" href="#"><span class="svc__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="1"></rect><path d="M9 21v-4h6v4"></path><path d="M8 7h2M14 7h2M8 11h2M14 11h2"></path></svg></span><span class="label">تصميم وتنفيذ · إدارة إنشاء</span><h3 class="h4">المقاولات المدنية والعامة</h3><p>المقاولات العامة وإدارة الإنشاءات والتخطيط لما قبل التنفيذ.</p><span class="link">اعرف المزيد <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
+    <a class="svc" href="#"><span class="svc__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9z"></path></svg></span><span class="label">مصافٍ · محطات طاقة</span><h3 class="h4">صيانة المصانع والإيقافات</h3><p>دعم الصيانة والإنشاءات للمصافي ومصانع البتروكيماويات ومحطات الطاقة.</p><span class="link">اعرف المزيد <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
+    <a class="svc" href="#"><span class="svc__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.4-.5-2-1-3-1.1-2.1-.2-4 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.2.4-2.3 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg></span><span class="label">حديد · تشغيل آلي</span><h3 class="h4">التصنيع والورش</h3><p>تصنيع الهياكل الفولاذية والتشغيل الآلي وتصنيع المبادلات الحرارية وإصلاحها.</p><span class="link">اعرف المزيد <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
+    <a class="svc" href="#"><span class="svc__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 6h12v10H2z"></path><path d="M14 9h4l4 4v3h-8"></path><circle cx="6" cy="17.5" r="2"></circle><circle cx="17" cy="17.5" r="2"></circle></svg></span><span class="label">حافلات · مقطورات منخفضة</span><h3 class="h4">الخدمات اللوجستية والنقل</h3><p>حافلات للعمال من 15 إلى 55 مقعداً، ومقطورات مسطحة ومنخفضة هيدروليكية.</p><span class="link">اعرف المزيد <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
+  </div>
+</div></section>
+
+</sc-if>
+
+<sc-if value="{{ showB }}" hint-placeholder-val="{{ true }}">
+<!-- Manpower -->
+<section class="sec"><div class="c">
+  <div class="mp">
+    <div class="mp__copy rv">
+      <span class="eyebrow">توريد القوى العاملة</span>
+      <h2 class="h2">39 وظيفة جاهزة للتعبئة</h2>
+      <p class="lead">اختر الوظائف التي تحتاجها، وسنرشّح كوادر مؤهلة ومدرّبة على السلامة ونرسل السير الذاتية مع العرض.</p>
+      <img class="mp__photo rv-img" src="../../src/assets/images/site/rebar-inspection-team.jpg" alt="مهندسون يفحصون حديد التسليح المطلي بالإيبوكسي">
+    </div>
+    <div class="rv">
+      <div class="mp__panel">
+        <div class="tabs" role="tablist" aria-label="التخصصات">
+          <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="4">
+            <button class="tab" type="button" role="tab" aria-selected="{{ t.selected }}" onClick="{{ t.pick }}">{{ t.label }} <span class="cnt">{{ t.count }}</span></button>
+          </sc-for>
+        </div>
+        <div class="chips" role="tabpanel" aria-label="{{ tabLabel }}">
+          <sc-for list="{{ roles }}" as="r" hint-placeholder-count="12">
+            <button class="chip" type="button" aria-pressed="{{ r.pressed }}" onClick="{{ r.toggle }}"><sc-if value="{{ r.on }}" hint-placeholder-val="{{ false }}"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg></sc-if>{{ r.name }}</button>
+          </sc-for>
+        </div>
+        <div class="mp__foot">
+          <span class="label">{{ pickedText }}</span>
+          <a class="btn" href="#quote">اطلب هذه الوظائف <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+        </div>
+      </div>
+      <div class="models">
+        <div class="model"><b>قصير الأجل</b><span>من أيام إلى أسابيع، لأوقات الذروة والاحتياجات العاجلة.</span></div>
+        <div class="model"><b>طويل الأجل</b><span>عقود شهرية للعمليات المستمرة.</span></div>
+        <div class="model"><b>الإيقافات</b><span>فرق للصيانة الشاملة خلال الإيقافات المخطط لها.</span></div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- Fleet -->
+<section class="sec alt" id="fleet"><div class="c">
+  <div class="head rv">
+    <div><span class="eyebrow">تأجير المعدات</span><h2 class="h2">معدات صُممت للمواقع الصعبة</h2></div>
+    <p class="lead">معدات الحفر والرفع والطاقة والنقل، مع مشغلين أو بدونهم. أضف المعدات إلى عرض سعر واحد.</p>
+  </div>
+  <div class="filters" role="group" aria-label="فئة المعدات">
+    <sc-for list="{{ filters }}" as="f" hint-placeholder-count="6">
+      <button class="filter" type="button" aria-pressed="{{ f.pressed }}" onClick="{{ f.pick }}">{{ f.label }}</button>
+    </sc-for>
+  </div>
+  <sc-if value="{{ hasPlates }}" hint-placeholder-val="{{ true }}">
+    <div class="plates">
+      <sc-for list="{{ plates }}" as="p" hint-placeholder-count="4">
+        <article class="plate">
+          <div class="plate__top"><span>{{ p.cat }}</span><b>{{ p.code }}</b></div>
+          <div class="plate__ph"><img src="{{ p.img }}" alt="{{ p.alt }}"></div>
+          <h3>{{ p.name }}</h3>
+          <dl>
+            <sc-for list="{{ p.specs }}" as="s" hint-placeholder-count="4">
+              <div><dt>{{ s.k }}</dt><dd><sc-if value="{{ s.tbc }}" hint-placeholder-val="{{ false }}"><span class="tbc">بانتظار التأكيد</span></sc-if><sc-if value="{{ s.known }}" hint-placeholder-val="{{ true }}">{{ s.v }}</sc-if></dd></div>
+            </sc-for>
+          </dl>
+          <div class="plate__act"><button class="{{ p.addClass }}" type="button" onClick="{{ p.add }}">{{ p.addLabel }}</button><a class="btn btn--sm btn--ghost" href="#">التفاصيل</a></div>
+        </article>
+      </sc-for>
+    </div>
+  </sc-if>
+  <sc-if value="{{ noPlates }}" hint-placeholder-val="{{ false }}">
+    <div class="fleet__more"><div><b class="h4">معدات الطاقة والموقع</b><p class="lead" style="font-size: 15px">مولدات وضواغط هواء وماكينات لحام وأبراج إنارة. الصور والمواصفات قريباً.</p></div><a class="btn btn--ghost" href="#quote">استفسر عن التوفر</a></div>
+  </sc-if>
+  <div class="fleet__more">
+    <div><b class="h4">{{ quoteText }}</b><p style="font-size: 15px; color: #3e4a5a">يضم الأسطول الكامل 29 نوعاً من المعدات، من البوبكات إلى الرافعات البرجية.</p></div>
+    <div style="display: flex; gap: 10px; flex-wrap: wrap"><a class="btn btn--ink" href="equipment-fleet.html">عرض الأسطول كاملاً</a><a class="btn" href="#quote">إرسال قائمة العرض</a></div>
+  </div>
+</div></section>
+
+</sc-if>
+
+<sc-if value="{{ showC }}" hint-placeholder-val="{{ true }}">
+<!-- How we mobilise: video band -->
+<section class="band on-dark">
+  <video src="../../public/video/desert-720.mp4" poster="../../public/video/desert-poster.jpg" muted="{{ yes }}" loop="{{ yes }}" aria-hidden="true"></video>
+  <div class="c sec">
+    <div class="head rv" style="margin-bottom: 0">
+      <div><span class="eyebrow">كيف نبدأ العمل</span><h2 class="h2">من الطلب إلى الموقع في أربع خطوات</h2></div>
+      <p class="lead">منسّق واحد من أول اتصال حتى إنهاء التعبئة.</p>
+    </div>
+    <div class="steps rv">
+      <div class="step"><span class="step__n">01</span><h3>أخبرنا باحتياجك</h3><p>الوظائف والمعدات والموقع والتواريخ عبر نموذج العرض أو الهاتف أو واتساب.</p></div>
+      <div class="step"><span class="step__n">02</span><h3>الترشيح والعرض</h3><p>نؤكد التوفر ونرسل السير الذاتية ومواصفات المعدات وعرض سعر مفصّلاً.</p></div>
+      <div class="step"><span class="step__n">03</span><h3>التعبئة</h3><p>تصل الفرق والمعدات ووسائل النقل مع المستندات التي تطلبها بوابة موقعك.</p></div>
+      <div class="step"><span class="step__n">04</span><h3>الدعم في الموقع</h3><p>الاستبدالات والتمديدات وإنهاء التعبئة يتولاها الفريق نفسه.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Industries -->
+<section class="sec" id="industries"><div class="c">
+  <div class="head head--center rv"><div style="justify-items: center"><span class="eyebrow">القطاعات</span><h2 class="h2">نعمل حيث تبني المملكة</h2></div></div>
+  <div class="ind rv">
+    <a href="industries.html#oil-gas"><img src="../../src/assets/images/site/pipeline-sany-line.jpg" alt=""><div><strong>النفط والغاز</strong><small>الاستكشاف والمصافي وخطوط الأنابيب</small></div><span class="ind__go"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"></path></svg></span></a>
+    <a href="industries.html#industrial"><img src="../../src/assets/images/site/plant-foundations.jpg" alt=""><div><strong>البتروكيماويات</strong><small>مصانع الجبيل ورأس تنورة</small></div><span class="ind__go"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"></path></svg></span></a>
+    <a href="industries.html#construction"><img src="../../src/assets/images/site/formwork-rebar-wide.jpg" alt=""><div><strong>الإنشاءات</strong><small>المشاريع العملاقة والمباني</small></div><span class="ind__go"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"></path></svg></span></a>
+    <a href="industries.html#renewables"><img src="../../src/assets/images/projects/neom-solar-field.jpg" alt=""><div><strong>الطاقة والمرافق</strong><small>الطاقة الشمسية ومحطات الطاقة والإيقافات</small></div><span class="ind__go"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"></path></svg></span></a>
+    <a href="industries.html#public"><img src="../../src/assets/images/projects/dareen-finished-plaza.jpg" alt=""><div><strong>المرافق العامة والبلدية</strong><small>حدائق ومساحات الهيئة الملكية</small></div><span class="ind__go"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"></path></svg></span></a>
+  </div>
+</div></section>
+
+<!-- Testimonials -->
+<section class="sec alt"><div class="c">
+  <div class="tst">
+    <div class="tst__side rv">
+      <span class="eyebrow">آراء العملاء</span>
+      <h2 class="h2">ماذا يقول مدراء المواقع عن فرقنا</h2>
+      <p class="lead">اقتباسات من مدراء المشاريع والمشتريات، تُنشر بإذنهم.</p>
+      <div class="tst__nav">
+        <button class="tst__arrow" type="button" aria-label="الرأي السابق" onClick="{{ prevT }}"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"></path></svg></button>
+        <button class="tst__arrow" type="button" aria-label="الرأي التالي" onClick="{{ nextT }}"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+        <span class="label">{{ tCounter }}</span>
+      </div>
+    </div>
+    <figure class="tst__card rv">
+      <img class="tst__ph" src="{{ tImg }}" alt="">
+      <div class="tst__body">
+        <svg class="tst__q" viewBox="0 0 48 36" aria-hidden="true"><path d="M0 36V20C0 8 7 1 19 0v7c-6 1-9 5-9 11h9v18zm29 0V20c0-12 7-19 19-20v7c-6 1-9 5-9 11h9v18z"></path></svg>
+        <blockquote class="tst__text">{{ tText }}</blockquote>
+        <figcaption class="tst__who"><span class="tst__av">{{ tInit }}</span><div><b>{{ tName }}</b><span class="label">{{ tRole }}</span></div><span class="tst__tag">{{ tTag }}</span></figcaption>
+        <div class="tst__dots">
+          <sc-for list="{{ tDots }}" as="d" hint-placeholder-count="3">
+            <button class="tst__dot" type="button" aria-label="{{ d.label }}" aria-pressed="{{ d.on }}" onClick="{{ d.pick }}"></button>
+          </sc-for>
+        </div>
+      </div>
+    </figure>
+  </div>
+</div></section>
+
+</sc-if>
+
+<sc-if value="{{ showD }}" hint-placeholder-val="{{ true }}">
+<!-- HSE -->
+<section class="sec" id="hse"><div class="c">
+  <div class="hse">
+    <div class="hse__media rv">
+      <img class="rv-img" src="../../src/assets/images/site/rebar-harness-walkway.jpg" alt="فريق على ممر سقالات يرتدي أحزمة أمان كاملة">
+      <div class="hse__tag"><b>السلامة أولاً</b><span class="label">في كل موقع وكل وردية</span></div>
+    </div>
+    <div class="hse__copy rv">
+      <span class="eyebrow">الصحة والسلامة والجودة</span>
+      <h2 class="h2">السلامة جزء من عرض السعر</h2>
+      <p class="lead">نخطط للصحة والسلامة في كل تعبئة، من الفرق المدرّبة إلى المعدات المفحوصة.</p>
+      <div class="pillars">
+        <div class="pillar"><b>ثقافة السلامة أولاً</b><span>اجتماعات السلامة اليومية وتخطيط السلامة في كل عمل.</span></div>
+        <div class="pillar"><b>كوادر مؤهلة</b><span>فرق معتمدة ومدرّبة، بينها عمال سقالات معتمدون من TÜV.</span></div>
+        <div class="pillar"><b>معدات مفحوصة</b><span>فحص وصيانة مجدولة قبل التعبئة.</span></div>
+        <div class="pillar"><b>التحسين المستمر</b><span>الإبلاغ عن الحوادث ومتابعة الإجراءات التصحيحية.</span></div>
+      </div>
+      <div class="regs"><span class="label">السجل التجاري <span class="tbc">بانتظار التأكيد</span></span><span class="label">الرقم الضريبي <span class="tbc">بانتظار التأكيد</span></span><span class="label">ISO 45001 <span class="tbc">بانتظار التأكيد</span></span></div>
+      <a class="link" href="hse.html">سياسة الصحة والسلامة والجودة <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+    </div>
+  </div>
+</div></section>
+
+<!-- Certificates -->
+<section class="certs-sec alt"><div class="c">
+  <div class="certs__head rv"><div><span class="eyebrow">التسجيلات والشهادات</span><h2 class="h2">جاهزون لملف التسجيل كمورّد</h2></div><a class="btn btn--ghost" href="#">تحميل حزمة المستندات</a></div>
+  <div class="certs rv">
+    <div class="cert"><span class="cert__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"></path><path d="M9 12l2 2 4-4"></path></svg></span><b>ISO 9001</b><span>إدارة الجودة</span><span class="tbc">بانتظار التأكيد</span></div>
+    <div class="cert"><span class="cert__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"></path><path d="M9 12l2 2 4-4"></path></svg></span><b>ISO 45001</b><span>الصحة والسلامة المهنية</span><span class="tbc">بانتظار التأكيد</span></div>
+    <div class="cert"><span class="cert__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"></path><path d="M9 12l2 2 4-4"></path></svg></span><b>ISO 14001</b><span>الإدارة البيئية</span><span class="tbc">بانتظار التأكيد</span></div>
+    <div class="cert"><span class="cert__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="1"></rect><path d="M8 8h8M8 12h8M8 16h5"></path></svg></span><b>السجل التجاري</b><span>وزارة التجارة</span><span class="tbc">بانتظار التأكيد</span></div>
+    <div class="cert"><span class="cert__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="1"></rect><path d="M8 8h8M8 12h8M8 16h5"></path></svg></span><b>التسجيل الضريبي</b><span>هيئة الزكاة والضريبة والجمارك</span><span class="tbc">بانتظار التأكيد</span></div>
+    <div class="cert"><span class="cert__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c1-4 4-6 8-6s7 2 8 6"></path></svg></span><b>التأمينات الاجتماعية ونطاقات</b><span>التأمينات الاجتماعية ونطاق التوطين</span><span class="tbc">بانتظار التأكيد</span></div>
+  </div>
+</div></section>
+
+<!-- Projects -->
+<section class="sec" id="projects"><div class="c">
+  <div class="head rv">
+    <div><span class="eyebrow">سجل الإنجازات</span><h2 class="h2">أعمال مختارة</h2></div>
+    <div style="display: grid; gap: 16px; justify-items: start"><p class="lead">خطوط أنابيب وحقول طاقة شمسية وأساسات مصانع ومرافق مواقع وحدائق عامة لكبار المقاولين في المملكة.</p><a class="link" href="projects.html">عرض جميع المشاريع <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></div>
+  </div>
+  <div class="pbento rv">
+    <a class="pcard" href="project-case-study.html"><div class="pcard__ph"><img src="../../src/assets/images/projects/neom-cable-tape-crew.jpg" alt="فريق يمد شريط تحذير الكابلات بجوار الألواح الشمسية"><span class="proj__tag">الطاقة المتجددة · الطاقة الشمسية</span></div><div class="pcard__body"><span class="label">لارسن آند توبرو (L&amp;T)</span><h3 class="h4">هيدروجين نيوم الأخضر، الطاقة الشمسية</h3><div class="pcard__fig"><b>90 كم</b><span>حفر خنادق الكابلات وتقاطعات الطرق وعلامات المسار</span></div><span class="link">عرض المشروع <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></div></a>
+    <a class="pcard" href="project-case-study.html"><div class="pcard__ph"><img src="../../src/assets/images/site/pipeline-excavators-row.jpg" alt="حفارات تكسر الصخور بجوار خط أنابيب"><span class="proj__tag">النفط والغاز · خطوط الأنابيب</span></div><div class="pcard__body"><span class="label">كالباتارو إنترناشونال</span><h3 class="h4">MGSE المرحلة الثالثة، الحزمة 13</h3><div class="pcard__fig"><b>160 كم</b><span>حرم المسار والفرشة والخنادق والسواتر</span></div><span class="link">عرض المشروع <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></div></a>
+    <a class="pcard" href="project-case-study.html"><div class="pcard__ph"><img src="../../src/assets/images/projects/tcf-tadano-lift-riggers.jpg" alt="رافعة متنقلة ترفع مبنى موقع"><span class="proj__tag">النفط والغاز · المرافق</span></div><div class="pcard__body"><span class="label">نسما للصناعات المتحدة</span><h3 class="h4">مرافق البناء المؤقتة لأرامكو</h3><div class="pcard__fig"><b>10,000 م²</b><span>مرافق بناء مؤقتة</span></div><span class="link">عرض المشروع <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></div></a>
+    <a class="pcard" href="project-case-study.html"><div class="pcard__ph"><img src="../../src/assets/images/site/formwork-rebar-wide.jpg" alt="أقفاص حديد وقوالب لأساسات الآلات"><span class="proj__tag">صناعي · مدني</span></div><div class="pcard__body"><span class="label">سندان الدولية</span><h3 class="h4">GSSIP، سبارك</h3><div class="pcard__fig"><b>مدني</b><span>حفريات وأساسات ومحطة طاقة وهياكل فولاذية</span></div><span class="link">عرض المشروع <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></div></a>
+    <a class="pcard" href="project-case-study.html"><div class="pcard__ph"><img src="../../src/assets/images/projects/dareen-paving-manhole.jpg" alt="رصف حجري حول إطار فتحة تفتيش"><span class="proj__tag">عام · صيانة</span></div><div class="pcard__body"><span class="label">National Blue Company</span><h3 class="h4">حديقة دارين، الفناتير</h3><div class="pcard__fig"><b>حديقة</b><span>صيانة الأرصفة والتصريف، الجبيل</span></div><span class="link">عرض المشروع <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></div></a>
+  </div>
+</div></section>
+
+</sc-if>
+
+<sc-if value="{{ showCta }}" hint-placeholder-val="{{ true }}">
+<!-- CTA band -->
+<div class="hazard" aria-hidden="true"></div>
+<section class="cta"><div class="c">
+  <div><h2 class="h2">تحتاج فرقاً أو معدات في موقعك؟</h2><p>أخبرنا بالوظائف أو المعدات والموقع وتاريخ البدء، وسنعود إليك بالتوفر وعرض السعر.</p></div>
+  <div class="cta__act">
+    <div><a class="btn btn--ink btn--lg" href="quote.html">اطلب عرض سعر <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a><a class="btn btn--ghost btn--lg" href="#">راسلنا على واتساب</a></div>
+    <div style="display: flex; gap: 8px 24px; flex-wrap: wrap"><span class="data">+966 53 905 1475</span><span class="data">+966 59 880 7429</span></div>
+  </div>
+</div></section>
+</sc-if>
+
+<sc-if value="{{ showE }}" hint-placeholder-val="{{ true }}">
+<!-- News -->
+<section class="sec alt"><div class="c">
+  <div class="head rv">
+    <div><span class="eyebrow">الأخبار والمقالات</span><h2 class="h2">ملاحظات من الميدان</h2></div>
+    <div style="display: grid; gap: 16px; justify-items: start"><p class="lead">أدلة عملية لتخطيط الفرق والمعدات والإيقافات في المنطقة الشرقية.</p><a class="link" href="#">جميع المقالات <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></div>
+  </div>
+  <div class="news rv">
+    <a class="post" href="#"><div class="post__ph"><img src="../../src/assets/images/site/plant-foundations.jpg" alt=""></div><div class="post__body"><div class="post__meta"><span class="post__tag">دليل</span><span class="label">[التاريخ]</span></div><h3 class="h4">تخطيط القوى العاملة لإيقاف مصفاة</h3><p>أي الحرف تُحجز أولاً، وكم تستغرق التعبئة، وما الذي ستطلبه بوابة الموقع.</p><span class="link">اقرأ المقال <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></div></a>
+    <a class="post" href="#"><div class="post__ph"><img src="../../src/assets/images/site/crawler-crane-slab.jpg" alt=""></div><div class="post__body"><div class="post__meta"><span class="post__tag">قائمة تحقق</span><span class="label">[التاريخ]</span></div><h3 class="h4">قائمة تحقق لتأجير الرافعات في المواقع الصناعية</h3><p>خطط الرفع والفحص من طرف ثالث وبطاقات المشغلين وحالة الأرض في قائمة واحدة.</p><span class="link">اقرأ المقال <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></div></a>
+    <a class="post" href="#"><div class="post__ph"><img src="../../src/assets/images/site/toolbox-talk-sunrise.jpg" alt=""></div><div class="post__body"><div class="post__meta"><span class="post__tag">شرح</span><span class="label">[التاريخ]</span></div><h3 class="h4">ماذا يعني التوطين لعقود القوى العاملة</h3><p>كيف تؤثر نطاقات على الفرق التي تستعين بها، وما الذي تسأل عنه المورّد.</p><span class="link">اقرأ المقال <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></div></a>
+  </div>
+</div></section>
+
+<!-- FAQ -->
+<section class="sec"><div class="c">
+  <div class="faq">
+    <div class="faq__side rv">
+      <span class="eyebrow">الأسئلة الشائعة</span>
+      <h2 class="h2">أسئلة يطرحها المشترون أولاً</h2>
+      <p class="lead">لم تجد إجابتك؟ اتصل بمكتبنا في الجبيل أو راسله.</p>
+      <div class="faq__call"><span class="foot__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"></path></svg></span><div><span class="label">اتصل بالمكتب</span><b class="data">+966 53 905 1475</b></div></div>
+    </div>
+    <div class="faq__list rv">
+      <sc-for list="{{ faqs }}" as="q" hint-placeholder-count="6">
+        <div class="{{ q.cls }}">
+          <button class="faq__q" type="button" aria-expanded="{{ q.open }}" onClick="{{ q.toggle }}"><span>{{ q.q }}</span><span class="faq__pm" aria-hidden="true"></span></button>
+          <sc-if value="{{ q.isOpen }}" hint-placeholder-val="{{ false }}"><p class="faq__a">{{ q.a }}</p></sc-if>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</div></section>
+
+</sc-if>
+
+<sc-if value="{{ showF }}" hint-placeholder-val="{{ true }}">
+<!-- Request a quote -->
+<section class="sec alt" id="quote"><div class="c">
+  <div class="qf">
+    <aside class="qf__side rv">
+      <span class="eyebrow">اطلب عرض سعر</span>
+      <h2 class="h2">أخبرنا بما يحتاجه موقعك</h2>
+      <p class="qf__lead">أخبرنا بالوظائف أو المعدات والموقع وتاريخ البدء، وسنعود إليك بالتوفر وعرض سعر مفصّل.</p>
+      <ul class="qf__list">
+        <li><span class="qf__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"></path></svg></span><div><span class="label">اتصال</span><b class="data">+966 53 905 1475</b><b class="data">+966 59 880 7429</b></div></li>
+        <li><span class="qf__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.4z"></path></svg></span><div><span class="label">واتساب</span><b class="data">+966 53 905 1475</b></div></li>
+        <li><span class="qf__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"></path><circle cx="12" cy="10" r="2.5"></circle></svg></span><div><span class="label">المقر الرئيسي</span><b>الجبيل، المنطقة الشرقية</b><span class="qf__muted">المملكة العربية السعودية</span></div></li>
+        <li><span class="qf__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></span><div><span class="label">ساعات العمل</span><b><span class="tbc">بانتظار التأكيد</span></b></div></li>
+      </ul>
+      <a class="btn btn--ghost-inv" href="#">تحميل ملف الشركة (PDF)</a>
+    </aside>
+
+    <div class="qf__card rv">
+      <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+        <form class="qf__form" onSubmit="{{ submitQuote }}">
+          <fieldset class="qf__set">
+            <legend class="qf__legend"><span class="qf__step">1</span> ماذا تحتاج؟</legend>
+            <div class="qf__types" role="group" aria-label="الخدمة">
+              <sc-for list="{{ qtypes }}" as="q" hint-placeholder-count="4">
+                <button class="qf__type" type="button" aria-pressed="{{ q.pressed }}" onClick="{{ q.pick }}"><b>{{ q.label }}</b><span>{{ q.sub }}</span></button>
+              </sc-for>
+            </div>
+            <div class="fld"><label for="f-scope">نطاق العمل</label><textarea id="f-scope" class="inp inp--area" placeholder="الوظائف وعدد الأفراد أو المعدات أو العمل المطلوب"></textarea></div>
+          </fieldset>
+          <fieldset class="qf__set">
+            <legend class="qf__legend"><span class="qf__step">2</span> أين ومتى؟</legend>
+            <div class="qf__grid">
+              <div class="fld"><label for="f-site">موقع العمل</label><select id="f-site" class="inp"><option>الجبيل</option><option>الدمام</option><option>رأس تنورة</option><option>الخبر</option><option>الرياض</option><option>نيوم</option><option>أخرى</option></select></div>
+              <div class="fld"><label for="f-start">تاريخ البدء</label><input id="f-start" class="inp" type="date" value="2026-11-02"></div>
+              <div class="fld"><label for="f-dur">المدة <span class="qf__opt">(اختياري)</span></label><input id="f-dur" class="inp" placeholder="مثال: 3 أشهر"></div>
+              <div class="fld"><label for="f-count">عدد الأفراد أو الوحدات <span class="qf__opt">(اختياري)</span></label><input id="f-count" class="inp" placeholder="مثال: 12 لحاماً ورافعتان"></div>
+            </div>
+          </fieldset>
+          <fieldset class="qf__set">
+            <legend class="qf__legend"><span class="qf__step">3</span> بياناتك</legend>
+            <div class="qf__grid">
+              <div class="fld"><label for="f-name">الاسم الكامل</label><input id="f-name" class="inp" autocomplete="name" placeholder="اسمك"></div>
+              <div class="fld"><label for="f-company">الشركة</label><input id="f-company" class="inp" autocomplete="organization" placeholder="الشركة أو المشروع"></div>
+              <div class="fld"><label for="f-phone">رقم الجوال</label><input id="f-phone" class="inp" type="tel" autocomplete="tel" placeholder="05x xxx xxxx"></div>
+              <div class="fld"><label for="f-email">البريد الإلكتروني للعمل</label><input id="f-email" class="inp" type="email" autocomplete="email" placeholder="name@company.com"></div>
+            </div>
+            <label class="qf__check"><input id="f-wa" type="checkbox"> الرد عبر واتساب بدلاً من البريد الإلكتروني</label>
+          </fieldset>
+          <div class="qf__foot">
+            <p class="qf__fine">نستخدم هذه البيانات فقط للرد على هذا الطلب.</p>
+            <button class="btn btn--lg" type="submit">إرسال الطلب <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+          </div>
+        </form>
+      </sc-if>
+      <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+        <div class="qf__done">
+          <span class="qf__tick"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg></span>
+          <h3 class="h2">تم استلام الطلب</h3>
+          <p class="lead">سيتواصل معك فريقنا في الجبيل بالتوفر وعرض السعر. للحالات العاجلة اتصل على ‎+966 53 905 1475.</p>
+          <button class="btn btn--ghost" type="button" onClick="{{ resetQuote }}">إرسال طلب آخر</button>
+        </div>
+      </sc-if>
+    </div>
+  </div>
+</div></section>
+
+</sc-if>
+
+<sc-if value="{{ showFtr }}" hint-placeholder-val="{{ true }}">
+<!-- Footer -->
+<div class="hazard" aria-hidden="true"></div>
+<footer class="foot"><div class="c">
+  <div class="foot__contact">
+    <div class="foot__ci"><span class="foot__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"></path></svg></span><div><span class="label">اتصل بنا</span><b class="data">+966 53 905 1475</b></div></div>
+    <div class="foot__ci"><span class="foot__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.4z"></path></svg></span><div><span class="label">واتساب</span><b class="data">+966 59 880 7429</b></div></div>
+    <div class="foot__ci"><span class="foot__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"></path><circle cx="12" cy="10" r="2.5"></circle></svg></span><div><span class="label">المقر الرئيسي</span><b>الجبيل، السعودية</b></div></div>
+    <a class="btn btn--hivis" href="quote.html">اطلب عرض سعر <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+  </div>
+  <div class="foot__g">
+    <div style="display: grid; gap: 16px; align-content: start">
+      <span class="plate-logo"><img src="../../src/assets/images/logo-skill-bridge.jpg" alt="سكل بريدج"></span>
+      <p class="foot__ar" lang="ar" dir="rtl">شركة سكيل بريدج للمقاولات</p>
+      <p style="max-width: 40ch">قوى عاملة ومعدات ومقاولات للمواقع الصناعية في جميع أنحاء المملكة العربية السعودية.</p>
+      <div class="foot__soc">
+        <a class="foot__sq" href="#" aria-label="سكل بريدج على لينكدإن"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path><path d="M2 9h4v12H2z"></path><circle cx="4" cy="4" r="2"></circle></svg></a>
+        <a class="foot__sq" href="#" aria-label="واتساب"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.4z"></path></svg></a>
+        <a class="btn btn--sm btn--ghost-inv" href="#"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"></path></svg> ملف الشركة</a>
+      </div>
+    </div>
+    <div><h3>الخدمات</h3><ul><li><a href="#">توريد القوى العاملة</a></li><li><a href="#">تأجير المعدات</a></li><li><a href="#">المقاولات المدنية والعامة</a></li><li><a href="#">صيانة المصانع</a></li><li><a href="#">التصنيع والورش</a></li><li><a href="#">الخدمات اللوجستية والنقل</a></li><li><a href="#">التجارة والتوريد</a></li></ul></div>
+    <div><h3>الشركة</h3><ul><li><a href="about.html">من نحن</a></li><li><a href="equipment-fleet.html">أسطول المعدات</a></li><li><a href="industries.html">القطاعات</a></li><li><a href="projects.html">المشاريع</a></li><li><a href="hse.html">الصحة والسلامة والجودة</a></li><li><a href="careers.html">الوظائف</a></li></ul></div>
+    <div><h3>المقر الرئيسي</h3><ul><li>الجبيل، المنطقة الشرقية<br>المملكة العربية السعودية</li><li class="data" style="color: #e8eef5">+966 53 905 1475</li><li class="data" style="color: #e8eef5">+966 59 880 7429</li><li>السجل التجاري <span class="tbc">بانتظار التأكيد</span></li><li>الرقم الضريبي <span class="tbc">بانتظار التأكيد</span></li></ul></div>
+  </div>
+  <div class="foot__legal"><span>© 2026 شركة سكل بريدج للمقاولات. جميع الحقوق محفوظة.</span><span><a href="#">الخصوصية</a> · <a href="#">الشروط</a> · <a href="home.html" lang="en">English</a></span></div>
+</div></footer>
+
+</sc-if>
+
+<sc-if value="{{ showWa }}" hint-placeholder-val="{{ true }}">
+<a class="wa" href="#" aria-label="تواصل عبر واتساب"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.4z"></path><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.5-2-1-1 .8c-1-.4-2-1.4-2.4-2.4l.8-1-1-2z"></path></svg></a>
+</sc-if>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"part":{"editor":"enum","options":["all","a","b","c","d","e","f","hdr","cta","quote","ftr"],"default":"all"},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { seg: 0, tab: 0, picked: { 'مهندس أنابيب': 1, 'لحام 3G': 1, 'عامل رفع (المستوى 1–3)': 1 }, filter: 'الكل', menu: false, paused: false, quote: {}, qtype: 0, sent: false, t: 0, faq: 0 };
+  }
+  componentDidMount() {
+    var vids = document.querySelectorAll('.sbh video');
+    for (var i = 0; i < vids.length; i++) {
+      var v = vids[i];
+      v.muted = true; v.loop = true; v.playsInline = true; v.setAttribute('playsinline', '');
+      if (!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+        var p = v.play(); if (p && p.catch) p.catch(function () {});
+      }
+    }
+  }
+  renderVals() {
+    var self = this, st = this.state;
+    var segNames = ['قوى عاملة', 'معدات', 'مقاولات'];
+    var tabDefs = [
+      { label: 'الهندسة', roles: ['مهندس ميكانيكي', 'مهندس مدني', 'مهندس إنشاءات', 'مهندس سلامة', 'مهندس كهربائي', 'مهندس مواد', 'مهندس حاسب آلي', 'مهندس ضبط وضمان الجودة', 'مهندس أنابيب', 'مخطط مشاريع', 'مهندس تكييف وتهوية', 'مهندس أجهزة دقيقة'] },
+      { label: 'المكتب والإدارة', roles: ['سكرتير تنفيذي', 'مدخل بيانات', 'مراقب وثائق', 'عامل مكتب', 'مساعد إداري', 'مشغل حاسب آلي', 'رسام أوتوكاد', 'مراقب دوام', 'عامل نظافة', 'موظف هاتف', 'سائق مكتب'] },
+      { label: 'الحرف الماهرة', roles: ['فني تركيب ميكانيكي', 'فني تركيب أجهزة', 'فني تركيب أنابيب', 'نجار', 'لحام 3G', 'مشغل رافعة', 'عامل رفع (المستوى 1–3)', 'بنّاء', 'مركّب هياكل فولاذية', 'سبّاك', 'سائق خفيف', 'مشغل رافعة شوكية'] },
+      { label: 'الموقع والسلامة', roles: ['سائق ثقيل', 'عامل سقالات (TÜV)', 'مراقب فتحات التفتيش', 'مساعد مسؤول سلامة'] }
+    ];
+    var plateDefs = [
+      { cat: 'الرفع', code: 'SB-L01', img: '../../src/assets/images/site/crawler-crane-slab.jpg', alt: 'رافعة زاحفة في موقع أساسات', name: 'رافعة زاحفة', specs: [['السعة', null], ['التوريد', 'بمشغل أو بدونه'], ['الذراع', null], ['المدة', 'قصيرة أو متوسطة']] },
+      { cat: 'أعمال ترابية', code: 'SB-E04', img: '../../src/assets/images/site/excavator-breaker-pipeline.jpg', alt: 'حفار بكسارة هيدروليكية بجوار خط أنابيب', name: 'حفار بكسارة', specs: [['الفئة', null], ['التوريد', 'بمشغل أو بدونه'], ['الملحق', 'كسارة هيدروليكية'], ['المدة', 'قصيرة أو متوسطة']] },
+      { cat: 'نقل العمال', code: 'SB-T01', img: '../../src/assets/images/stock/crew-buses-depot.jpg', alt: 'صف من الحافلات في مستودع', name: 'حافلة عمال', specs: [['المقاعد', '15 · 33 · 55'], ['الأنواع', 'هايس · كوستر · حافلة'], ['السائق', null], ['المدة', null]] },
+      { cat: 'الشحن', code: 'SB-H02', img: '../../src/assets/images/site/fleet-lineup-desert.jpg', alt: 'شاحنات قلابة وممهدات ومدحلة في موقع صحراوي', name: 'شاحنات قلابة', specs: [['الحمولة', null], ['الأسطول', 'شاحنات وممهدات ومداحل'], ['التوريد', null], ['التغطية', 'جميع أنحاء المملكة']] }
+    ];
+    var filterNames = ['الكل', 'أعمال ترابية', 'الرفع', 'الطاقة والموقع', 'الشحن', 'نقل العمال'];
+    var tab = tabDefs[st.tab];
+    var pickedN = Object.keys(st.picked).length;
+    var quoteN = Object.keys(st.quote).length;
+    var shown = plateDefs.filter(function (p) { return st.filter === 'الكل' || p.cat === st.filter; });
+    var part = this.props.part || 'all';
+    var all = part === 'all';
+    var tsts = [
+      { text: '[رأي العميل: جملتان أو ثلاث عن جودة الفرق وسجل السلامة وسرعة تعبئة سكل بريدج.]', name: '[الاسم]', role: '[مدير مشروع · الشركة]', init: 'PM', tag: 'قوى عاملة', img: '../../src/assets/images/site/team-fleet-desert.jpg' },
+      { text: '[رأي العميل: مدير مشتريات عن حالة المعدات ووثائق الفحص والتسليم إلى الموقع في الموعد.]', name: '[الاسم]', role: '[مسؤول مشتريات · الشركة]', init: 'PL', tag: 'معدات', img: '../../src/assets/images/site/crawler-crane-slab.jpg' },
+      { text: '[رأي العميل: مشرف مصنع عن دعم الإيقافات والاستبدالات والتنسيق عبر جهة اتصال واحدة.]', name: '[الاسم]', role: '[مشرف مصنع · الشركة]', init: 'PS', tag: 'إيقافات', img: '../../src/assets/images/site/plant-foundations.jpg' }
+    ];
+    var faqDefs = [
+      ['ما الخدمات التي تقدمها سكل بريدج؟', 'سبعة خطوط خدمة: توريد القوى العاملة، وتأجير المعدات، والمقاولات المدنية والعامة، وصيانة المصانع والإيقافات، والتصنيع، والخدمات اللوجستية والنقل، والتجارة والتوريد.'],
+      ['أين تعملون؟', 'مقرنا الرئيسي في الجبيل، وندعم المواقع في جميع أنحاء المملكة العربية السعودية.'],
+      ['هل يمكن توفير المعدات مع مشغلين؟', 'نعم. معظم المعدات متاحة بمشغل أو بدونه، وتأتي حافلات العمال مع سائقين. حدّد ما تحتاجه في طلب العرض.'],
+      ['ما سرعة التعبئة لديكم؟', 'تعتمد على الوظائف والكميات ومتطلبات الموقع. أرسل طلبك وسنؤكد موعد التعبئة مع العرض.'],
+      ['هل عمالكم معتمدون؟', 'تخضع الفرق لاختبارات مهنية وتدريب على السلامة، ونرسل الشهادات مثل بطاقات TÜV لعمال السقالات مع السير الذاتية.'],
+      ['هل توفرون فرقاً لفترات قصيرة؟', 'نعم. نوفر فرقاً قصيرة وطويلة الأجل وفرقاً للإيقافات والصيانة الشاملة.']
+    ];
+    var tCur = tsts[st.t];
+    return {
+      yes: true,
+      rootClass: all ? 'sbh' : 'sbh sbh--static',
+      showHdr: all || part === 'a' || part === 'hdr', showA: all || part === 'a', showCta: all || part === 'd' || part === 'cta', showFtr: all || part === 'f' || part === 'ftr', showB: all || part === 'b', showC: all || part === 'c', showD: all || part === 'd', showE: all || part === 'e', showF: all || part === 'f' || part === 'quote',
+      showWa: all || part === 'a',
+      tText: tCur.text, tName: tCur.name, tRole: tCur.role, tInit: tCur.init, tTag: tCur.tag, tImg: tCur.img,
+      tCounter: (st.t + 1) + ' / ' + tsts.length,
+      prevT: function () { self.setState({ t: (st.t + tsts.length - 1) % tsts.length }); },
+      nextT: function () { self.setState({ t: (st.t + 1) % tsts.length }); },
+      tDots: tsts.map(function (x, i) { return { label: 'عرض الرأي ' + (i + 1), on: String(st.t === i), pick: function () { self.setState({ t: i }); } }; }),
+      faqs: faqDefs.map(function (f, i) { var o = st.faq === i; return { q: f[0], a: f[1], isOpen: o, open: String(o), cls: o ? 'faq__item is-open' : 'faq__item', toggle: function () { self.setState({ faq: o ? -1 : i }); } }; }),
+      menuOpen: st.menu, menuClosed: !st.menu, menuLabel: st.menu ? 'إغلاق القائمة' : 'فتح القائمة',
+      toggleMenu: function () { self.setState({ menu: !st.menu }); },
+      playing: !st.paused, paused: st.paused, videoLabel: st.paused ? 'تشغيل' : 'إيقاف مؤقت',
+      toggleVideo: function (e) {
+        var box = e && e.currentTarget && e.currentTarget.parentNode;
+        var v = box && box.querySelector('video');
+        if (v) { if (st.paused) { v.play(); } else { v.pause(); } }
+        self.setState({ paused: !st.paused });
+      },
+      noSubmit: function (e) { if (e && e.preventDefault) e.preventDefault(); },
+      segs: segNames.map(function (n, i) { return { label: n, pressed: String(st.seg === i), pick: function () { self.setState({ seg: i }); } }; }),
+      tabs: tabDefs.map(function (t, i) { return { label: t.label, count: t.roles.length, selected: String(st.tab === i), pick: function () { self.setState({ tab: i }); } }; }),
+      tabLabel: 'وظائف ' + tab.label,
+      roles: tab.roles.map(function (r) {
+        var on = !!st.picked[r];
+        return { name: r, on: on, pressed: String(on), toggle: function () { var p = Object.assign({}, self.state.picked); if (p[r]) { delete p[r]; } else { p[r] = 1; } self.setState({ picked: p }); } };
+      }),
+      pickedText: 'الوظائف المختارة: ' + pickedN,
+      filters: filterNames.map(function (n) { return { label: n, pressed: String(st.filter === n), pick: function () { self.setState({ filter: n }); } }; }),
+      hasPlates: shown.length > 0, noPlates: shown.length === 0,
+      plates: shown.map(function (p) {
+        var added = !!st.quote[p.code];
+        return {
+          cat: p.cat, code: p.code, img: p.img, alt: p.alt, name: p.name,
+          specs: p.specs.map(function (s) { return { k: s[0], v: s[1], tbc: s[1] === null, known: s[1] !== null }; }),
+          addLabel: added ? 'تمت الإضافة ✓' : 'أضف إلى العرض',
+          addClass: added ? 'btn btn--sm btn--ink' : 'btn btn--sm',
+          add: function () { var q = Object.assign({}, self.state.quote); if (q[p.code]) { delete q[p.code]; } else { q[p.code] = 1; } self.setState({ quote: q }); }
+        };
+      }),
+      qtypes: [['قوى عاملة', '39 وظيفة'], ['معدات', '29 نوعاً'], ['صيانة', 'مصانع وإيقافات'], ['أخرى', 'مدني، تصنيع، لوجستيات']].map(function (q, i) { return { label: q[0], sub: q[1], pressed: String(st.qtype === i), pick: function () { self.setState({ qtype: i }); } }; }),
+      sent: st.sent, notSent: !st.sent,
+      submitQuote: function (e) { if (e && e.preventDefault) e.preventDefault(); self.setState({ sent: true }); },
+      resetQuote: function () { self.setState({ sent: false }); },
+      quoteText: quoteN === 0 ? 'قائمة العرض فارغة' : ('عدد المعدات في قائمة العرض: ' + quoteN)
+    };
+  }
+}
+</script>
+</body>
+</html>

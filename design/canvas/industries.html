@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Industries we serve</title>
+<link rel="stylesheet" href="sb-home.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Sans+Arabic:wght@400;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#0a72a6}a:hover{color:#085b85}
+.sbh svg.i{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+</style>
+</helmet>
+<div style="width: 100%; background: #ffffff">
+
+<sc-if value="{{ showA }}" hint-placeholder-val="{{ true }}">
+<dc-import name="Main" part="hdr" hint-size="100%,120px"></dc-import>
+</sc-if>
+
+<div class="sbh-wrap" style="font-family: 'IBM Plex Sans', system-ui, sans-serif; color: #0b1220">
+<div class="{{ rootClass }}">
+
+<sc-if value="{{ showA }}" hint-placeholder-val="{{ true }}">
+<header class="ph">
+  <img class="ph__img" src="../../src/assets/images/projects/neom-solar-field.jpg" alt="">
+  <div class="c ph__in">
+    <ol class="crumbs"><li><a href="home.html">Home</a></li><li aria-current="page">Industries</li></ol>
+    <span class="eyebrow">Industries</span>
+    <h1 class="display ph__h">Working where the Kingdom builds</h1>
+    <p class="lead ph__lead">Oil and gas pipelines, solar fields, industrial plants, construction sites and public spaces: the same crews and fleet, adapted to each sector's rules.</p>
+  </div>
+</header>
+
+<nav class="subnav" aria-label="Sectors"><div class="c subnav__in">
+  <a class="is-on" href="#oil-gas">Oil &amp; gas</a><a href="#renewables">Renewables &amp; power</a><a href="#industrial">Petrochemical &amp; industrial</a><a href="#construction">Construction</a><a href="#public">Public &amp; municipal</a>
+  <a class="btn btn--sm subnav__cta" href="quote.html">Request a quote</a>
+</div></nav>
+
+<!-- Oil & gas -->
+<section class="sec" id="oil-gas"><div class="c">
+  <div class="sb-blk rv">
+    <div class="sb-blk__media"><img class="rv-img" src="../../src/assets/images/site/pipeline-excavators-row.jpg" alt="Excavators breaking rock beside a pipe string"><div class="sb-blk__fig"><b>160 km</b><span>pipeline civil works, MGSE Phase-3</span></div></div>
+    <div class="sb-blk__copy">
+      <span class="label sb-blk__n">Sector 01</span>
+      <h2 class="h2">Oil &amp; gas</h2>
+      <p class="lead">Pipeline right-of-way, trenching, bedding and berms, plus the temporary facilities and crews that big Aramco programmes need.</p>
+      <div class="sb-blk__chips"><span class="cs-chip cs-chip--light">Civil works</span><span class="cs-chip cs-chip--light">Equipment rental</span><span class="cs-chip cs-chip--light">Manpower</span><span class="cs-chip cs-chip--light">Site facilities</span></div>
+      <div class="sb-blk__projects">
+        <a class="sb-blk__p" href="project-case-study.html"><img src="../../src/assets/images/site/pipeline-sany-line.jpg" alt=""><div><span class="label">Kalpataru International</span><b>MGSE Phase-3, Package 13</b></div><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+        <a class="sb-blk__p" href="project-case-study.html"><img src="../../src/assets/images/projects/tcf-tadano-lift-riggers.jpg" alt=""><div><span class="label">Nesma United Industries</span><b>Aramco TCF</b></div><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- Renewables -->
+<section class="sec alt" id="renewables"><div class="c">
+  <div class="sb-blk sb-blk--rev rv">
+    <div class="sb-blk__media"><img class="rv-img" src="../../src/assets/images/projects/neom-trench-pv-row.jpg" alt="Cable trench beside rows of solar panels"><div class="sb-blk__fig"><b>90 km</b><span>cable trenching at NEOM</span></div></div>
+    <div class="sb-blk__copy">
+      <span class="label sb-blk__n">Sector 02</span>
+      <h2 class="h2">Renewables &amp; power</h2>
+      <p class="lead">Cable trenching, duct banks, road crossings and route markers for solar PV plants, and support for power plants and substations.</p>
+      <div class="sb-blk__chips"><span class="cs-chip cs-chip--light">Cable trenching</span><span class="cs-chip cs-chip--light">Backhoe fleet</span><span class="cs-chip cs-chip--light">Excavation crews</span></div>
+      <div class="sb-blk__projects">
+        <a class="sb-blk__p" href="project-case-study.html"><img src="../../src/assets/images/projects/neom-cable-tape-crew.jpg" alt=""><div><span class="label">Larsen &amp; Toubro (L&amp;T)</span><b>NEOM Green Hydrogen, Solar PV</b></div><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      </div>
+    </div>
+  </div>
+</div></section>
+</sc-if>
+
+<sc-if value="{{ showB }}" hint-placeholder-val="{{ true }}">
+<!-- Industrial -->
+<section class="sec" id="industrial"><div class="c">
+  <div class="sb-blk rv">
+    <div class="sb-blk__media"><img class="rv-img" src="../../src/assets/images/site/formwork-rebar-wide.jpg" alt="Rebar cages and formwork for machine foundations"><div class="sb-blk__fig"><b>SPARK</b><span>King Salman Energy Park</span></div></div>
+    <div class="sb-blk__copy">
+      <span class="label sb-blk__n">Sector 03</span>
+      <h2 class="h2">Petrochemical &amp; industrial</h2>
+      <p class="lead">Excavations, machine foundations, powerhouses and steel structure for industrial plants, plus maintenance and shutdown crews for refineries.</p>
+      <div class="sb-blk__chips"><span class="cs-chip cs-chip--light">Civil works</span><span class="cs-chip cs-chip--light">Plant maintenance</span><span class="cs-chip cs-chip--light">Fabrication</span></div>
+      <div class="sb-blk__projects">
+        <a class="sb-blk__p" href="project-case-study.html"><img src="../../src/assets/images/site/rebar-cages-crew.jpg" alt=""><div><span class="label">Sendan International</span><b>GSSIP, SPARK</b></div><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- Construction -->
+<section class="sec alt" id="construction"><div class="c">
+  <div class="sb-blk sb-blk--rev rv">
+    <div class="sb-blk__media"><img class="rv-img" src="../../src/assets/images/site/concrete-pour-pump.jpg" alt="Concrete pump boom over a foundation pour"><div class="sb-blk__fig"><b>Civil</b><span>contracting and site crews</span></div></div>
+    <div class="sb-blk__copy">
+      <span class="label sb-blk__n">Sector 04</span>
+      <h2 class="h2">Construction</h2>
+      <p class="lead">General contracting, construction management and design-build, with our own crews, earthmoving fleet and lifting equipment.</p>
+      <div class="sb-blk__chips"><span class="cs-chip cs-chip--light">General contracting</span><span class="cs-chip cs-chip--light">Earthmoving</span><span class="cs-chip cs-chip--light">Lifting</span><span class="cs-chip cs-chip--light">Crew transport</span></div>
+      <div class="sb-blk__projects">
+        <a class="sb-blk__p" href="equipment-fleet.html"><img src="../../src/assets/images/site/fleet-lineup-desert.jpg" alt=""><div><span class="label">Equipment fleet</span><b>29 equipment types for rent</b></div><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- Public -->
+<section class="sec" id="public"><div class="c">
+  <div class="sb-blk rv">
+    <div class="sb-blk__media"><img class="rv-img" src="../../src/assets/images/projects/dareen-finished-plaza.jpg" alt="Finished stone paving in a park plaza"><div class="sb-blk__fig"><b>Jubail</b><span>Royal Commission parks</span></div></div>
+    <div class="sb-blk__copy">
+      <span class="label sb-blk__n">Sector 05</span>
+      <h2 class="h2">Public &amp; municipal</h2>
+      <p class="lead">Maintenance of parks, walkways and public spaces for the Royal Commission, delivered safely around the public.</p>
+      <div class="sb-blk__chips"><span class="cs-chip cs-chip--light">Paving</span><span class="cs-chip cs-chip--light">Drainage</span><span class="cs-chip cs-chip--light">Maintenance crews</span></div>
+      <div class="sb-blk__projects">
+        <a class="sb-blk__p" href="project-case-study.html"><img src="../../src/assets/images/projects/dareen-paving-manhole.jpg" alt=""><div><span class="label">National Blue Company</span><b>Dareen Park, Al Fanateer</b></div><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      </div>
+    </div>
+  </div>
+</div></section>
+</sc-if>
+
+</div>
+</div>
+
+<sc-if value="{{ showB }}" hint-placeholder-val="{{ true }}">
+<dc-import name="Main" part="cta" hint-size="100%,330px"></dc-import>
+<dc-import name="Main" part="ftr" hint-size="100%,580px"></dc-import>
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"part":{"editor":"enum","options":["all","a","b"],"default":"all"},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var part = this.props.part || 'all';
+    var has = function (k) { return part === 'all' || part.indexOf(k) >= 0; };
+    return { rootClass: part === 'all' ? 'sbh' : 'sbh sbh--static', showA: has('a'), showB: has('b') };
+  }
+}
+</script>
+</body>
+</html>

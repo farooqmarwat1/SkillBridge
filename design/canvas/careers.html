@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Careers at Skill Bridge</title>
+<link rel="stylesheet" href="sb-home.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Sans+Arabic:wght@400;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#0a72a6}a:hover{color:#085b85}
+.sbh svg.i{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+</style>
+</helmet>
+<div style="width: 100%; background: #ffffff">
+
+<sc-if value="{{ showA }}" hint-placeholder-val="{{ true }}">
+<dc-import name="Main" part="hdr" hint-size="100%,120px"></dc-import>
+</sc-if>
+
+<div class="sbh-wrap" style="font-family: 'IBM Plex Sans', system-ui, sans-serif; color: #0b1220">
+<div class="{{ rootClass }}">
+
+<sc-if value="{{ showA }}" hint-placeholder-val="{{ true }}">
+<header class="ph">
+  <img class="ph__img" src="../../src/assets/images/site/toolbox-talk-sunrise.jpg" alt="">
+  <div class="c ph__in">
+    <ol class="crumbs"><li><a href="home.html">Home</a></li><li aria-current="page">Careers</li></ol>
+    <span class="eyebrow">Careers</span>
+    <h1 class="display ph__h">Build the Kingdom's biggest projects with us</h1>
+    <p class="lead ph__lead">Engineers, office staff, skilled trades and site crews: Skill Bridge hires for work on NEOM, Saudi Aramco and SPARK projects across Saudi Arabia.</p>
+    <div class="hero__ctas"><a class="btn btn--hivis btn--lg" href="#apply">Apply now <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a><a class="btn btn--ghost-inv btn--lg" href="#roles">Roles we hire</a></div>
+  </div>
+</header>
+
+<!-- Why join -->
+<section class="sec"><div class="c">
+  <div class="head rv">
+    <div><span class="eyebrow">Why Skill Bridge</span><h2 class="h2">Work that goes on your CV</h2></div>
+    <p class="lead">Join crews working for leading contractors on the projects that are reshaping Saudi Arabia.</p>
+  </div>
+  <div class="cr-why rv">
+    <article class="cr-why__item"><img src="../../src/assets/images/projects/neom-duct-bank-crew.jpg" alt="Crew placing a duct bank in a trench at NEOM"><div><span class="label">Major projects</span><b class="h4">NEOM, Aramco, SPARK</b><p>Real experience on giga-projects for L&amp;T, Nesma, Kalpataru and Sendan.</p></div></article>
+    <article class="cr-why__item"><img src="../../src/assets/images/site/rebar-harness-walkway.jpg" alt="Crew in full-body harnesses on a scaffold walkway"><div><span class="label">Safety first</span><b class="h4">Inducted and protected</b><p>Induction, PPE and daily toolbox talks before anyone starts work.</p></div></article>
+    <article class="cr-why__item"><img src="../../src/assets/images/site/rebar-inspection-team.jpg" alt="Engineers inspecting rebar"><div><span class="label">Grow your skills</span><b class="h4">Trade tests and certification</b><p>Trade testing and support for certifications such as TÜV cards.</p></div></article>
+    <article class="cr-why__item"><img src="../../src/assets/images/site/team-fleet-desert.jpg" alt="Skill Bridge team in front of the truck fleet"><div><span class="label">Long-term work</span><b class="h4">Project after project</b><p>Good crews move with us from one project to the next.</p></div></article>
+  </div>
+</div></section>
+
+<!-- Roles -->
+<section class="sec alt" id="roles"><div class="c">
+  <div class="head rv">
+    <div><span class="eyebrow">Roles we hire</span><h2 class="h2">39 roles in four disciplines</h2></div>
+    <p class="lead">We hire for these roles throughout the year. Pick yours in the application form below.</p>
+  </div>
+  <div class="cr-roles rv">
+    <sc-for list="{{ groups }}" as="g" hint-placeholder-count="4">
+      <div class="cr-roles__col">
+        <div class="cr-roles__head"><b class="h4">{{ g.name }}</b><span class="cnt">{{ g.count }}</span></div>
+        <ul>
+          <sc-for list="{{ g.roles }}" as="r" hint-placeholder-count="10"><li>{{ r }}</li></sc-for>
+        </ul>
+      </div>
+    </sc-for>
+  </div>
+</div></section>
+</sc-if>
+
+<sc-if value="{{ showB }}" hint-placeholder-val="{{ true }}">
+<!-- How hiring works -->
+<section class="sec"><div class="c">
+  <div class="head rv">
+    <div><span class="eyebrow">How hiring works</span><h2 class="h2">From application to site</h2></div>
+    <p class="lead">Four steps. We contact you on WhatsApp or by phone at each one.</p>
+  </div>
+  <ol class="tl tl--4 rv">
+    <li class="tl__step"><span class="tl__dot">1</span><h3>Apply</h3><p>Send the form below with your CV and certificates.</p></li>
+    <li class="tl__step"><span class="tl__dot">2</span><h3>Test and interview</h3><p>Trade test or technical interview for your role.</p></li>
+    <li class="tl__step"><span class="tl__dot">3</span><h3>Documents</h3><p>Medical, Iqama and certificates checked and filed.</p></li>
+    <li class="tl__step"><span class="tl__dot">4</span><h3>Induction</h3><p>Safety induction and PPE, then transport to site.</p></li>
+  </ol>
+  <div class="cr-warn rv"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 16H3z"></path><path d="M12 10v4M12 17h.01"></path></svg><p><b>We never ask candidates for money to apply.</b> If anyone asks for a fee in Skill Bridge's name, report it to us. <span class="tbc">To confirm</span></p></div>
+</div></section>
+
+<!-- Application form -->
+<section class="sec alt" id="apply"><div class="c">
+  <div class="qf">
+    <aside class="qf__side">
+      <span class="eyebrow">Apply</span>
+      <h2 class="h2">Send your application</h2>
+      <p class="qf__lead">Takes about three minutes. Prefer WhatsApp? Send your CV to the number below.</p>
+      <ul class="qf__list">
+        <li><span class="qf__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.4z"></path></svg></span><div><span class="label">WhatsApp your CV</span><b class="data">+966 59 880 7429</b></div></li>
+        <li><span class="qf__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"></path><circle cx="12" cy="10" r="2.5"></circle></svg></span><div><span class="label">HR office</span><b>Al Jubail, Eastern Province</b></div></li>
+      </ul>
+    </aside>
+    <div class="qf__card">
+      <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+        <form class="qf__form" onSubmit="{{ submit }}">
+          <fieldset class="qf__set">
+            <legend class="qf__legend"><span class="qf__step">1</span> About you</legend>
+            <div class="qf__grid">
+              <div class="fld"><label for="c-name">Full name</label><input id="c-name" class="inp" autocomplete="name" placeholder="As on your passport"></div>
+              <div class="fld"><label for="c-phone">Mobile / WhatsApp</label><input id="c-phone" class="inp" type="tel" autocomplete="tel" placeholder="05x xxx xxxx"></div>
+              <div class="fld"><label for="c-email">Email <span class="qf__opt">(optional)</span></label><input id="c-email" class="inp" type="email" autocomplete="email" placeholder="name@email.com"></div>
+              <div class="fld"><label for="c-loc">Where are you now?</label><select id="c-loc" class="inp"><option>In Saudi Arabia, transferable Iqama</option><option>In Saudi Arabia, other status</option><option>Saudi national</option><option>Outside Saudi Arabia</option></select></div>
+            </div>
+          </fieldset>
+          <fieldset class="qf__set">
+            <legend class="qf__legend"><span class="qf__step">2</span> Your trade</legend>
+            <div class="qf__grid">
+              <div class="fld"><label for="c-role">Role</label><select id="c-role" class="inp"><optgroup label="Engineering"><option>Mechanical Engineer</option><option>Civil Engineer</option><option>Construction Engineer</option><option>Safety Engineer</option><option>Electrical Engineer</option><option>Material Engineer</option><option>Computer Engineer</option><option>QA/QC Engineer</option><option>Piping Engineer</option><option>Planner</option><option>HVAC Engineer</option><option>Instrumentation Engineer</option></optgroup><optgroup label="Office &amp; admin"><option>Executive Secretary</option><option>Data Entry</option><option>Document Controller</option><option>Office Boy</option><option>Admin Assistant</option><option>Computer Operator</option><option>AutoCAD Draftsman</option><option>Time Keeper</option><option>Janitor</option><option>Telephone Operator</option><option>Office Driver</option></optgroup><optgroup label="Skilled trades"><option>Millwright Fitter</option><option>Instrument Fitter</option><option>Pipe Fitter</option><option>Carpenter</option><option>3G Welder</option><option>Crane Operator</option><option>Rigger L1–L3</option><option>Mason</option><option>Steel Erector</option><option>Plumber</option><option>Light Driver</option><option>Forklift Operator</option></optgroup><optgroup label="Site &amp; HSE"><option>Heavy Driver</option><option>Scaffolder (TÜV)</option><option>Manhole Watch</option><option>Assistant Safety Officer</option></optgroup></select></div>
+              <div class="fld"><label for="c-exp">Years of experience</label><select id="c-exp" class="inp"><option>Less than 2</option><option selected>2 to 5</option><option>5 to 10</option><option>More than 10</option></select></div>
+            </div>
+            <div class="fld"><span class="fld__lbl">Certificates you hold <span class="qf__opt">(optional)</span></span>
+              <div class="chips cr-certs">
+                <sc-for list="{{ certs }}" as="k" hint-placeholder-count="6">
+                  <button class="chip" type="button" aria-pressed="{{ k.pressed }}" onClick="{{ k.toggle }}">{{ k.label }}</button>
+                </sc-for>
+              </div>
+            </div>
+            <label class="cr-drop" for="c-cv"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5M5 20h14"></path></svg><span><b>Upload your CV</b><span>PDF, Word or a photo, up to 10 MB</span></span><input id="c-cv" type="file" class="sr"></label>
+          </fieldset>
+          <div class="qf__foot">
+            <label class="qf__check"><input id="c-consent" type="checkbox"> I agree that Skill Bridge may keep my details for future roles.</label>
+            <button class="btn btn--lg" type="submit">Send application <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+          </div>
+        </form>
+      </sc-if>
+      <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+        <div class="qf__done">
+          <span class="qf__tick"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg></span>
+          <h3 class="h2">Application received</h3>
+          <p class="lead">Our HR team reviews applications every week and contacts shortlisted candidates on WhatsApp or by phone.</p>
+          <button class="btn btn--ghost" type="button" onClick="{{ reset }}">Send another application</button>
+        </div>
+      </sc-if>
+    </div>
+  </div>
+</div></section>
+</sc-if>
+
+</div>
+</div>
+
+<sc-if value="{{ showB }}" hint-placeholder-val="{{ true }}">
+<dc-import name="Main" part="ftr" hint-size="100%,580px"></dc-import>
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"part":{"editor":"enum","options":["all","a","b"],"default":"all"},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { sent: false, certs: { 'TÜV scaffolding': 1 } };
+  }
+  renderVals() {
+    var self = this, st = this.state;
+    var part = this.props.part || 'all';
+    var has = function (k) { return part === 'all' || part.indexOf(k) >= 0; };
+    var groups = [
+      ['Engineering', ['Mechanical Engineer', 'Civil Engineer', 'Construction Engineer', 'Safety Engineer', 'Electrical Engineer', 'Material Engineer', 'Computer Engineer', 'QA/QC Engineer', 'Piping Engineer', 'Planner', 'HVAC Engineer', 'Instrumentation Engineer']],
+      ['Office & admin', ['Executive Secretary', 'Data Entry', 'Document Controller', 'Office Boy', 'Admin Assistant', 'Computer Operator', 'AutoCAD Draftsman', 'Time Keeper', 'Janitor', 'Telephone Operator', 'Office Driver']],
+      ['Skilled trades', ['Millwright Fitter', 'Instrument Fitter', 'Pipe Fitter', 'Carpenter', '3G Welder', 'Crane Operator', 'Rigger L1–L3', 'Mason', 'Steel Erector', 'Plumber', 'Light Driver', 'Forklift Operator']],
+      ['Site & HSE', ['Heavy Driver', 'Scaffolder (TÜV)', 'Manhole Watch', 'Assistant Safety Officer']]
+    ];
+    var certNames = ['TÜV scaffolding', 'Rigger card', 'Crane operator licence', 'Saudi driving licence', '3G / 6G welding', 'NEBOSH / IOSH'];
+    var roleOpts = [];
+    groups.forEach(function (g) { g[1].forEach(function (r) { roleOpts.push(r); }); });
+    return {
+      rootClass: part === 'all' ? 'sbh' : 'sbh sbh--static',
+      showA: has('a'), showB: has('b'),
+      groups: groups.map(function (g) { return { name: g[0], count: g[1].length, roles: g[1] }; }),
+      roleOpts: roleOpts,
+      certs: certNames.map(function (c) { var on = !!st.certs[c]; return { label: c, pressed: String(on), toggle: function () { var x = Object.assign({}, self.state.certs); if (x[c]) { delete x[c]; } else { x[c] = 1; } self.setState({ certs: x }); } }; }),
+      sent: st.sent, notSent: !st.sent,
+      submit: function (e) { if (e && e.preventDefault) e.preventDefault(); self.setState({ sent: true }); },
+      reset: function () { self.setState({ sent: false }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

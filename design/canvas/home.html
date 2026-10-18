@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Skill Bridge home</title>
+<link rel="stylesheet" href="sb-home.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Sans+Arabic:wght@400;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#0a72a6}a:hover{color:#085b85}
+.sbh svg.i{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+</style>
+</helmet>
+<div class="sbh-wrap" style="font-family: 'IBM Plex Sans', system-ui, sans-serif; color: #0b1220">
+<div class="{{ rootClass }}">
+
+<sc-if value="{{ showHdr }}" hint-placeholder-val="{{ true }}">
+<!-- Utility bar -->
+<div class="util"><div class="c">
+  <div class="util__g"><span class="data">+966 53 905 1475</span><span class="data util__hide">+966 59 880 7429</span><span class="util__hide">Al Jubail Head Office</span></div>
+  <div class="util__g"><a class="util__hide" href="#">Company profile (PDF)</a><span class="lang" aria-label="Language"><a class="is-on" href="home.html">EN</a><a href="home-ar.html" lang="ar">عربي</a></span></div>
+</div></div>
+
+<!-- Header -->
+<header class="hdr">
+  <div class="c">
+    <a class="hdr__logo" href="#"><img src="../../src/assets/images/logo-skill-bridge.jpg" alt="Skill Bridge"></a>
+    <ul class="nav">
+      <li><a href="about.html">About</a></li>
+      <li><a href="#services">Services <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></a></li>
+      <li><a href="equipment-fleet.html">Equipment</a></li>
+      <li><a href="industries.html">Industries</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="hse.html">HSE</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="hdr__act">
+      <a class="btn hdr__quote" href="quote.html">Request a quote</a>
+      <button class="burger" type="button" aria-label="{{ menuLabel }}" onClick="{{ toggleMenu }}">
+        <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></sc-if>
+        <sc-if value="{{ menuClosed }}" hint-placeholder-val="{{ true }}"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></sc-if>
+      </button>
+    </div>
+  </div>
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <nav class="drawer" aria-label="Mobile">
+      <a href="about.html">About <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      <a href="#services">Services <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      <a href="equipment-fleet.html">Equipment <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      <a href="industries.html">Industries <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      <a href="projects.html">Projects <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      <a href="hse.html">HSE <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      <a href="careers.html">Careers <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      <a href="contact.html">Contact <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      <a class="btn btn--hivis btn--lg" href="quote.html">Request a quote</a>
+    </nav>
+  </sc-if>
+</header>
+
+</sc-if>
+
+<sc-if value="{{ showA }}" hint-placeholder-val="{{ true }}">
+<!-- Hero -->
+<section class="hero">
+  <div class="hero__copy">
+    <span class="eyebrow">Manpower · Equipment · Contracting</span>
+    <h1 class="display">
+      <span class="ln"><span>Skilled crews and</span></span>
+      <span class="ln"><span>heavy equipment,</span></span>
+      <span class="ln"><span><mark>from Jubail</mark></span></span>
+    </h1>
+    <p class="lead fade">Manpower supply, equipment rental, plant maintenance, fabrication and logistics for oil &amp; gas, petrochemical and construction sites across the Kingdom.</p>
+    <div class="hero__ctas fade2">
+      <a class="btn btn--lg" href="#quote">Request a quote <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      <a class="btn btn--ghost btn--lg" href="#services">Our services</a>
+    </div>
+    <div class="hero__facts fade2">
+      <span class="label"><b>39</b> trades &amp; disciplines</span>
+      <span class="label"><b>29</b> equipment types</span>
+      <span class="label"><b>7</b> service lines</span>
+    </div>
+  </div>
+  <div class="hero__media">
+    <video src="../../public/video/excavator-720.mp4" poster="../../public/video/excavator-poster.jpg" muted="{{ yes }}" loop="{{ yes }}" aria-hidden="true"></video>
+    <button class="vidbtn" type="button" onClick="{{ toggleVideo }}">
+      <sc-if value="{{ playing }}" hint-placeholder-val="{{ true }}"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14"></path></svg></sc-if>
+      <sc-if value="{{ paused }}" hint-placeholder-val="{{ false }}"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5l12 7-12 7z"></path></svg></sc-if>
+      {{ videoLabel }}
+    </button>
+    <div class="vidcap"><span class="label">Earthmoving</span></div>
+    <form class="quick" id="quick" onSubmit="{{ noSubmit }}">
+      <div class="quick__head"><strong>Quick request</strong><span class="label">3 fields</span></div>
+      <div class="quick__body">
+        <div class="seg" role="group" aria-label="I need">
+          <sc-for list="{{ segs }}" as="s" hint-placeholder-count="3">
+            <button type="button" aria-pressed="{{ s.pressed }}" onClick="{{ s.pick }}">{{ s.label }}</button>
+          </sc-for>
+        </div>
+        <div class="row2">
+          <div class="fld"><label for="q-site">Site</label><select id="q-site" class="inp"><option>Al Jubail</option><option>Dammam</option><option>Ras Tanura</option><option>Riyadh</option><option>NEOM</option></select></div>
+          <div class="fld"><label for="q-start">Start date</label><input id="q-start" class="inp" type="date" value="2026-11-02"></div>
+        </div>
+        <button class="btn" type="submit">Get a quote <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- Clients -->
+<div class="clients"><div class="c">
+  <span class="label clients__lbl">Trusted on sites for</span>
+  <div class="clients__vp"><div class="clients__tr">
+    <span>Kalpataru International</span><span>Sendan International</span><span>Larsen &amp; Toubro</span><span>Saudi Aramco</span><span>NEOM</span><span>Sinopec</span><span>Hyundai</span><span>Red Sea Global</span><span>Saipem</span><span>Nesma</span><span>Ma'aden</span>
+    <span aria-hidden="true">Kalpataru International</span><span aria-hidden="true">Sendan International</span><span aria-hidden="true">Larsen &amp; Toubro</span><span aria-hidden="true">Saudi Aramco</span><span aria-hidden="true">NEOM</span><span aria-hidden="true">Sinopec</span><span aria-hidden="true">Hyundai</span><span aria-hidden="true">Red Sea Global</span><span aria-hidden="true">Saipem</span><span aria-hidden="true">Nesma</span><span aria-hidden="true">Ma'aden</span>
+  </div></div>
+</div></div>
+
+<!-- About + stats -->
+<section class="sec"><div class="c">
+  <div class="about">
+    <div class="about__media rv">
+      <img class="about__main rv-img" src="../../src/assets/images/site/team-fleet-desert.jpg" alt="Skill Bridge site team lined up in front of the truck fleet on a desert site">
+      <img class="about__sub" src="../../src/assets/images/site/toolbox-talk-sunrise.jpg" alt="Toolbox talk with a crew in hard hats and hi-vis vests at sunrise">
+      <div class="about__badge"><b>Al Jubail</b><span>Head office · KSA</span></div>
+    </div>
+    <div class="about__copy rv">
+      <span class="eyebrow">About Skill Bridge</span>
+      <h2 class="h2">Industrial support from one partner</h2>
+      <p class="lead">Skill Bridge Contracting supplies people and equipment to industry and general contracting across Saudi Arabia. We support oil, gas and petrochemical operators and their contractors with skilled manpower, rental machines, maintenance and logistics.</p>
+      <ul class="checks">
+        <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg><div><b>Qualified, safety-inducted crews</b><span>Matched to your project's trades and certifications.</span></div></li>
+        <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg><div><b>A fleet ready for site</b><span>Earthmoving, lifting, power and transport under one contract.</span></div></li>
+        <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg><div><b>One point of accountability</b><span>Manpower, machines and logistics coordinated by one team.</span></div></li>
+      </ul>
+      <a class="link" href="about.html">About the company <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+    </div>
+  </div>
+  <div class="stats rv">
+    <div class="stat"><span class="stat__n" style="--to: 39" aria-label="39"></span><span class="label">Trades &amp; disciplines</span><p>From engineers to riggers and TÜV scaffolders.</p></div>
+    <div class="stat"><span class="stat__n" style="--to: 29" aria-label="29"></span><span class="label">Equipment types</span><p>Earthmoving, lifting, power, haulage, transport.</p></div>
+    <div class="stat"><span class="stat__n" style="--to: 7" aria-label="7"></span><span class="label">Service lines</span><p>People, machines, site work and supply.</p></div>
+    <div class="stat"><span class="stat__n" style="--to: 5" aria-label="5"></span><span class="label">Sectors served</span><p>Oil &amp; gas to mining, across the Kingdom.</p></div>
+  </div>
+</div></section>
+
+<!-- Services -->
+<section class="sec alt" id="services"><div class="c">
+  <div class="head rv">
+    <div><span class="eyebrow">What we do</span><h2 class="h2">People, machines and site work under one contract</h2></div>
+    <p class="lead">Seven service lines that a project site needs at the same time, run from our head office in Al Jubail.</p>
+  </div>
+  <div class="svcs rv">
+    <a class="svc" href="#"><span class="svc__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 18h20"></path><path d="M4 18v-3a8 8 0 0 1 16 0v3"></path><path d="M10 7.5V12"></path><path d="M14 7.5V12"></path></svg></span><span class="label">39 trades &amp; disciplines</span><h3 class="h4">Manpower Supply</h3><p>Engineers, office staff, skilled trades and site crews, short-term or long-term.</p><span class="link">Learn more <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
+    <a class="svc" href="equipment-fleet.html"><span class="svc__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4h11"></path><path d="M5 4l4-2"></path><path d="M16 4v5"></path><path d="M14 9h4v3h-4z"></path><path d="M2 21h7"></path><path d="M5 9l5-5"></path></svg></span><span class="label">29 equipment types</span><h3 class="h4">Equipment Rental</h3><p>Cranes, earthmovers, generators and trailers, bare or with operators.</p><span class="link">Learn more <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
+    <a class="svc" href="#"><span class="svc__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="1"></rect><path d="M9 21v-4h6v4"></path><path d="M8 7h2M14 7h2M8 11h2M14 11h2"></path></svg></span><span class="label">Design-build · CM</span><h3 class="h4">Civil &amp; General Contracting</h3><p>General contracting, construction management and pre-construction planning.</p><span class="link">Learn more <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
+    <a class="svc" href="#"><span class="svc__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9z"></path></svg></span><span class="label">Refineries · Power</span><h3 class="h4">Plant Maintenance &amp; Shutdowns</h3><p>Maintenance and construction support for refineries, petrochemical and power plants.</p><span class="link">Learn more <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
+    <a class="svc" href="#"><span class="svc__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.4-.5-2-1-3-1.1-2.1-.2-4 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.2.4-2.3 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg></span><span class="label">Steel · Machining</span><h3 class="h4">Fabrication &amp; Workshop</h3><p>Steel fabrication, machining and heat exchanger fabrication and repair.</p><span class="link">Learn more <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
+    <a class="svc" href="#"><span class="svc__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 6h12v10H2z"></path><path d="M14 9h4l4 4v3h-8"></path><circle cx="6" cy="17.5" r="2"></circle><circle cx="17" cy="17.5" r="2"></circle></svg></span><span class="label">Buses · Low-beds</span><h3 class="h4">Logistics &amp; Transport</h3><p>Crew buses from 15 to 55 seats, flatbed and hydraulic low-bed trailers.</p><span class="link">Learn more <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
+  </div>
+</div></section>
+
+</sc-if>
+
+<sc-if value="{{ showB }}" hint-placeholder-val="{{ true }}">
+<!-- Manpower -->
+<section class="sec"><div class="c">
+  <div class="mp">
+    <div class="mp__copy rv">
+      <span class="eyebrow">Manpower supply</span>
+      <h2 class="h2">39 roles, ready to mobilise</h2>
+      <p class="lead">Pick the roles you need. We shortlist qualified, safety-inducted people and send CVs with the quote.</p>
+      <img class="mp__photo rv-img" src="../../src/assets/images/site/rebar-inspection-team.jpg" alt="Engineers in hi-vis vests inspecting epoxy-coated rebar">
+    </div>
+    <div class="rv">
+      <div class="mp__panel">
+        <div class="tabs" role="tablist" aria-label="Disciplines">
+          <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="4">
+            <button class="tab" type="button" role="tab" aria-selected="{{ t.selected }}" onClick="{{ t.pick }}">{{ t.label }} <span class="cnt">{{ t.count }}</span></button>
+          </sc-for>
+        </div>
+        <div class="chips" role="tabpanel" aria-label="{{ tabLabel }}">
+          <sc-for list="{{ roles }}" as="r" hint-placeholder-count="12">
+            <button class="chip" type="button" aria-pressed="{{ r.pressed }}" onClick="{{ r.toggle }}"><sc-if value="{{ r.on }}" hint-placeholder-val="{{ false }}"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg></sc-if>{{ r.name }}</button>
+          </sc-for>
+        </div>
+        <div class="mp__foot">
+          <span class="label">{{ pickedText }}</span>
+          <a class="btn" href="#quote">Request these roles <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+        </div>
+      </div>
+      <div class="models">
+        <div class="model"><b>Short-term</b><span>Days to weeks, for peaks and urgent gaps.</span></div>
+        <div class="model"><b>Long-term</b><span>Monthly contracts for running operations.</span></div>
+        <div class="model"><b>Shutdowns</b><span>Turnaround crews for planned plant outages.</span></div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- Fleet -->
+<section class="sec alt" id="fleet"><div class="c">
+  <div class="head rv">
+    <div><span class="eyebrow">Equipment rental</span><h2 class="h2">Machines built for demanding sites</h2></div>
+    <p class="lead">Earthmoving, lifting, power and transport, bare or with operators. Add machines to one quote.</p>
+  </div>
+  <div class="filters" role="group" aria-label="Equipment category">
+    <sc-for list="{{ filters }}" as="f" hint-placeholder-count="6">
+      <button class="filter" type="button" aria-pressed="{{ f.pressed }}" onClick="{{ f.pick }}">{{ f.label }}</button>
+    </sc-for>
+  </div>
+  <sc-if value="{{ hasPlates }}" hint-placeholder-val="{{ true }}">
+    <div class="plates">
+      <sc-for list="{{ plates }}" as="p" hint-placeholder-count="4">
+        <article class="plate">
+          <div class="plate__top"><span>{{ p.cat }}</span><b>{{ p.code }}</b></div>
+          <div class="plate__ph"><img src="{{ p.img }}" alt="{{ p.alt }}"></div>
+          <h3>{{ p.name }}</h3>
+          <dl>
+            <sc-for list="{{ p.specs }}" as="s" hint-placeholder-count="4">
+              <div><dt>{{ s.k }}</dt><dd><sc-if value="{{ s.tbc }}" hint-placeholder-val="{{ false }}"><span class="tbc">To confirm</span></sc-if><sc-if value="{{ s.known }}" hint-placeholder-val="{{ true }}">{{ s.v }}</sc-if></dd></div>
+            </sc-for>
+          </dl>
+          <div class="plate__act"><button class="{{ p.addClass }}" type="button" onClick="{{ p.add }}">{{ p.addLabel }}</button><a class="btn btn--sm btn--ghost" href="#">Details</a></div>
+        </article>
+      </sc-for>
+    </div>
+  </sc-if>
+  <sc-if value="{{ noPlates }}" hint-placeholder-val="{{ false }}">
+    <div class="fleet__more"><div><b class="h4">Power &amp; site equipment</b><p class="lead" style="font-size: 15px">Generators, air compressors, welding machines and tower lights. Photos and specs coming soon.</p></div><a class="btn btn--ghost" href="#quote">Ask for availability</a></div>
+  </sc-if>
+  <div class="fleet__more">
+    <div><b class="h4">{{ quoteText }}</b><p style="font-size: 15px; color: #3e4a5a">The full fleet covers 29 equipment types, from Bobcats to tower cranes.</p></div>
+    <div style="display: flex; gap: 10px; flex-wrap: wrap"><a class="btn btn--ink" href="equipment-fleet.html">View full fleet</a><a class="btn" href="#quote">Send quote list</a></div>
+  </div>
+</div></section>
+
+</sc-if>
+
+<sc-if value="{{ showC }}" hint-placeholder-val="{{ true }}">
+<!-- How we mobilise: video band -->
+<section class="band on-dark">
+  <video src="../../public/video/desert-720.mp4" poster="../../public/video/desert-poster.jpg" muted="{{ yes }}" loop="{{ yes }}" aria-hidden="true"></video>
+  <div class="c sec">
+    <div class="head rv" style="margin-bottom: 0">
+      <div><span class="eyebrow">How we mobilise</span><h2 class="h2">From request to site in four steps</h2></div>
+      <p class="lead">One coordinator from first call to demobilisation.</p>
+    </div>
+    <div class="steps rv">
+      <div class="step"><span class="step__n">01</span><h3>Tell us the need</h3><p>Roles, machines, site and dates through the quote form, phone or WhatsApp.</p></div>
+      <div class="step"><span class="step__n">02</span><h3>Shortlist and quote</h3><p>We confirm availability and send CVs, equipment specs and a priced quote.</p></div>
+      <div class="step"><span class="step__n">03</span><h3>Mobilise</h3><p>Crews, machines and transport arrive with the paperwork your site gate needs.</p></div>
+      <div class="step"><span class="step__n">04</span><h3>Support on site</h3><p>Replacements, extensions and demobilisation handled by the same team.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Industries -->
+<section class="sec" id="industries"><div class="c">
+  <div class="head head--center rv"><div style="justify-items: center"><span class="eyebrow">Industries</span><h2 class="h2">Working where the Kingdom builds</h2></div></div>
+  <div class="ind rv">
+    <a href="industries.html#oil-gas"><img src="../../src/assets/images/site/pipeline-sany-line.jpg" alt=""><div><strong>Oil &amp; gas</strong><small>Upstream, refineries and pipelines</small></div><span class="ind__go"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"></path></svg></span></a>
+    <a href="industries.html#industrial"><img src="../../src/assets/images/site/plant-foundations.jpg" alt=""><div><strong>Petrochemical</strong><small>Jubail and Ras Tanura plants</small></div><span class="ind__go"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"></path></svg></span></a>
+    <a href="industries.html#construction"><img src="../../src/assets/images/site/formwork-rebar-wide.jpg" alt=""><div><strong>Construction</strong><small>Giga-projects and buildings</small></div><span class="ind__go"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"></path></svg></span></a>
+    <a href="industries.html#renewables"><img src="../../src/assets/images/projects/neom-solar-field.jpg" alt=""><div><strong>Power &amp; utilities</strong><small>Solar PV, power plants, shutdowns</small></div><span class="ind__go"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"></path></svg></span></a>
+    <a href="industries.html#public"><img src="../../src/assets/images/projects/dareen-finished-plaza.jpg" alt=""><div><strong>Public &amp; municipal</strong><small>Royal Commission parks and spaces</small></div><span class="ind__go"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"></path></svg></span></a>
+  </div>
+</div></section>
+
+<!-- Testimonials -->
+<section class="sec alt"><div class="c">
+  <div class="tst">
+    <div class="tst__side rv">
+      <span class="eyebrow">Client feedback</span>
+      <h2 class="h2">What site managers say about our crews</h2>
+      <p class="lead">Quotes from project and procurement managers, shared with their permission.</p>
+      <div class="tst__nav">
+        <button class="tst__arrow" type="button" aria-label="Previous testimonial" onClick="{{ prevT }}"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"></path></svg></button>
+        <button class="tst__arrow" type="button" aria-label="Next testimonial" onClick="{{ nextT }}"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+        <span class="label">{{ tCounter }}</span>
+      </div>
+    </div>
+    <figure class="tst__card rv">
+      <img class="tst__ph" src="{{ tImg }}" alt="">
+      <div class="tst__body">
+        <svg class="tst__q" viewBox="0 0 48 36" aria-hidden="true"><path d="M0 36V20C0 8 7 1 19 0v7c-6 1-9 5-9 11h9v18zm29 0V20c0-12 7-19 19-20v7c-6 1-9 5-9 11h9v18z"></path></svg>
+        <blockquote class="tst__text">{{ tText }}</blockquote>
+        <figcaption class="tst__who"><span class="tst__av">{{ tInit }}</span><div><b>{{ tName }}</b><span class="label">{{ tRole }}</span></div><span class="tst__tag">{{ tTag }}</span></figcaption>
+        <div class="tst__dots">
+          <sc-for list="{{ tDots }}" as="d" hint-placeholder-count="3">
+            <button class="tst__dot" type="button" aria-label="{{ d.label }}" aria-pressed="{{ d.on }}" onClick="{{ d.pick }}"></button>
+          </sc-for>
+        </div>
+      </div>
+    </figure>
+  </div>
+</div></section>
+
+</sc-if>
+
+<sc-if value="{{ showD }}" hint-placeholder-val="{{ true }}">
+<!-- HSE -->
+<section class="sec" id="hse"><div class="c">
+  <div class="hse">
+    <div class="hse__media rv">
+      <img class="rv-img" src="../../src/assets/images/site/rebar-harness-walkway.jpg" alt="Crew on a scaffold walkway wearing full-body harnesses">
+      <div class="hse__tag"><b>Safety first</b><span class="label">On every site, every shift</span></div>
+    </div>
+    <div class="hse__copy rv">
+      <span class="eyebrow">HSE &amp; quality</span>
+      <h2 class="h2">Safe operations are part of the quote</h2>
+      <p class="lead">HSE is planned into every mobilisation, from inducted crews to inspected machines.</p>
+      <div class="pillars">
+        <div class="pillar"><b>Safety-first culture</b><span>Toolbox talks and HSE planning on every job.</span></div>
+        <div class="pillar"><b>Qualified people</b><span>Certified, inducted crews, including TÜV-certified scaffolders.</span></div>
+        <div class="pillar"><b>Inspected equipment</b><span>Scheduled inspection and maintenance before mobilisation.</span></div>
+        <div class="pillar"><b>Continuous improvement</b><span>Incident reporting and corrective-action follow-up.</span></div>
+      </div>
+      <div class="regs"><span class="label">CR <span class="tbc">To confirm</span></span><span class="label">VAT <span class="tbc">To confirm</span></span><span class="label">ISO 45001 <span class="tbc">To confirm</span></span></div>
+      <a class="link" href="hse.html">HSE &amp; quality policy <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+    </div>
+  </div>
+</div></section>
+
+<!-- Certificates -->
+<section class="certs-sec alt"><div class="c">
+  <div class="certs__head rv"><div><span class="eyebrow">Registrations &amp; certificates</span><h2 class="h2">Ready for your vendor file</h2></div><a class="btn btn--ghost" href="#">Download documents pack</a></div>
+  <div class="certs rv">
+    <div class="cert"><span class="cert__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"></path><path d="M9 12l2 2 4-4"></path></svg></span><b>ISO 9001</b><span>Quality management</span><span class="tbc">To confirm</span></div>
+    <div class="cert"><span class="cert__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"></path><path d="M9 12l2 2 4-4"></path></svg></span><b>ISO 45001</b><span>Occupational health &amp; safety</span><span class="tbc">To confirm</span></div>
+    <div class="cert"><span class="cert__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"></path><path d="M9 12l2 2 4-4"></path></svg></span><b>ISO 14001</b><span>Environmental management</span><span class="tbc">To confirm</span></div>
+    <div class="cert"><span class="cert__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="1"></rect><path d="M8 8h8M8 12h8M8 16h5"></path></svg></span><b>Commercial Registration</b><span>Ministry of Commerce</span><span class="tbc">To confirm</span></div>
+    <div class="cert"><span class="cert__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="1"></rect><path d="M8 8h8M8 12h8M8 16h5"></path></svg></span><b>VAT registration</b><span>ZATCA</span><span class="tbc">To confirm</span></div>
+    <div class="cert"><span class="cert__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c1-4 4-6 8-6s7 2 8 6"></path></svg></span><b>GOSI &amp; Nitaqat</b><span>Social insurance, Saudization band</span><span class="tbc">To confirm</span></div>
+  </div>
+</div></section>
+
+<!-- Projects -->
+<section class="sec" id="projects"><div class="c">
+  <div class="head rv">
+    <div><span class="eyebrow">Track record</span><h2 class="h2">Selected work</h2></div>
+    <div style="display: grid; gap: 16px; justify-items: start"><p class="lead">Pipelines, solar fields, plant foundations, site facilities and public parks for the Kingdom's leading contractors.</p><a class="link" href="projects.html">View all projects <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></div>
+  </div>
+  <div class="pbento rv">
+    <a class="pcard" href="project-case-study.html"><div class="pcard__ph"><img src="../../src/assets/images/projects/neom-cable-tape-crew.jpg" alt="Crew laying cable warning tape beside solar panels"><span class="proj__tag">Renewables · Solar PV</span></div><div class="pcard__body"><span class="label">Larsen &amp; Toubro (L&amp;T)</span><h3 class="h4">NEOM Green Hydrogen, Solar PV</h3><div class="pcard__fig"><b>90 km</b><span>cable trenching, road crossings and route markers</span></div><span class="link">View project <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></div></a>
+    <a class="pcard" href="project-case-study.html"><div class="pcard__ph"><img src="../../src/assets/images/site/pipeline-excavators-row.jpg" alt="Excavators breaking rock beside a pipe string"><span class="proj__tag">Oil &amp; gas · Pipeline</span></div><div class="pcard__body"><span class="label">Kalpataru International</span><h3 class="h4">MGSE Phase-3, Package 13</h3><div class="pcard__fig"><b>160 km</b><span>ROW, bedding, trenching and berms</span></div><span class="link">View project <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></div></a>
+    <a class="pcard" href="project-case-study.html"><div class="pcard__ph"><img src="../../src/assets/images/projects/tcf-tadano-lift-riggers.jpg" alt="Mobile crane lifting a site building"><span class="proj__tag">Oil &amp; gas · Facilities</span></div><div class="pcard__body"><span class="label">Nesma United Industries</span><h3 class="h4">Aramco TCF</h3><div class="pcard__fig"><b>10,000 m²</b><span>temporary construction facilities</span></div><span class="link">View project <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></div></a>
+    <a class="pcard" href="project-case-study.html"><div class="pcard__ph"><img src="../../src/assets/images/site/formwork-rebar-wide.jpg" alt="Rebar cages and formwork for machine foundations"><span class="proj__tag">Industrial · Civil</span></div><div class="pcard__body"><span class="label">Sendan International</span><h3 class="h4">GSSIP, SPARK</h3><div class="pcard__fig"><b>Civil</b><span>excavations, foundations, powerhouse, steel</span></div><span class="link">View project <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></div></a>
+    <a class="pcard" href="project-case-study.html"><div class="pcard__ph"><img src="../../src/assets/images/projects/dareen-paving-manhole.jpg" alt="Stone paving laid around a manhole frame"><span class="proj__tag">Public · Maintenance</span></div><div class="pcard__body"><span class="label">National Blue Company</span><h3 class="h4">Dareen Park, Al Fanateer</h3><div class="pcard__fig"><b>Park</b><span>paving and drainage maintenance, Jubail</span></div><span class="link">View project <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></div></a>
+  </div>
+</div></section>
+
+</sc-if>
+
+<sc-if value="{{ showCta }}" hint-placeholder-val="{{ true }}">
+<!-- CTA band -->
+<div class="hazard" aria-hidden="true"></div>
+<section class="cta"><div class="c">
+  <div><h2 class="h2">Need crew or equipment on site?</h2><p>Tell us the roles or machines, the site and the start date. We come back with availability and a quote.</p></div>
+  <div class="cta__act">
+    <div><a class="btn btn--ink btn--lg" href="quote.html">Request a quote <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a><a class="btn btn--ghost btn--lg" href="#">WhatsApp us</a></div>
+    <div style="display: flex; gap: 8px 24px; flex-wrap: wrap"><span class="data">+966 53 905 1475</span><span class="data">+966 59 880 7429</span></div>
+  </div>
+</div></section>
+</sc-if>
+
+<sc-if value="{{ showE }}" hint-placeholder-val="{{ true }}">
+<!-- News -->
+<section class="sec alt"><div class="c">
+  <div class="head rv">
+    <div><span class="eyebrow">News &amp; insights</span><h2 class="h2">Notes from the field</h2></div>
+    <div style="display: grid; gap: 16px; justify-items: start"><p class="lead">Practical guides for planning crews, machines and shutdowns in the Eastern Province.</p><a class="link" href="#">All articles <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></div>
+  </div>
+  <div class="news rv">
+    <a class="post" href="#"><div class="post__ph"><img src="../../src/assets/images/site/plant-foundations.jpg" alt=""></div><div class="post__body"><div class="post__meta"><span class="post__tag">Guide</span><span class="label">[Date]</span></div><h3 class="h4">Planning manpower for a refinery shutdown</h3><p>Which trades to book first, how long mobilisation takes and what the site gate will ask for.</p><span class="link">Read article <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></div></a>
+    <a class="post" href="#"><div class="post__ph"><img src="../../src/assets/images/site/crawler-crane-slab.jpg" alt=""></div><div class="post__body"><div class="post__meta"><span class="post__tag">Checklist</span><span class="label">[Date]</span></div><h3 class="h4">Crane rental checklist for industrial sites</h3><p>Lift plans, third-party inspection, operator cards and ground conditions in one list.</p><span class="link">Read article <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></div></a>
+    <a class="post" href="#"><div class="post__ph"><img src="../../src/assets/images/site/toolbox-talk-sunrise.jpg" alt=""></div><div class="post__body"><div class="post__meta"><span class="post__tag">Explainer</span><span class="label">[Date]</span></div><h3 class="h4">What Saudization means for contract manpower</h3><p>How Nitaqat bands affect the crews you hire and what to ask a supplier.</p><span class="link">Read article <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></div></a>
+  </div>
+</div></section>
+
+<!-- FAQ -->
+<section class="sec"><div class="c">
+  <div class="faq">
+    <div class="faq__side rv">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="h2">Questions buyers ask first</h2>
+      <p class="lead">Can't find your answer? Call or message our Al Jubail office.</p>
+      <div class="faq__call"><span class="foot__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"></path></svg></span><div><span class="label">Call the office</span><b class="data">+966 53 905 1475</b></div></div>
+    </div>
+    <div class="faq__list rv">
+      <sc-for list="{{ faqs }}" as="q" hint-placeholder-count="6">
+        <div class="{{ q.cls }}">
+          <button class="faq__q" type="button" aria-expanded="{{ q.open }}" onClick="{{ q.toggle }}"><span>{{ q.q }}</span><span class="faq__pm" aria-hidden="true"></span></button>
+          <sc-if value="{{ q.isOpen }}" hint-placeholder-val="{{ false }}"><p class="faq__a">{{ q.a }}</p></sc-if>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</div></section>
+
+</sc-if>
+
+<sc-if value="{{ showF }}" hint-placeholder-val="{{ true }}">
+<!-- Request a quote -->
+<section class="sec alt" id="quote"><div class="c">
+  <div class="qf">
+    <aside class="qf__side rv">
+      <span class="eyebrow">Request a quote</span>
+      <h2 class="h2">Tell us what your site needs</h2>
+      <p class="qf__lead">Tell us the roles or machines, the site and the start date. We come back with availability and a priced quote.</p>
+      <ul class="qf__list">
+        <li><span class="qf__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"></path></svg></span><div><span class="label">Call</span><b class="data">+966 53 905 1475</b><b class="data">+966 59 880 7429</b></div></li>
+        <li><span class="qf__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.4z"></path></svg></span><div><span class="label">WhatsApp</span><b class="data">+966 53 905 1475</b></div></li>
+        <li><span class="qf__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"></path><circle cx="12" cy="10" r="2.5"></circle></svg></span><div><span class="label">Head office</span><b>Al Jubail, Eastern Province</b><span class="qf__muted">Kingdom of Saudi Arabia</span></div></li>
+        <li><span class="qf__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></span><div><span class="label">Office hours</span><b><span class="tbc">To confirm</span></b></div></li>
+      </ul>
+      <a class="btn btn--ghost-inv" href="#">Download company profile (PDF)</a>
+    </aside>
+
+    <div class="qf__card rv">
+      <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+        <form class="qf__form" onSubmit="{{ submitQuote }}">
+          <fieldset class="qf__set">
+            <legend class="qf__legend"><span class="qf__step">1</span> What do you need?</legend>
+            <div class="qf__types" role="group" aria-label="Service">
+              <sc-for list="{{ qtypes }}" as="q" hint-placeholder-count="4">
+                <button class="qf__type" type="button" aria-pressed="{{ q.pressed }}" onClick="{{ q.pick }}"><b>{{ q.label }}</b><span>{{ q.sub }}</span></button>
+              </sc-for>
+            </div>
+            <div class="fld"><label for="f-scope">Scope</label><textarea id="f-scope" class="inp inp--area" placeholder="Roles and headcount, machines, or the work to be done"></textarea></div>
+          </fieldset>
+          <fieldset class="qf__set">
+            <legend class="qf__legend"><span class="qf__step">2</span> Where and when?</legend>
+            <div class="qf__grid">
+              <div class="fld"><label for="f-site">Site location</label><select id="f-site" class="inp"><option>Al Jubail</option><option>Dammam</option><option>Ras Tanura</option><option>Khobar</option><option>Riyadh</option><option>NEOM</option><option>Other</option></select></div>
+              <div class="fld"><label for="f-start">Start date</label><input id="f-start" class="inp" type="date" value="2026-11-02"></div>
+              <div class="fld"><label for="f-dur">Duration <span class="qf__opt">(optional)</span></label><input id="f-dur" class="inp" placeholder="e.g. 3 months"></div>
+              <div class="fld"><label for="f-count">Headcount or units <span class="qf__opt">(optional)</span></label><input id="f-count" class="inp" placeholder="e.g. 12 welders, 2 cranes"></div>
+            </div>
+          </fieldset>
+          <fieldset class="qf__set">
+            <legend class="qf__legend"><span class="qf__step">3</span> Your details</legend>
+            <div class="qf__grid">
+              <div class="fld"><label for="f-name">Full name</label><input id="f-name" class="inp" autocomplete="name" placeholder="Your name"></div>
+              <div class="fld"><label for="f-company">Company</label><input id="f-company" class="inp" autocomplete="organization" placeholder="Company or project"></div>
+              <div class="fld"><label for="f-phone">Mobile number</label><input id="f-phone" class="inp" type="tel" autocomplete="tel" placeholder="05x xxx xxxx"></div>
+              <div class="fld"><label for="f-email">Work email</label><input id="f-email" class="inp" type="email" autocomplete="email" placeholder="name@company.com"></div>
+            </div>
+            <label class="qf__check"><input id="f-wa" type="checkbox"> Reply on WhatsApp instead of email</label>
+          </fieldset>
+          <div class="qf__foot">
+            <p class="qf__fine">We use these details only to answer this request.</p>
+            <button class="btn btn--lg" type="submit">Send request <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+          </div>
+        </form>
+      </sc-if>
+      <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+        <div class="qf__done">
+          <span class="qf__tick"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg></span>
+          <h3 class="h2">Request received</h3>
+          <p class="lead">Our team in Al Jubail will contact you with availability and a quote. For anything urgent, call +966 53 905 1475.</p>
+          <button class="btn btn--ghost" type="button" onClick="{{ resetQuote }}">Send another request</button>
+        </div>
+      </sc-if>
+    </div>
+  </div>
+</div></section>
+
+</sc-if>
+
+<sc-if value="{{ showFtr }}" hint-placeholder-val="{{ true }}">
+<!-- Footer -->
+<div class="hazard" aria-hidden="true"></div>
+<footer class="foot"><div class="c">
+  <div class="foot__contact">
+    <div class="foot__ci"><span class="foot__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"></path></svg></span><div><span class="label">Call us</span><b class="data">+966 53 905 1475</b></div></div>
+    <div class="foot__ci"><span class="foot__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.4z"></path></svg></span><div><span class="label">WhatsApp</span><b class="data">+966 59 880 7429</b></div></div>
+    <div class="foot__ci"><span class="foot__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"></path><circle cx="12" cy="10" r="2.5"></circle></svg></span><div><span class="label">Head office</span><b>Al Jubail, KSA</b></div></div>
+    <a class="btn btn--hivis" href="quote.html">Request a quote <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+  </div>
+  <div class="foot__g">
+    <div style="display: grid; gap: 16px; align-content: start">
+      <span class="plate-logo"><img src="../../src/assets/images/logo-skill-bridge.jpg" alt="Skill Bridge"></span>
+      <p class="foot__ar" lang="ar" dir="rtl">شركة سكيل بريدج للمقاولات</p>
+      <p style="max-width: 40ch">Manpower, equipment and contracting for industrial sites across Saudi Arabia.</p>
+      <div class="foot__soc">
+        <a class="foot__sq" href="#" aria-label="Skill Bridge on LinkedIn"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path><path d="M2 9h4v12H2z"></path><circle cx="4" cy="4" r="2"></circle></svg></a>
+        <a class="foot__sq" href="#" aria-label="WhatsApp"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.4z"></path></svg></a>
+        <a class="btn btn--sm btn--ghost-inv" href="#"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"></path></svg> Company profile</a>
+      </div>
+    </div>
+    <div><h3>Services</h3><ul><li><a href="#">Manpower Supply</a></li><li><a href="#">Equipment Rental</a></li><li><a href="#">Civil &amp; General Contracting</a></li><li><a href="#">Plant Maintenance</a></li><li><a href="#">Fabrication &amp; Workshop</a></li><li><a href="#">Logistics &amp; Transport</a></li><li><a href="#">Trading &amp; Supply</a></li></ul></div>
+    <div><h3>Company</h3><ul><li><a href="about.html">About</a></li><li><a href="equipment-fleet.html">Equipment fleet</a></li><li><a href="industries.html">Industries</a></li><li><a href="projects.html">Projects</a></li><li><a href="hse.html">HSE &amp; Quality</a></li><li><a href="careers.html">Careers</a></li></ul></div>
+    <div><h3>Head office</h3><ul><li>Al Jubail, Eastern Province<br>Kingdom of Saudi Arabia</li><li class="data" style="color: #e8eef5">+966 53 905 1475</li><li class="data" style="color: #e8eef5">+966 59 880 7429</li><li>CR <span class="tbc">To confirm</span></li><li>VAT <span class="tbc">To confirm</span></li></ul></div>
+  </div>
+  <div class="foot__legal"><span>© 2026 Skill Bridge Contracting Company. All rights reserved.</span><span><a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="home-ar.html" lang="ar">عربي</a></span></div>
+</div></footer>
+
+</sc-if>
+
+<sc-if value="{{ showWa }}" hint-placeholder-val="{{ true }}">
+<a class="wa" href="#" aria-label="Chat on WhatsApp"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.4z"></path><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.5-2-1-1 .8c-1-.4-2-1.4-2.4-2.4l.8-1-1-2z"></path></svg></a>
+</sc-if>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"part":{"editor":"enum","options":["all","a","b","c","d","e","f","hdr","cta","quote","ftr"],"default":"all"},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { seg: 0, tab: 0, picked: { 'Piping Engineer': 1, '3G Welder': 1, 'Rigger L1–L3': 1 }, filter: 'All', menu: false, paused: false, quote: {}, qtype: 0, sent: false, t: 0, faq: 0 };
+  }
+  componentDidMount() {
+    var vids = document.querySelectorAll('.sbh video');
+    for (var i = 0; i < vids.length; i++) {
+      var v = vids[i];
+      v.muted = true; v.loop = true; v.playsInline = true; v.setAttribute('playsinline', '');
+      if (!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+        var p = v.play(); if (p && p.catch) p.catch(function () {});
+      }
+    }
+  }
+  renderVals() {
+    var self = this, st = this.state;
+    var segNames = ['Manpower', 'Equipment', 'Contracting'];
+    var tabDefs = [
+      { label: 'Engineering', roles: ['Mechanical Engineer', 'Civil Engineer', 'Construction Engineer', 'Safety Engineer', 'Electrical Engineer', 'Material Engineer', 'Computer Engineer', 'QA/QC Engineer', 'Piping Engineer', 'Planner', 'HVAC Engineer', 'Instrumentation Engineer'] },
+      { label: 'Office & admin', roles: ['Executive Secretary', 'Data Entry', 'Document Controller', 'Office Boy', 'Admin Assistant', 'Computer Operator', 'AutoCAD Draftsman', 'Time Keeper', 'Janitor', 'Telephone Operator', 'Office Driver'] },
+      { label: 'Skilled trades', roles: ['Millwright Fitter', 'Instrument Fitter', 'Pipe Fitter', 'Carpenter', '3G Welder', 'Crane Operator', 'Rigger L1–L3', 'Mason', 'Steel Erector', 'Plumber', 'Light Driver', 'Forklift Operator'] },
+      { label: 'Site & HSE', roles: ['Heavy Driver', 'Scaffolder (TÜV)', 'Manhole Watch', 'Assistant Safety Officer'] }
+    ];
+    var plateDefs = [
+      { cat: 'Lifting', code: 'SB-L01', img: '../../src/assets/images/site/crawler-crane-slab.jpg', alt: 'Crawler crane on a foundation site', name: 'Crawler crane', specs: [['Capacity', null], ['Supply', 'Bare or operated'], ['Boom', null], ['Term', 'Short or medium']] },
+      { cat: 'Earthmoving', code: 'SB-E04', img: '../../src/assets/images/site/excavator-breaker-pipeline.jpg', alt: 'Excavator with a hydraulic breaker working beside a pipeline', name: 'Excavator with breaker', specs: [['Class', null], ['Supply', 'Bare or operated'], ['Attachment', 'Hydraulic breaker'], ['Term', 'Short or medium']] },
+      { cat: 'Crew transport', code: 'SB-T01', img: '../../src/assets/images/stock/crew-buses-depot.jpg', alt: 'Row of buses at a depot', name: 'Crew bus', specs: [['Seats', '15 · 33 · 55'], ['Types', 'Hi-Ace · Coaster · Bus'], ['Driver', null], ['Term', null]] },
+      { cat: 'Haulage', code: 'SB-H02', img: '../../src/assets/images/site/fleet-lineup-desert.jpg', alt: 'Dump trucks, graders and a roller lined up on a desert site', name: 'Dump trucks', specs: [['Payload', null], ['Fleet', 'Trucks, graders, rollers'], ['Supply', null], ['Coverage', 'Kingdom-wide']] }
+    ];
+    var filterNames = ['All', 'Earthmoving', 'Lifting', 'Power & site', 'Haulage', 'Crew transport'];
+    var tab = tabDefs[st.tab];
+    var pickedN = Object.keys(st.picked).length;
+    var quoteN = Object.keys(st.quote).length;
+    var shown = plateDefs.filter(function (p) { return st.filter === 'All' || p.cat === st.filter; });
+    var part = this.props.part || 'all';
+    var all = part === 'all';
+    var tsts = [
+      { text: '[Client testimonial: two or three sentences on crew quality, safety record and how quickly Skill Bridge mobilised.]', name: '[Name]', role: '[Project manager · Company]', init: 'PM', tag: 'Manpower', img: '../../src/assets/images/site/team-fleet-desert.jpg' },
+      { text: '[Client testimonial: a procurement manager on equipment condition, inspection paperwork and on-time delivery to site.]', name: '[Name]', role: '[Procurement lead · Company]', init: 'PL', tag: 'Equipment', img: '../../src/assets/images/site/crawler-crane-slab.jpg' },
+      { text: '[Client testimonial: a plant superintendent on shutdown support, replacements and coordination with one point of contact.]', name: '[Name]', role: '[Plant superintendent · Company]', init: 'PS', tag: 'Shutdowns', img: '../../src/assets/images/site/plant-foundations.jpg' }
+    ];
+    var faqDefs = [
+      ['What services does Skill Bridge provide?', 'Seven service lines: manpower supply, equipment rental, civil and general contracting, plant maintenance and shutdowns, fabrication, logistics and transport, and trading and supply.'],
+      ['Where do you work?', 'Our head office is in Al Jubail. We support sites across the Kingdom of Saudi Arabia.'],
+      ['Can equipment come with operators?', 'Yes. Most machines are available bare or operated, and crew buses come with drivers. Tell us which you need in the quote request.'],
+      ['How fast can you mobilise?', 'It depends on the roles, quantities and site requirements. Send the request and we confirm a mobilisation date with the quote.'],
+      ['Are your workers certified?', 'Crews are trade-tested and safety-inducted. Certificates, such as TÜV cards for scaffolders, are shared with the CVs.'],
+      ['Do you supply short-term crews?', 'Yes. We supply short-term, long-term and shutdown or turnaround crews.']
+    ];
+    var tCur = tsts[st.t];
+    return {
+      yes: true,
+      rootClass: all ? 'sbh' : 'sbh sbh--static',
+      showHdr: all || part === 'a' || part === 'hdr', showA: all || part === 'a', showCta: all || part === 'd' || part === 'cta', showFtr: all || part === 'f' || part === 'ftr', showB: all || part === 'b', showC: all || part === 'c', showD: all || part === 'd', showE: all || part === 'e', showF: all || part === 'f' || part === 'quote',
+      showWa: all || part === 'a',
+      tText: tCur.text, tName: tCur.name, tRole: tCur.role, tInit: tCur.init, tTag: tCur.tag, tImg: tCur.img,
+      tCounter: (st.t + 1) + ' / ' + tsts.length,
+      prevT: function () { self.setState({ t: (st.t + tsts.length - 1) % tsts.length }); },
+      nextT: function () { self.setState({ t: (st.t + 1) % tsts.length }); },
+      tDots: tsts.map(function (x, i) { return { label: 'Show testimonial ' + (i + 1), on: String(st.t === i), pick: function () { self.setState({ t: i }); } }; }),
+      faqs: faqDefs.map(function (f, i) { var o = st.faq === i; return { q: f[0], a: f[1], isOpen: o, open: String(o), cls: o ? 'faq__item is-open' : 'faq__item', toggle: function () { self.setState({ faq: o ? -1 : i }); } }; }),
+      menuOpen: st.menu, menuClosed: !st.menu, menuLabel: st.menu ? 'Close menu' : 'Open menu',
+      toggleMenu: function () { self.setState({ menu: !st.menu }); },
+      playing: !st.paused, paused: st.paused, videoLabel: st.paused ? 'Play' : 'Pause',
+      toggleVideo: function (e) {
+        var box = e && e.currentTarget && e.currentTarget.parentNode;
+        var v = box && box.querySelector('video');
+        if (v) { if (st.paused) { v.play(); } else { v.pause(); } }
+        self.setState({ paused: !st.paused });
+      },
+      noSubmit: function (e) { if (e && e.preventDefault) e.preventDefault(); },
+      segs: segNames.map(function (n, i) { return { label: n, pressed: String(st.seg === i), pick: function () { self.setState({ seg: i }); } }; }),
+      tabs: tabDefs.map(function (t, i) { return { label: t.label, count: t.roles.length, selected: String(st.tab === i), pick: function () { self.setState({ tab: i }); } }; }),
+      tabLabel: tab.label + ' roles',
+      roles: tab.roles.map(function (r) {
+        var on = !!st.picked[r];
+        return { name: r, on: on, pressed: String(on), toggle: function () { var p = Object.assign({}, self.state.picked); if (p[r]) { delete p[r]; } else { p[r] = 1; } self.setState({ picked: p }); } };
+      }),
+      pickedText: pickedN + (pickedN === 1 ? ' role selected' : ' roles selected'),
+      filters: filterNames.map(function (n) { return { label: n, pressed: String(st.filter === n), pick: function () { self.setState({ filter: n }); } }; }),
+      hasPlates: shown.length > 0, noPlates: shown.length === 0,
+      plates: shown.map(function (p) {
+        var added = !!st.quote[p.code];
+        return {
+          cat: p.cat, code: p.code, img: p.img, alt: p.alt, name: p.name,
+          specs: p.specs.map(function (s) { return { k: s[0], v: s[1], tbc: s[1] === null, known: s[1] !== null }; }),
+          addLabel: added ? 'Added ✓' : 'Add to quote',
+          addClass: added ? 'btn btn--sm btn--ink' : 'btn btn--sm',
+          add: function () { var q = Object.assign({}, self.state.quote); if (q[p.code]) { delete q[p.code]; } else { q[p.code] = 1; } self.setState({ quote: q }); }
+        };
+      }),
+      qtypes: [['Manpower', '39 roles'], ['Equipment', '29 types'], ['Maintenance', 'Plant & shutdowns'], ['Other', 'Civil, fabrication, logistics']].map(function (q, i) { return { label: q[0], sub: q[1], pressed: String(st.qtype === i), pick: function () { self.setState({ qtype: i }); } }; }),
+      sent: st.sent, notSent: !st.sent,
+      submitQuote: function (e) { if (e && e.preventDefault) e.preventDefault(); self.setState({ sent: true }); },
+      resetQuote: function () { self.setState({ sent: false }); },
+      quoteText: quoteN === 0 ? 'Your quote list is empty' : (quoteN + (quoteN === 1 ? ' machine in your quote list' : ' machines in your quote list'))
+    };
+  }
+}
+</script>
+</body>
+</html>

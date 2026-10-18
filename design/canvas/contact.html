@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Contact Skill Bridge</title>
+<link rel="stylesheet" href="sb-home.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Sans+Arabic:wght@400;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#0a72a6}a:hover{color:#085b85}
+.sbh svg.i{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+</style>
+</helmet>
+<div style="width: 100%; background: #ffffff">
+
+<dc-import name="Main" part="hdr" hint-size="100%,120px"></dc-import>
+
+<div class="sbh-wrap" style="font-family: 'IBM Plex Sans', system-ui, sans-serif; color: #0b1220">
+<div class="{{ rootClass }}">
+
+<header class="ct-head"><div class="c ct-head__in">
+  <ol class="crumbs crumbs--dark"><li><a href="home.html">Home</a></li><li aria-current="page">Contact</li></ol>
+  <span class="eyebrow">Contact</span>
+  <h1 class="display">Talk to our Al Jubail office</h1>
+  <p class="lead">Call, message us on WhatsApp or send the form. For prices and availability, the quote form is the fastest route.</p>
+</div></header>
+
+<!-- Contact cards -->
+<section class="ct-cards-sec"><div class="c">
+  <div class="ct-cards">
+    <div class="ct-card"><span class="foot__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"></path></svg></span><span class="label">Call</span><b class="data">+966 53 905 1475</b><b class="data">+966 59 880 7429</b></div>
+    <div class="ct-card"><span class="foot__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.4z"></path></svg></span><span class="label">WhatsApp</span><b class="data">+966 53 905 1475</b><span class="ct-card__note">Fastest for quick questions</span></div>
+    <div class="ct-card"><span class="foot__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg></span><span class="label">Email</span><b>info@skillbridge.sa</b><span class="tbc">To confirm</span></div>
+    <div class="ct-card"><span class="foot__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></span><span class="label">Office hours</span><b>Saturday to Thursday</b><span class="tbc">Hours to confirm</span></div>
+  </div>
+</div></section>
+
+<!-- Form + map -->
+<section class="sec"><div class="c">
+  <div class="ct-main">
+    <div class="ct-form">
+      <span class="eyebrow">Send a message</span>
+      <h2 class="h2">How can we help?</h2>
+      <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+        <form class="qf__form" onSubmit="{{ submit }}">
+          <div class="fld"><span class="fld__lbl">Your enquiry is about</span>
+            <div class="ct-topics" role="group" aria-label="Enquiry type">
+              <sc-for list="{{ topics }}" as="t" hint-placeholder-count="5">
+                <button class="filter" type="button" aria-pressed="{{ t.pressed }}" onClick="{{ t.pick }}">{{ t.label }}</button>
+              </sc-for>
+            </div>
+            <sc-if value="{{ hint }}" hint-placeholder-val="{{ false }}"><p class="ct-hint">{{ hintText }} <a class="link" href="{{ hintHref }}">{{ hintLink }} <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></p></sc-if>
+          </div>
+          <div class="qf__grid">
+            <div class="fld"><label for="ct-name">Full name</label><input id="ct-name" class="inp" autocomplete="name" placeholder="Your name"></div>
+            <div class="fld"><label for="ct-company">Company <span class="qf__opt">(optional)</span></label><input id="ct-company" class="inp" autocomplete="organization" placeholder="Company name"></div>
+            <div class="fld"><label for="ct-phone">Mobile number</label><input id="ct-phone" class="inp" type="tel" autocomplete="tel" placeholder="05x xxx xxxx"></div>
+            <div class="fld"><label for="ct-email">Email</label><input id="ct-email" class="inp" type="email" autocomplete="email" placeholder="name@company.com"></div>
+          </div>
+          <div class="fld"><label for="ct-msg">Message</label><textarea id="ct-msg" class="inp inp--area" placeholder="Tell us what you need"></textarea></div>
+          <div class="qf__foot">
+            <label class="qf__check"><input id="ct-wa" type="checkbox"> Reply on WhatsApp</label>
+            <button class="btn btn--lg" type="submit">Send message <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+          </div>
+        </form>
+      </sc-if>
+      <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+        <div class="qf__done ct-done">
+          <span class="qf__tick"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg></span>
+          <h3 class="h2">Message sent</h3>
+          <p class="lead">Thanks. Our Al Jubail office will reply on your preferred channel.</p>
+          <button class="btn btn--ghost" type="button" onClick="{{ reset }}">Send another message</button>
+        </div>
+      </sc-if>
+    </div>
+    <aside class="ct-side">
+      <div class="ct-map" role="img" aria-label="Stylised map showing the Skill Bridge head office in Al Jubail">
+        <div class="ct-map__grid" aria-hidden="true"></div>
+        <div class="ct-map__coast" aria-hidden="true"></div>
+        <span class="ct-map__pin" aria-hidden="true"><svg class="i" viewBox="0 0 24 24"><path d="M12 22s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"></path><circle cx="12" cy="10" r="2.5"></circle></svg></span>
+        <span class="ct-map__ring" aria-hidden="true"></span>
+        <div class="ct-map__card"><span class="label">Head office</span><b>Al Jubail</b><span>Eastern Province, Kingdom of Saudi Arabia</span><span class="tbc">Street address to confirm</span><a class="link" href="#">Open in Google Maps <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"></path></svg></a></div>
+      </div>
+      <div class="ct-routes">
+        <a class="ct-route" href="quote.html"><span class="svc__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="1"></rect><path d="M8 8h8M8 12h8M8 16h5"></path></svg></span><div><b>Request a quote</b><span>Manpower, equipment or site work</span></div><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+        <a class="ct-route" href="careers.html"><span class="svc__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 18h20"></path><path d="M4 18v-3a8 8 0 0 1 16 0v3"></path><path d="M10 7.5V12"></path><path d="M14 7.5V12"></path></svg></span><div><b>Apply for a job</b><span>39 roles in four disciplines</span></div><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+        <a class="ct-route" href="equipment-fleet.html"><span class="svc__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4h11"></path><path d="M16 4v5"></path><path d="M14 9h4v3h-4z"></path><path d="M2 21h7"></path></svg></span><div><b>Browse the fleet</b><span>29 equipment types</span></div><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      </div>
+    </aside>
+  </div>
+</div></section>
+
+</div>
+</div>
+
+<dc-import name="Main" part="ftr" hint-size="100%,580px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"static":{"editor":"boolean","default":false},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { topic: 0, sent: false };
+  }
+  renderVals() {
+    var self = this, st = this.state;
+    var T = [
+      ['General enquiry', null],
+      ['Quote or pricing', ['For prices and availability, the quote form gets you an answer faster.', 'Open the quote form', 'quote.html']],
+      ['Job application', ['Applying for a role? Use the careers form so HR receives your CV.', 'Go to careers', 'careers.html']],
+      ['Supplier or partner', null],
+      ['Existing project', null]
+    ];
+    var cur = T[st.topic][1];
+    return {
+      rootClass: this.props.static ? 'sbh sbh--static' : 'sbh',
+      topics: T.map(function (t, i) { return { label: t[0], pressed: String(st.topic === i), pick: function () { self.setState({ topic: i }); } }; }),
+      hint: !!cur, hintText: cur ? cur[0] : '', hintLink: cur ? cur[1] : '', hintHref: cur ? cur[2] : '#',
+      sent: st.sent, notSent: !st.sent,
+      submit: function (e) { if (e && e.preventDefault) e.preventDefault(); self.setState({ sent: true }); },
+      reset: function () { self.setState({ sent: false }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

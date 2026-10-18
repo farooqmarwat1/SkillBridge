@@ -1,9 +1,0 @@
-import Image from "next/image";
-import { SectionHeading } from "@/components/ui/SectionHeading";
-
-export function About() {
-  return <section id="intro" className="scroll-mt-24 bg-mist"><div className="container-sb section-pad grid items-center gap-14 lg:grid-cols-2">
-    <div className="relative mb-6"><div className="relative aspect-[4/3] overflow-hidden rounded-[10px] shadow-2xl"><Image src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=1000" alt="Industrial construction team at work" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" /></div><div className="absolute -bottom-8 right-0 aspect-[4/3] w-[44%] overflow-hidden rounded-[10px] border-[5px] border-white shadow-xl"><Image src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=600" alt="Construction planning" fill className="object-cover" sizes="300px" /></div><div className="absolute -left-4 -top-4 -z-10 size-[70px] rounded-lg bg-gold" /></div>
-    <div><SectionHeading eyebrow="Who We Are" title="A Reliable Partner for Industrial Growth" /><div className="-mt-6 space-y-4 text-[17px] leading-[1.75] text-muted"><p>Operating from Al Jubail, Skill Bridge is an efficient provider of human resources and equipment for industry and general contracting across the Kingdom of Saudi Arabia — built on a team of dedicated, goal-oriented professionals.</p><p>We undertake industrial techno-skilled manpower services with diversified support to the oil, gas and petrochemical sectors — spanning equipment rental, maintenance, civil and general contracting, logistics, fabrication and material trading, all delivered with quality and safe operations at the core.</p></div><a href="#services" className="mt-7 inline-flex rounded-lg bg-navy px-7 py-3.5 font-display text-[15px] font-semibold text-white transition hover:bg-brand">Discover Skill Bridge →</a></div>
-  </div></section>;
-}

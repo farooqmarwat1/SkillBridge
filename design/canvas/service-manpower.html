@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Manpower Supply service page</title>
+<link rel="stylesheet" href="sb-home.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Sans+Arabic:wght@400;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#0a72a6}a:hover{color:#085b85}
+.sbh svg.i{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+</style>
+</helmet>
+<div style="width: 100%; background: #ffffff">
+
+<sc-if value="{{ showA }}" hint-placeholder-val="{{ true }}">
+<dc-import name="Main" part="hdr" hint-size="100%,120px"></dc-import>
+</sc-if>
+
+<div class="sbh-wrap" style="font-family: 'IBM Plex Sans', system-ui, sans-serif; color: #0b1220">
+<div class="{{ rootClass }}">
+
+<sc-if value="{{ showA }}" hint-placeholder-val="{{ true }}">
+<!-- Page header -->
+<header class="ph">
+  <img class="ph__img" src="../../src/assets/images/site/toolbox-talk-sunrise.jpg" alt="">
+  <div class="c ph__in">
+    <ol class="crumbs"><li><a href="home.html">Home</a></li><li><a href="#">Services</a></li><li aria-current="page">Manpower Supply</li></ol>
+    <span class="eyebrow">Service 01 of 07</span>
+    <h1 class="display ph__h">Manpower supply</h1>
+    <p class="lead ph__lead">Engineers, office staff, skilled trades and site crews for oil &amp; gas, petrochemical and construction projects, on short-term, long-term or shutdown contracts.</p>
+    <div class="ph__facts"><span class="ph__fact"><b>39</b> roles</span><span class="ph__fact"><b>4</b> disciplines</span><span class="ph__fact"><b>3</b> supply models</span></div>
+    <div class="hero__ctas"><a class="btn btn--hivis btn--lg" href="#roles">Choose roles <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a><a class="btn btn--ghost-inv btn--lg" href="#">Download manpower profile</a></div>
+  </div>
+</header>
+
+<!-- In-page navigation -->
+<nav class="subnav" aria-label="On this page"><div class="c subnav__in">
+  <a class="is-on" href="#overview">Overview</a><a href="#roles">Roles</a><a href="#models">Supply models</a><a href="#process">Process</a><a href="#docs">Documents</a><a href="#svc-faq">FAQ</a>
+  <a class="btn btn--sm subnav__cta" href="#quote">Request manpower</a>
+</div></nav>
+
+<!-- Overview -->
+<section class="sec" id="overview"><div class="c">
+  <div class="ov">
+    <div class="ov__main">
+      <div class="ov__head rv"><span class="eyebrow">Overview</span><h2 class="h2">People for every stage of the job</h2><p class="lead">Skill Bridge supplies techno-skilled manpower to industrial sites across the Kingdom. We source, screen and induct the crew, then manage them on site so your team can focus on the work.</p></div>
+      <div class="incl rv">
+        <div class="incl__item"><span class="incl__n">01</span><div><b>Sourcing and shortlisting</b><p>Candidates matched to your trades, certifications and site rules.</p></div></div>
+        <div class="incl__item"><span class="incl__n">02</span><div><b>Trade testing and screening</b><p>Skills checked before CVs reach you, with documents attached.</p></div></div>
+        <div class="incl__item"><span class="incl__n">03</span><div><b>Safety induction</b><p>HSE induction and PPE before anyone reaches your gate.</p></div></div>
+        <div class="incl__item"><span class="incl__n">04</span><div><b>Mobilisation and transport</b><p>Crew transport to site from our own bus and coaster fleet.</p></div></div>
+        <div class="incl__item"><span class="incl__n">05</span><div><b>Site supervision</b><p>A coordinator who handles attendance, timesheets and issues.</p></div></div>
+        <div class="incl__item"><span class="incl__n">06</span><div><b>Replacements</b><p>Replacement terms agreed in the contract. <span class="tbc">To confirm</span></p></div></div>
+      </div>
+      <figure class="ov__fig rv"><img class="rv-img" src="../../src/assets/images/site/rebar-inspection-team.jpg" alt="Engineers in hi-vis vests inspecting epoxy-coated rebar"><figcaption class="label">Engineers checking rebar before a pour</figcaption></figure>
+    </div>
+    <aside class="side">
+      <div class="side__card">
+        <div class="side__head"><strong>Request manpower</strong><span class="label">2 minutes</span></div>
+        <div class="side__body">
+          <div class="side__picked"><span class="label">Roles selected</span><b>{{ pickedText }}</b><span class="side__names">{{ pickedNames }}</span></div>
+          <div class="fld"><label for="s-site">Site location</label><select id="s-site" class="inp"><option>Al Jubail</option><option>Dammam</option><option>Ras Tanura</option><option>Riyadh</option><option>NEOM</option></select></div>
+          <div class="fld"><label for="s-start">Start date</label><input id="s-start" class="inp" type="date" value="2026-11-02"></div>
+          <a class="btn" href="#quote">Continue to request <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+        </div>
+        <div class="side__call"><span class="label">Or call</span><b class="data">+966 53 905 1475</b></div>
+      </div>
+    </aside>
+  </div>
+</div></section>
+</sc-if>
+
+<sc-if value="{{ showB }}" hint-placeholder-val="{{ true }}">
+<!-- Roles directory -->
+<section class="sec alt" id="roles"><div class="c">
+  <div class="head rv">
+    <div><span class="eyebrow">Role directory</span><h2 class="h2">Pick the roles you need</h2></div>
+    <p class="lead">All 39 roles from our profile. Search or browse by discipline, then add roles to your request.</p>
+  </div>
+  <div class="dir">
+    <div class="dir__bar">
+      <label class="dir__search" for="r-search"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg><span class="sr">Search roles</span><input id="r-search" type="search" placeholder="Search roles, e.g. welder" onInput="{{ onSearch }}"></label>
+      <div class="dir__tabs" role="group" aria-label="Discipline">
+        <sc-for list="{{ discs }}" as="d" hint-placeholder-count="5">
+          <button class="filter" type="button" aria-pressed="{{ d.pressed }}" onClick="{{ d.pick }}">{{ d.label }} <span class="cnt">{{ d.count }}</span></button>
+        </sc-for>
+      </div>
+    </div>
+    <div class="dir__list">
+      <sc-for list="{{ rows }}" as="r" hint-placeholder-count="12">
+        <div class="{{ r.cls }}">
+          <span class="dir__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 18h20"></path><path d="M4 18v-3a8 8 0 0 1 16 0v3"></path><path d="M10 7.5V12"></path><path d="M14 7.5V12"></path></svg></span>
+          <div class="dir__name"><b>{{ r.name }}</b><span class="label">{{ r.disc }}</span></div>
+          <button class="{{ r.btnCls }}" type="button" aria-pressed="{{ r.pressed }}" onClick="{{ r.toggle }}">{{ r.btn }}</button>
+        </div>
+      </sc-for>
+      <sc-if value="{{ noRows }}" hint-placeholder-val="{{ false }}"><p class="dir__empty">No role matches “{{ query }}”. Ask us anyway: we source roles beyond this list.</p></sc-if>
+    </div>
+    <div class="dir__tray">
+      <div><span class="label">Your request</span><b>{{ pickedText }}</b></div>
+      <a class="btn btn--hivis" href="#quote">Request these roles <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+    </div>
+  </div>
+</div></section>
+
+<!-- Supply models -->
+<section class="sec" id="models"><div class="c">
+  <div class="head rv">
+    <div><span class="eyebrow">Supply models</span><h2 class="h2">Hire for a week, a year or a shutdown</h2></div>
+    <p class="lead">Pick the model that fits the work. Terms and rates come with the quote.</p>
+  </div>
+  <div class="models3 rv">
+    <article class="mdl"><div class="mdl__top"><span class="label">Model A</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></div><h3 class="h3s">Short-term</h3><p>Cover peaks, absences and urgent gaps without adding headcount.</p><dl><div><dt class="label">Typical length</dt><dd>Days to weeks</dd></div><div><dt class="label">Best for</dt><dd>Peaks and urgent cover</dd></div></dl></article>
+    <article class="mdl mdl--dark"><div class="mdl__top"><span class="label">Model B</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="1"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg></div><h3 class="h3s">Long-term</h3><p>Monthly contracts for running operations, with one coordinator for the crew.</p><dl><div><dt class="label">Typical length</dt><dd>Months to years</dd></div><div><dt class="label">Best for</dt><dd>Operations and projects</dd></div></dl></article>
+    <article class="mdl"><div class="mdl__top"><span class="label">Model C</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9z"></path></svg></div><h3 class="h3s">Shutdown &amp; turnaround</h3><p>Planned crews for plant outages, sized to your shutdown schedule.</p><dl><div><dt class="label">Typical length</dt><dd>Weeks</dd></div><div><dt class="label">Best for</dt><dd>Refineries and power plants</dd></div></dl></article>
+  </div>
+</div></section>
+</sc-if>
+
+<sc-if value="{{ showC }}" hint-placeholder-val="{{ true }}">
+<!-- Process -->
+<section class="sec alt" id="process"><div class="c">
+  <div class="head rv">
+    <div><span class="eyebrow">How it works</span><h2 class="h2">From request to crew on site</h2></div>
+    <p class="lead">Five steps, one coordinator from start to finish.</p>
+  </div>
+  <ol class="tl rv">
+    <li class="tl__step"><span class="tl__dot">1</span><h3>Request</h3><p>Send roles, headcount, site and dates by form, phone or WhatsApp.</p></li>
+    <li class="tl__step"><span class="tl__dot">2</span><h3>Shortlist</h3><p>We match candidates and send CVs with certificates and the quote.</p></li>
+    <li class="tl__step"><span class="tl__dot">3</span><h3>Approve</h3><p>You review CVs, interview if needed, and confirm the crew.</p></li>
+    <li class="tl__step"><span class="tl__dot">4</span><h3>Mobilise</h3><p>Induction, PPE and transport, with gate documents ready.</p></li>
+    <li class="tl__step"><span class="tl__dot">5</span><h3>Support</h3><p>Timesheets, replacements and extensions through one coordinator.</p></li>
+  </ol>
+</div></section>
+
+<!-- Documents -->
+<section class="docs" id="docs"><div class="c docs__in">
+  <div class="docs__copy rv">
+    <span class="eyebrow">Gate-ready paperwork</span>
+    <h2 class="h2">Documents that arrive with each worker</h2>
+    <p class="lead">Your site gate and HSE team get what they ask for, before day one. Final list to confirm with Skill Bridge.</p>
+  </div>
+  <ul class="docs__list rv">
+    <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg>Iqama and passport copies</li>
+    <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg>CV and trade certificates</li>
+    <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg>Medical fitness certificate</li>
+    <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg>HSE induction record</li>
+    <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg>TÜV cards for scaffolders and riggers</li>
+    <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg>Operator licences for crane and forklift crews</li>
+  </ul>
+</div></section>
+
+<!-- Industries + related services -->
+<section class="sec"><div class="c">
+  <div class="head rv">
+    <div><span class="eyebrow">Where our crews work</span><h2 class="h2">Industries we staff</h2></div>
+    <p class="lead">The same screening and induction on every site, whatever the sector.</p>
+  </div>
+  <div class="indrow rv">
+    <a class="indcard" href="#"><img src="../../src/assets/images/site/pipeline-sany-line.jpg" alt=""><span>Oil &amp; gas</span></a>
+    <a class="indcard" href="#"><img src="../../src/assets/images/site/plant-foundations.jpg" alt=""><span>Petrochemical</span></a>
+    <a class="indcard" href="#"><img src="../../src/assets/images/site/formwork-rebar-wide.jpg" alt=""><span>Construction</span></a>
+    <a class="indcard" href="#"><img src="../../src/assets/images/projects/neom-solar-field.jpg" alt=""><span>Power &amp; utilities</span></a>
+    <a class="indcard" href="#"><img src="../../src/assets/images/site/trench-excavator-loader.jpg" alt=""><span>Mining</span></a>
+  </div>
+  <div class="rel">
+    <span class="eyebrow">Often booked together</span>
+    <div class="rel__grid rv">
+      <a class="relc" href="#"><img src="../../src/assets/images/site/fleet-lineup-desert.jpg" alt=""><div><span class="label">Logistics &amp; Transport</span><b class="h4">Trucks and crew transport</b><span class="link">View service <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></div></a>
+      <a class="relc" href="#"><img src="../../src/assets/images/site/excavator-breaker-pipeline.jpg" alt=""><div><span class="label">Equipment Rental</span><b class="h4">Cranes and earthmovers, operated</b><span class="link">View service <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></div></a>
+      <a class="relc" href="#"><img src="../../src/assets/images/site/scaffold-formwork.jpg" alt=""><div><span class="label">Plant Maintenance</span><b class="h4">Shutdown and turnaround support</b><span class="link">View service <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></div></a>
+    </div>
+  </div>
+</div></section>
+</sc-if>
+
+<sc-if value="{{ showD }}" hint-placeholder-val="{{ true }}">
+<!-- Service FAQ -->
+<section class="sec alt" id="svc-faq"><div class="c">
+  <div class="faq">
+    <div class="faq__side rv">
+      <span class="eyebrow">Manpower FAQ</span>
+      <h2 class="h2">Before you hire</h2>
+      <p class="lead">Answers to what procurement teams ask about contract manpower.</p>
+    </div>
+    <div class="faq__list rv">
+      <sc-for list="{{ faqs }}" as="q" hint-placeholder-count="5">
+        <div class="{{ q.cls }}">
+          <button class="faq__q" type="button" aria-expanded="{{ q.open }}" onClick="{{ q.toggle }}"><span>{{ q.q }}</span><span class="faq__pm" aria-hidden="true"></span></button>
+          <sc-if value="{{ q.isOpen }}" hint-placeholder-val="{{ false }}"><p class="faq__a">{{ q.a }}</p></sc-if>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</div></section>
+</sc-if>
+
+</div>
+</div>
+
+<sc-if value="{{ showD }}" hint-placeholder-val="{{ true }}">
+<dc-import name="Main" part="cta" hint-size="100%,330px"></dc-import>
+<dc-import name="Main" part="quote" hint-size="100%,1150px"></dc-import>
+<dc-import name="Main" part="ftr" hint-size="100%,580px"></dc-import>
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"part":{"editor":"enum","options":["all","a","b","c","d","ab","cd"],"default":"all"},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { disc: 'All', q: '', picked: { 'Piping Engineer': 1, '3G Welder': 1, 'Rigger L1–L3': 1 }, faq: 0 };
+  }
+  renderVals() {
+    var self = this, st = this.state;
+    var part = this.props.part || 'all';
+    var has = function (k) { return part === 'all' || part.indexOf(k) >= 0; };
+    var groups = [
+      ['Engineering', ['Mechanical Engineer', 'Civil Engineer', 'Construction Engineer', 'Safety Engineer', 'Electrical Engineer', 'Material Engineer', 'Computer Engineer', 'QA/QC Engineer', 'Piping Engineer', 'Planner', 'HVAC Engineer', 'Instrumentation Engineer']],
+      ['Office & admin', ['Executive Secretary', 'Data Entry', 'Document Controller', 'Office Boy', 'Admin Assistant', 'Computer Operator', 'AutoCAD Draftsman', 'Time Keeper', 'Janitor', 'Telephone Operator', 'Office Driver']],
+      ['Skilled trades', ['Millwright Fitter', 'Instrument Fitter', 'Pipe Fitter', 'Carpenter', '3G Welder', 'Crane Operator', 'Rigger L1–L3', 'Mason', 'Steel Erector', 'Plumber', 'Light Driver', 'Forklift Operator']],
+      ['Site & HSE', ['Heavy Driver', 'Scaffolder (TÜV)', 'Manhole Watch', 'Assistant Safety Officer']]
+    ];
+    var all = [];
+    groups.forEach(function (g) { g[1].forEach(function (r) { all.push({ name: r, disc: g[0] }); }); });
+    var q = st.q.trim().toLowerCase();
+    var list = all.filter(function (r) { return (st.disc === 'All' || r.disc === st.disc) && (!q || r.name.toLowerCase().indexOf(q) >= 0); });
+    if (st.disc === 'All' && !q) list = list.slice(0, 12);
+    var names = Object.keys(st.picked);
+    var n = names.length;
+    var faqDefs = [
+      ['Do you supply both Saudi nationals and expatriate workers?', 'Crew mix depends on the role and your Saudization requirements. Tell us your Nitaqat needs and we shortlist to match.'],
+      ['Who manages the workers on site?', 'A Skill Bridge coordinator handles attendance, timesheets, replacements and day-to-day issues, so your supervisors deal with one contact.'],
+      ['Can we interview candidates before they start?', 'Yes. We send CVs with certificates and you can interview or trade-test before you confirm the crew.'],
+      ['What if a worker does not fit the job?', 'Replacement terms are agreed in the contract before mobilisation.'],
+      ['Can you supply transport and accommodation?', 'Crew transport comes from our own fleet of buses, coasters and Hi-Aces. Accommodation can be arranged on request.']
+    ];
+    return {
+      rootClass: part === 'all' ? 'sbh' : 'sbh sbh--static',
+      showA: has('a'), showB: has('b'), showC: has('c'), showD: has('d'),
+      discs: [['All', all.length]].concat(groups.map(function (g) { return [g[0], g[1].length]; })).map(function (d) {
+        return { label: d[0], count: d[1], pressed: String(st.disc === d[0]), pick: function () { self.setState({ disc: d[0] }); } };
+      }),
+      onSearch: function (e) { self.setState({ q: (e && e.target && e.target.value) || '' }); },
+      query: st.q,
+      rows: list.map(function (r) {
+        var on = !!st.picked[r.name];
+        return {
+          name: r.name, disc: r.disc, pressed: String(on),
+          cls: on ? 'dir__row is-on' : 'dir__row',
+          btn: on ? 'Added ✓' : 'Add',
+          btnCls: on ? 'btn btn--sm btn--ink' : 'btn btn--sm btn--ghost',
+          toggle: function () { var p = Object.assign({}, self.state.picked); if (p[r.name]) { delete p[r.name]; } else { p[r.name] = 1; } self.setState({ picked: p }); }
+        };
+      }),
+      noRows: list.length === 0,
+      pickedText: n + (n === 1 ? ' role selected' : ' roles selected'),
+      pickedNames: n ? names.join(' · ') : 'Pick roles from the directory below',
+      faqs: faqDefs.map(function (f, i) { var o = st.faq === i; return { q: f[0], a: f[1], isOpen: o, open: String(o), cls: o ? 'faq__item is-open' : 'faq__item', toggle: function () { self.setState({ faq: o ? -1 : i }); } }; })
+    };
+  }
+}
+</script>
+</body>
+</html>

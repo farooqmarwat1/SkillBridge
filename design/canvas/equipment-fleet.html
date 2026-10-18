@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Equipment fleet</title>
+<link rel="stylesheet" href="sb-home.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Sans+Arabic:wght@400;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#0a72a6}a:hover{color:#085b85}
+.sbh svg.i{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+</style>
+</helmet>
+<div style="width: 100%; background: #ffffff">
+
+<sc-if value="{{ showA }}" hint-placeholder-val="{{ true }}">
+<dc-import name="Main" part="hdr" hint-size="100%,120px"></dc-import>
+</sc-if>
+
+<div class="sbh-wrap" style="font-family: 'IBM Plex Sans', system-ui, sans-serif; color: #0b1220">
+<div class="{{ rootClass }}">
+
+<sc-if value="{{ showA }}" hint-placeholder-val="{{ true }}">
+<!-- Page header -->
+<header class="ph">
+  <img class="ph__img" src="../../src/assets/images/site/fleet-lineup-desert.jpg" alt="">
+  <div class="c ph__in">
+    <ol class="crumbs"><li><a href="home.html">Home</a></li><li><a href="#">Services</a></li><li aria-current="page">Equipment fleet</li></ol>
+    <span class="eyebrow">Equipment rental</span>
+    <h1 class="display ph__h">Equipment fleet</h1>
+    <p class="lead ph__lead">Earthmoving, lifting, power, haulage and crew transport for industrial sites across the Kingdom. Add machines to one quote list and send it in a single request.</p>
+    <div class="ph__facts"><span class="ph__fact"><b>{{ totalCount }}</b> equipment types</span><span class="ph__fact"><b>5</b> categories</span><span class="ph__fact"><b>Bare</b> or operated</span></div>
+  </div>
+</header>
+
+<!-- Catalogue -->
+<section class="sec alt" id="catalogue"><div class="c">
+  <div class="fl-wrap">
+    <div class="fl-main">
+      <div class="fl-tools">
+        <label class="dir__search" for="fl-search"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg><span class="sr">Search equipment</span><input id="fl-search" type="search" placeholder="Search equipment, e.g. crane" onInput="{{ onSearch }}"></label>
+        <div class="filters fl-filters" role="group" aria-label="Equipment category">
+          <sc-for list="{{ cats }}" as="f" hint-placeholder-count="6">
+            <button class="filter" type="button" aria-pressed="{{ f.pressed }}" onClick="{{ f.pick }}">{{ f.label }} <span class="cnt">{{ f.count }}</span></button>
+          </sc-for>
+        </div>
+        <div class="fl-meta"><span class="label">{{ shownText }}</span><span class="fl-legend"><span class="fl-sitetag">Site photo</span> from Skill Bridge projects</span></div>
+      </div>
+      <div class="fl-grid">
+        <sc-for list="{{ items }}" as="e" hint-placeholder-count="9">
+          <article class="{{ e.cls }}">
+            <div class="fl-card__top"><span>{{ e.cat }}</span><b>{{ e.code }}</b></div>
+            <div class="fl-card__ph">
+              <sc-if value="{{ e.hasImg }}" hint-placeholder-val="{{ true }}"><img src="{{ e.img }}" alt="{{ e.name }}" class="{{ e.posCls }}"></sc-if>
+              <sc-if value="{{ e.noImg }}" hint-placeholder-val="{{ false }}">
+                <div class="fl-ph">
+                  <sc-if value="{{ e.icDig }}" hint-placeholder-val="{{ true }}"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17h10l2-4h4l2 4"></path><circle cx="6" cy="19" r="2"></circle><circle cx="17" cy="19" r="2"></circle><path d="M7 13V7l6-3 4 4"></path></svg></sc-if>
+                  <sc-if value="{{ e.icLift }}" hint-placeholder-val="{{ false }}"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4h11"></path><path d="M5 4l4-2"></path><path d="M16 4v5"></path><path d="M14 9h4v3h-4z"></path><path d="M2 21h7"></path><path d="M5 9l5-5"></path></svg></sc-if>
+                  <sc-if value="{{ e.icPower }}" hint-placeholder-val="{{ false }}"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7z"></path></svg></sc-if>
+                  <sc-if value="{{ e.icHaul }}" hint-placeholder-val="{{ false }}"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 6h12v10H2z"></path><path d="M14 9h4l4 4v3h-8"></path><circle cx="6" cy="17.5" r="2"></circle><circle cx="17" cy="17.5" r="2"></circle></svg></sc-if>
+                  <sc-if value="{{ e.icBus }}" hint-placeholder-val="{{ false }}"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="15" rx="2"></rect><path d="M4 11h16M8 18v3M16 18v3"></path><circle cx="8" cy="14.5" r="1"></circle><circle cx="16" cy="14.5" r="1"></circle></svg></sc-if>
+                  <span class="label">Photo coming soon</span>
+                </div>
+              </sc-if>
+              <sc-if value="{{ e.real }}" hint-placeholder-val="{{ false }}"><span class="fl-sitetag fl-sitetag--on">Site photo</span></sc-if>
+            </div>
+            <h3 class="fl-card__name">{{ e.name }}</h3>
+            <dl class="fl-card__specs">
+              <div><dt>{{ e.k1 }}</dt><dd><sc-if value="{{ e.tbc1 }}" hint-placeholder-val="{{ false }}"><span class="tbc">To confirm</span></sc-if><sc-if value="{{ e.has1 }}" hint-placeholder-val="{{ true }}">{{ e.v1 }}</sc-if></dd></div>
+              <div><dt>Supply</dt><dd>{{ e.supply }}</dd></div>
+            </dl>
+            <div class="fl-card__act">
+              <button class="{{ e.btnCls }}" type="button" onClick="{{ e.toggle }}">{{ e.btn }}</button>
+            </div>
+          </article>
+        </sc-for>
+        <sc-if value="{{ noItems }}" hint-placeholder-val="{{ false }}"><p class="dir__empty">No equipment matches “{{ query }}”. Ask us anyway: we source machines beyond this list.</p></sc-if>
+      </div>
+    </div>
+
+    <!-- Quote list -->
+    <aside class="ql" id="quote-list">
+      <div class="ql__head"><strong>Your quote list</strong><span class="ql__count">{{ qCount }}</span></div>
+      <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+        <div class="ql__body">
+          <sc-if value="{{ qEmpty }}" hint-placeholder-val="{{ false }}"><p class="ql__empty">Add machines from the catalogue. You can set quantities here.</p></sc-if>
+          <ul class="ql__list">
+            <sc-for list="{{ qItems }}" as="q" hint-placeholder-count="2">
+              <li class="ql__item">
+                <div class="ql__name"><b>{{ q.name }}</b><span class="label">{{ q.code }}</span></div>
+                <div class="ql__qty">
+                  <button type="button" aria-label="{{ q.decLabel }}" onClick="{{ q.dec }}">−</button>
+                  <span>{{ q.qty }}</span>
+                  <button type="button" aria-label="{{ q.incLabel }}" onClick="{{ q.inc }}">+</button>
+                </div>
+                <button class="ql__rm" type="button" aria-label="{{ q.rmLabel }}" onClick="{{ q.rm }}"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+              </li>
+            </sc-for>
+          </ul>
+          <div class="ql__fields">
+            <div class="fld"><label for="ql-site">Site location</label><select id="ql-site" class="inp"><option>Al Jubail</option><option>Dammam</option><option>Ras Tanura</option><option>Riyadh</option><option>NEOM</option><option>Other</option></select></div>
+            <div class="row2">
+              <div class="fld"><label for="ql-start">Start date</label><input id="ql-start" class="inp" type="date" value="2026-11-02"></div>
+              <div class="fld"><label for="ql-dur">Duration</label><select id="ql-dur" class="inp"><option>1 week</option><option selected>1 month</option><option>3 months</option><option>6 months +</option></select></div>
+            </div>
+            <div class="fld"><span class="fld__lbl">Supply</span>
+              <div class="seg ql__seg" role="group" aria-label="Supply">
+                <sc-for list="{{ supplyOpts }}" as="s" hint-placeholder-count="2">
+                  <button type="button" aria-pressed="{{ s.pressed }}" onClick="{{ s.pick }}">{{ s.label }}</button>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+          <button class="{{ sendCls }}" type="button" onClick="{{ send }}">Send quote request <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+          <p class="ql__fine">We reply with availability, specs and rates. Or call <span class="data">+966 53 905 1475</span>.</p>
+        </div>
+      </sc-if>
+      <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+        <div class="ql__body ql__done">
+          <span class="qf__tick"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg></span>
+          <b class="h4">Request sent</b>
+          <p>{{ sentText }} Our Al Jubail team will come back with availability and rates.</p>
+          <button class="btn btn--ghost" type="button" onClick="{{ reset }}">Start a new list</button>
+        </div>
+      </sc-if>
+    </aside>
+  </div>
+</div></section>
+
+<!-- Mobile quote bar -->
+<sc-if value="{{ showBar }}" hint-placeholder-val="{{ false }}">
+  <div class="fl-bar"><span><b>{{ qTotal }}</b> in quote list</span><a class="btn btn--sm btn--hivis" href="#quote-list">Review list</a></div>
+</sc-if>
+</sc-if>
+
+<sc-if value="{{ showB }}" hint-placeholder-val="{{ true }}">
+<!-- Fleet in action -->
+<section class="sec"><div class="c">
+  <div class="head rv">
+    <div><span class="eyebrow">Fleet in action</span><h2 class="h2">Our machines on real projects</h2></div>
+    <p class="lead">The same fleet you book here has worked on the Kingdom's largest projects.</p>
+  </div>
+  <div class="fia rv">
+    <a class="fia__item" href="project-case-study.html"><img src="../../src/assets/images/projects/neom-jcb-backhoes.jpg" alt="Backhoe loader fleet at the NEOM solar plant"><div><span class="label">NEOM Green Hydrogen · L&amp;T</span><b>Backhoe loaders on 90 km of cable trenching</b></div></a>
+    <a class="fia__item" href="project-case-study.html"><img src="../../src/assets/images/site/pipeline-sany-line.jpg" alt="Excavators working along a pipeline"><div><span class="label">MGSE Phase-3 · Kalpataru</span><b>Excavators and breakers on 160 km of pipeline civil works</b></div></a>
+    <a class="fia__item" href="project-case-study.html"><img src="../../src/assets/images/projects/tcf-tadano-lift-riggers.jpg" alt="Mobile crane lifting a site building"><div><span class="label">Aramco TCF · Nesma</span><b>Mobile crane and low-beds for 10,000 m² of facilities</b></div></a>
+    <a class="fia__item" href="project-case-study.html"><img src="../../src/assets/images/site/crawler-crane-slab.jpg" alt="Crawler crane on a foundation site"><div><span class="label">GSSIP SPARK · Sendan</span><b>Crane and concrete pump support on plant foundations</b></div></a>
+  </div>
+</div></section>
+
+<!-- Rental options -->
+<section class="sec alt"><div class="c">
+  <div class="head rv">
+    <div><span class="eyebrow">How rental works</span><h2 class="h2">Three ways to hire</h2></div>
+    <p class="lead">Pick how much of the job you want us to run. Terms and rates come with the quote.</p>
+  </div>
+  <div class="models3 rv">
+    <article class="mdl"><div class="mdl__top"><span class="label">Option A</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9z"></path></svg></div><h3 class="h3s">Bare rental</h3><p>The machine only, delivered to your site for your own operators.</p><dl><div><dt class="label">Best for</dt><dd>Contractors with operators</dd></div><div><dt class="label">You provide</dt><dd>Operator and fuel</dd></div></dl></article>
+    <article class="mdl mdl--dark"><div class="mdl__top"><span class="label">Option B</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 18h20"></path><path d="M4 18v-3a8 8 0 0 1 16 0v3"></path><path d="M10 7.5V12"></path><path d="M14 7.5V12"></path></svg></div><h3 class="h3s">Operated rental</h3><p>Machine with a trained Skill Bridge operator, managed by our site coordinator.</p><dl><div><dt class="label">Best for</dt><dd>Fast mobilisation</dd></div><div><dt class="label">We provide</dt><dd>Machine and operator</dd></div></dl></article>
+    <article class="mdl"><div class="mdl__top"><span class="label">Option C</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 6h12v10H2z"></path><path d="M14 9h4l4 4v3h-8"></path><circle cx="6" cy="17.5" r="2"></circle><circle cx="17" cy="17.5" r="2"></circle></svg></div><h3 class="h3s">Delivered and set up</h3><p>We move heavy plant on low-bed trailers and support lifting and set-up on site.</p><dl><div><dt class="label">Best for</dt><dd>Heavy and oversized loads</dd></div><div><dt class="label">We provide</dt><dd>Haulage and lifting crew</dd></div></dl></article>
+  </div>
+  <div class="fl-insp rv">
+    <span class="cert__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"></path><path d="M9 12l2 2 4-4"></path></svg></span>
+    <div><b class="h4">Inspected before it leaves the yard</b><p>Machines are serviced between hires. Third-party inspection certificates for lifting equipment come with the delivery. <span class="tbc">To confirm</span></p></div>
+  </div>
+</div></section>
+</sc-if>
+
+</div>
+</div>
+
+<sc-if value="{{ showB }}" hint-placeholder-val="{{ true }}">
+<dc-import name="Main" part="cta" hint-size="100%,330px"></dc-import>
+<dc-import name="Main" part="ftr" hint-size="100%,580px"></dc-import>
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"part":{"editor":"enum","options":["all","a","b"],"default":"all"},"cat":{"editor":"enum","options":["All","Earthmoving","Lifting","Power & site","Haulage","Crew transport"],"default":"All"},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { cat: null, q: '', list: { 'SB-E01': 2, 'SB-L01': 1 }, supply: 1, sent: false };
+  }
+  renderVals() {
+    var self = this, st = this.state;
+    var B = function (id) { return '/_blob/' + id; };
+    var OP = 'Bare or operated', DR = 'With driver', DL = 'Delivered to site';
+    // [code, category, name, imageId or null, real site photo?, key spec label, key spec value or null, supply, image position]
+    var F = [
+      ['SB-E01', 'Earthmoving', 'Excavator', 'b2e16d99fc2c8eb29fc2be2917e7eb54', true, 'Class', null, OP, ''],
+      ['SB-E02', 'Earthmoving', 'Rock breaker', 'a6b4b9a575718dc43a73eaaa61ef2aff', true, 'Attachment', 'Hydraulic breaker', OP, ''],
+      ['SB-E03', 'Earthmoving', 'Backhoe loader', 'c79b4fb884bdc76b0fa7e789af7fce12', true, 'Model', 'JCB 3DX', OP, ''],
+      ['SB-E04', 'Earthmoving', 'Wheel loader', '138f94ac3aa549e1cdc145bbaa6004c1', true, 'Bucket', null, OP, 'fl-pos-30'],
+      ['SB-E05', 'Earthmoving', 'Grader', 'ec93b45cbfe1e00a31dae9388759990f', true, 'Blade', null, OP, 'fl-pos-mid'],
+      ['SB-E06', 'Earthmoving', 'Dump truck', 'ec93b45cbfe1e00a31dae9388759990f', true, 'Payload', null, OP, 'fl-pos-left'],
+      ['SB-E07', 'Earthmoving', 'Dozer', '4ef04d2fcbb81ae1e72f3430b28f120c', false, 'Class', null, OP, ''],
+      ['SB-E08', 'Earthmoving', 'Shovel', null, false, 'Bucket', null, OP, ''],
+      ['SB-E09', 'Earthmoving', 'Bobcat skid-steer', null, false, 'Type', 'Skid-steer loader', OP, ''],
+      ['SB-L01', 'Lifting', 'Mobile crane', 'becb15150bd9994aececdbf6a13efec2', true, 'Make', 'Tadano', OP, ''],
+      ['SB-L02', 'Lifting', 'Hydraulic crane', '34e0904286b9bc9f7ffef5539257d56e', true, 'Capacity', null, OP, ''],
+      ['SB-L03', 'Lifting', 'Crawler crane', '57b017ddf5e624c43d93fece3c81810a', true, 'Capacity', null, OP, 'fl-pos-top'],
+      ['SB-L04', 'Lifting', 'Tower crane', null, false, 'Height', null, OP, ''],
+      ['SB-L05', 'Lifting', 'Boom truck', null, false, 'Capacity', null, OP, ''],
+      ['SB-L06', 'Lifting', 'Forklift', null, false, 'Capacity', null, OP, ''],
+      ['SB-P01', 'Power & site', 'Generator', null, false, 'Rating', null, DL, ''],
+      ['SB-P02', 'Power & site', 'Air compressor', null, false, 'Output', null, DL, ''],
+      ['SB-P03', 'Power & site', 'Welding machine', null, false, 'Type', null, DL, ''],
+      ['SB-P04', 'Power & site', 'Tower light', null, false, 'Type', null, DL, ''],
+      ['SB-P05', 'Power & site', 'Power machines', null, false, 'Type', null, DL, ''],
+      ['SB-P06', 'Power & site', 'Portable machines', null, false, 'Type', null, DL, ''],
+      ['SB-H01', 'Haulage', 'Hydraulic low-bed trailer', '0261294441eabc77d15c708cff157263', true, 'Payload', null, DR, ''],
+      ['SB-H02', 'Haulage', 'Flatbed trailer', 'd75e2e4bc3448ee4e496dd2c2635180a', true, 'Deck', null, DR, 'fl-pos-right'],
+      ['SB-H03', 'Haulage', 'Prime mover', '853365fdbcd74462fe507b3610b2d851', false, 'Configuration', null, DR, ''],
+      ['SB-T01', 'Crew transport', '55-seat bus', '4665cbcec590b4a4a1fab7b82aa81262', false, 'Seats', '55', DR, ''],
+      ['SB-T02', 'Crew transport', '33-seat coaster', null, false, 'Seats', '33', DR, ''],
+      ['SB-T03', 'Crew transport', '15-seat Hi-Ace', null, false, 'Seats', '15', DR, ''],
+      ['SB-T04', 'Crew transport', 'Pickups', null, false, 'Use', 'Site supervision', DR, ''],
+      ['SB-T05', 'Crew transport', 'SUVs and sedans', null, false, 'Use', 'Management transport', DR, '']
+    ];
+    var catNames = ['All', 'Earthmoving', 'Lifting', 'Power & site', 'Haulage', 'Crew transport'];
+    var cat = st.cat || this.props.cat || 'All';
+    var q = st.q.trim().toLowerCase();
+    var shown = F.filter(function (e) { return (cat === 'All' || e[1] === cat) && (!q || e[2].toLowerCase().indexOf(q) >= 0 || e[1].toLowerCase().indexOf(q) >= 0); });
+    var byCode = {}; F.forEach(function (e) { byCode[e[0]] = e; });
+    var codes = Object.keys(st.list);
+    var total = codes.reduce(function (s, c) { return s + st.list[c]; }, 0);
+    var setQty = function (code, n) { var l = Object.assign({}, self.state.list); if (n <= 0) { delete l[code]; } else { l[code] = n; } self.setState({ list: l }); };
+    var part = this.props.part || 'all';
+    var has = function (k) { return part === 'all' || part.indexOf(k) >= 0; };
+    return {
+      rootClass: part === 'all' ? 'sbh' : 'sbh sbh--static',
+      showA: has('a'), showB: has('b'), showBar: has('a') && total > 0,
+      totalCount: F.length,
+      cats: catNames.map(function (n) { return { label: n, count: n === 'All' ? F.length : F.filter(function (e) { return e[1] === n; }).length, pressed: String(cat === n), pick: function () { self.setState({ cat: n }); } }; }),
+      onSearch: function (ev) { self.setState({ q: (ev && ev.target && ev.target.value) || '' }); },
+      query: st.q,
+      shownText: shown.length + (shown.length === 1 ? ' equipment type' : ' equipment types'),
+      noItems: shown.length === 0,
+      items: shown.map(function (e) {
+        var inList = !!st.list[e[0]];
+        return {
+          code: e[0], cat: e[1], name: e[2], img: e[3] ? B(e[3]) : '', hasImg: !!e[3], noImg: !e[3], real: !!e[4], posCls: "fl-img" + (e[8] ? " " + e[8] : ""),
+          icDig: e[1] === 'Earthmoving', icLift: e[1] === 'Lifting', icPower: e[1] === 'Power & site', icHaul: e[1] === 'Haulage', icBus: e[1] === 'Crew transport',
+          k1: e[5], v1: e[6], tbc1: e[6] === null, has1: e[6] !== null, supply: e[7],
+          cls: inList ? 'fl-card is-in' : 'fl-card',
+          btn: inList ? 'In quote list ✓' : 'Add to quote',
+          btnCls: inList ? 'btn btn--sm btn--ink' : 'btn btn--sm',
+          toggle: function () { setQty(e[0], self.state.list[e[0]] ? 0 : 1); }
+        };
+      }),
+      qCount: total === 0 ? 'Empty' : (total + (total === 1 ? ' unit' : ' units')),
+      qTotal: total + (total === 1 ? ' unit' : ' units'),
+      qEmpty: codes.length === 0,
+      qItems: codes.map(function (c) {
+        var e = byCode[c], n = st.list[c];
+        return { code: c, name: e[2], qty: n, dec: function () { setQty(c, n - 1); }, inc: function () { setQty(c, n + 1); }, rm: function () { setQty(c, 0); }, decLabel: 'One fewer ' + e[2], incLabel: 'One more ' + e[2], rmLabel: 'Remove ' + e[2] };
+      }),
+      supplyOpts: ['Bare', 'Operated'].map(function (s, i) { return { label: s, pressed: String(st.supply === i), pick: function () { self.setState({ supply: i }); } }; }),
+      sendCls: codes.length ? 'btn btn--lg ql__send' : 'btn btn--lg ql__send is-off',
+      send: function () { if (Object.keys(self.state.list).length) self.setState({ sent: true }); },
+      sent: st.sent, notSent: !st.sent,
+      sentText: total + (total === 1 ? ' unit' : ' units') + ' across ' + codes.length + (codes.length === 1 ? ' equipment type.' : ' equipment types.'),
+      reset: function () { self.setState({ sent: false, list: {} }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

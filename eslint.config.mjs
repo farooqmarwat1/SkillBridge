@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Design working files copied from the design session; not part of the site.
+    "work/**",
+    "ds/**",
   ]),
 ]);
 
