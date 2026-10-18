@@ -34,7 +34,7 @@ All routes exist under `/en` and `/ar`. `src/proxy.ts` redirects `/` to the visi
 | `/[lang]` | Home | `Main.dc.html`, `Main-AR.dc.html` | Built (EN + AR) |
 | `/[lang]/services/manpower-supply` | Service page template | `service-manpower.html` | Built (EN + AR) |
 | `/[lang]/services/[slug]` | Other 6 services, same template | `Service.dc.html` | To build |
-| `/[lang]/equipment` | Equipment fleet catalogue, filters, quote list | `Fleet.dc.html` | To build |
+| `/[lang]/equipment` | Equipment fleet catalogue, filters, quote list | `equipment-fleet.html` | Built (EN + AR) |
 | `/[lang]/projects` | Projects listing | `Projects.dc.html` | To build |
 | `/[lang]/projects/[slug]` | Case study x5 | `Project.dc.html` | To build |
 | `/[lang]/about` | About, mission, vision, leadership | `About.dc.html` | To build |
@@ -81,6 +81,7 @@ manpower picker, fleet preview, testimonials, FAQ, quote form).
 - CR number, VAT number, GOSI/Nitaqat band, ISO 9001 / 45001 / 14001 status.
 - Office hours and street address.
 - Equipment specs marked "To confirm" (capacities, classes, payloads).
+- Equipment service records and third-party inspection certificates for lifting equipment.
 - Manpower replacement terms and the final worker document checklist (shown with "To confirm" on the service page).
 - Whether accommodation can be arranged for supplied crews, as described in the approved service canvas.
 - Real testimonials with names and permission.

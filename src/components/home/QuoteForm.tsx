@@ -3,7 +3,7 @@
 import { useEffect, useId, useRef, useState, type FormEvent } from "react";
 import type { HomeContent, QuoteType } from "@/content/home";
 import { contact } from "@/content/site";
-import { QUOTE_EVENT, type QuotePrefill } from "@/lib/quote-bus";
+import { QUOTE_EVENT, takeQueuedQuotePrefill, type QuotePrefill } from "@/lib/quote-bus";
 import { Icon } from "@/components/ui/Icon";
 
 /* The full request form. It accepts prefills from the hero, role picker and fleet list.
@@ -16,20 +16,24 @@ export function QuoteForm({ t, sites }: { t: HomeContent["quote"]; sites: string
   const [scope, setScope] = useState("");
   const [site, setSite] = useState(sites[0]);
   const [start, setStart] = useState("");
+  const [duration, setDuration] = useState("");
   const [sent, setSent] = useState(false);
 
   useEffect(() => {
-    function onPrefill(e: Event) {
-      const d = (e as CustomEvent<QuotePrefill>).detail;
+    function applyPrefill(d: QuotePrefill) {
       setSent(false);
       if (d.type) setType(d.type);
       if (d.scope !== undefined) setScope(d.scope);
       if (d.site !== undefined) setSite(d.site);
       if (d.start !== undefined) setStart(d.start);
+      if (d.duration !== undefined) setDuration(d.duration);
       // Let the scroll settle, then put the cursor where the visitor continues.
       window.setTimeout(() => scopeRef.current?.focus({ preventScroll: true }), 400);
     }
+    function onPrefill(e: Event) { applyPrefill((e as CustomEvent<QuotePrefill>).detail); }
     window.addEventListener(QUOTE_EVENT, onPrefill);
+    const queued = takeQueuedQuotePrefill();
+    if (queued) applyPrefill(queued);
     return () => window.removeEventListener(QUOTE_EVENT, onPrefill);
   }, []);
 
@@ -84,7 +88,7 @@ export function QuoteForm({ t, sites }: { t: HomeContent["quote"]; sites: string
           </div>
           <div className="fld">
             <label htmlFor={f("dur")}>{t.duration} <span className="qf__opt">{t.optional}</span></label>
-            <input id={f("dur")} name="duration" className="inp" placeholder={t.durationPh} />
+            <input id={f("dur")} name="duration" className="inp" placeholder={t.durationPh} value={duration} onChange={(e) => setDuration(e.target.value)} />
           </div>
           <div className="fld">
             <label htmlFor={f("count")}>{t.count} <span className="qf__opt">{t.optional}</span></label>

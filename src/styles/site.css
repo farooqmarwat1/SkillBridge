@@ -1286,3 +1286,11 @@ a.faq__call:hover { border-color: var(--line-strong); }
 /* Card links must keep their foregrounds over the site-wide link colour. */
 .sbh a.indcard, .sbh a.indcard:hover { color: var(--surface); }
 .sbh a.relc, .sbh a.relc:hover { color: var(--text); }
+.sbh a.fia__item, .sbh a.fia__item:hover { color: var(--surface); }
+.ql__send:disabled { opacity: .45; cursor: not-allowed; }
+[dir="rtl"] .fl-filters .cnt { margin-left: 0; margin-right: 6px; }
+[dir="rtl"] .fl-card__specs > div:first-child { border-right: 0; border-left: 1px solid var(--line); }
+[dir="rtl"] .fl-card__ph .fl-sitetag--on { left: auto; right: 10px; }
+@container sbh (max-width: 600px) { [dir="rtl"] .fl-card__specs > div:first-child { border-left: 0; } }
+@container sbh (max-width: 600px) { .sbh:has(.fl-bar) .wa { display: none; } }
+.fl-tools { grid-template-columns: minmax(0, 1fr); min-width: 0; }

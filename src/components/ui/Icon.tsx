@@ -11,6 +11,9 @@ const paths = {
   play: <path d="M7 5l12 7-12 7z" />,
   check: <path d="M5 12l5 5L20 7" />,
   search: <><circle cx="11" cy="11" r="7" /><path d="M20 20l-4-4" /></>,
+  dig: <><path d="M3 17h10l2-4h4l2 4" /><circle cx="6" cy="19" r="2" /><circle cx="17" cy="19" r="2" /><path d="M7 13V7l6-3 4 4" /></>,
+  power: <path d="M13 2L4 14h7l-1 8 9-12h-7z" />,
+  bus: <><rect x="4" y="3" width="16" height="15" rx="2" /><path d="M4 11h16M8 18v3M16 18v3" /><circle cx="8" cy="14.5" r="1" /><circle cx="16" cy="14.5" r="1" /></>,
   phone: (
     <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z" />
   ),
