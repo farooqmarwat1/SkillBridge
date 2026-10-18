@@ -23,9 +23,9 @@ export function QuoteForm({ t, sites }: { t: HomeContent["quote"]; sites: string
       const d = (e as CustomEvent<QuotePrefill>).detail;
       setSent(false);
       if (d.type) setType(d.type);
-      if (d.scope) setScope(d.scope);
-      if (d.site) setSite(d.site);
-      if (d.start) setStart(d.start);
+      if (d.scope !== undefined) setScope(d.scope);
+      if (d.site !== undefined) setSite(d.site);
+      if (d.start !== undefined) setStart(d.start);
       // Let the scroll settle, then put the cursor where the visitor continues.
       window.setTimeout(() => scopeRef.current?.focus({ preventScroll: true }), 400);
     }

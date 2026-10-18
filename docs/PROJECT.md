@@ -32,7 +32,7 @@ All routes exist under `/en` and `/ar`. `src/proxy.ts` redirects `/` to the visi
 | Route | Page | Canvas source | Status |
 | --- | --- | --- | --- |
 | `/[lang]` | Home | `Main.dc.html`, `Main-AR.dc.html` | Built (EN + AR) |
-| `/[lang]/services/manpower-supply` | Service page template | `Service.dc.html` | To build |
+| `/[lang]/services/manpower-supply` | Service page template | `service-manpower.html` | Built (EN + AR) |
 | `/[lang]/services/[slug]` | Other 6 services, same template | `Service.dc.html` | To build |
 | `/[lang]/equipment` | Equipment fleet catalogue, filters, quote list | `Fleet.dc.html` | To build |
 | `/[lang]/projects` | Projects listing | `Projects.dc.html` | To build |
@@ -81,6 +81,8 @@ manpower picker, fleet preview, testimonials, FAQ, quote form).
 - CR number, VAT number, GOSI/Nitaqat band, ISO 9001 / 45001 / 14001 status.
 - Office hours and street address.
 - Equipment specs marked "To confirm" (capacities, classes, payloads).
+- Manpower replacement terms and the final worker document checklist (shown with "To confirm" on the service page).
+- Whether accommodation can be arranged for supplied crews, as described in the approved service canvas.
 - Real testimonials with names and permission.
 - News article dates and full articles.
 - Client logo usage permission for the marquee names.

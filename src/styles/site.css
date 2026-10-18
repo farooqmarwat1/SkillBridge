@@ -1267,5 +1267,18 @@ a.faq__call:hover { border-color: var(--line-strong); }
 .qf__list a { display: block; color: var(--text-inverse); text-decoration: none; }
 .qf__list a:hover b { color: var(--highlight); }
 .qf__done a { color: var(--action); }
+
 .foot__brand .foot__ar { justify-self: start; font-size: 16px; }
 .drawer .btn { justify-content: center; font-size: 17px; border-bottom: 0; padding-block: 0; }
+
+/* Service template: mirror physical edges used by the approved canvas in RTL. */
+[dir="rtl"] .ph::before { background: linear-gradient(270deg, rgba(11, 18, 32, .95) 25%, rgba(11, 18, 32, .72) 60%, rgba(11, 18, 32, .4)); }
+[dir="rtl"] .crumbs li + li::before { margin-right: 0; margin-left: 8px; }
+[dir="rtl"] .incl__item:nth-child(odd) { border-right: 0; border-left: 1px solid var(--line); }
+[dir="rtl"] .incl__item:nth-child(even) { padding-left: 0; padding-right: 24px; }
+[dir="rtl"] .dir__row:nth-child(odd) { border-right: 0; border-left: 1px solid var(--line); }
+[dir="rtl"] .dir__tabs .cnt { margin-left: 0; margin-right: 6px; }
+[dir="rtl"] .mdl dd { text-align: left; }
+@container sbh (max-width: 900px) { [dir="rtl"] .tl::before { left: auto; right: 24px; } }
+@container sbh (max-width: 800px) { [dir="rtl"] .dir__row:nth-child(odd) { border-left: 0; } }
+@container sbh (max-width: 600px) { [dir="rtl"] .incl__item:nth-child(odd) { border-left: 0; } [dir="rtl"] .incl__item:nth-child(even) { padding-right: 0; } }
