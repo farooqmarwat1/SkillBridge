@@ -1282,3 +1282,7 @@ a.faq__call:hover { border-color: var(--line-strong); }
 @container sbh (max-width: 900px) { [dir="rtl"] .tl::before { left: auto; right: 24px; } }
 @container sbh (max-width: 800px) { [dir="rtl"] .dir__row:nth-child(odd) { border-left: 0; } }
 @container sbh (max-width: 600px) { [dir="rtl"] .incl__item:nth-child(odd) { border-left: 0; } [dir="rtl"] .incl__item:nth-child(even) { padding-right: 0; } }
+
+/* Card links must keep their foregrounds over the site-wide link colour. */
+.sbh a.indcard, .sbh a.indcard:hover { color: var(--surface); }
+.sbh a.relc, .sbh a.relc:hover { color: var(--text); }
