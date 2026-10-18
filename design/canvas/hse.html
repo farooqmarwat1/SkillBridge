@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>HSE and Quality</title>
+<link rel="stylesheet" href="sb-home.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Sans+Arabic:wght@400;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#0a72a6}a:hover{color:#085b85}
+.sbh svg.i{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+</style>
+</helmet>
+<div style="width: 100%; background: #ffffff">
+
+<sc-if value="{{ showA }}" hint-placeholder-val="{{ true }}">
+<dc-import name="Main" part="hdr" hint-size="100%,120px"></dc-import>
+</sc-if>
+
+<div class="sbh-wrap" style="font-family: 'IBM Plex Sans', system-ui, sans-serif; color: #0b1220">
+<div class="{{ rootClass }}">
+
+<sc-if value="{{ showA }}" hint-placeholder-val="{{ true }}">
+<header class="ph">
+  <img class="ph__img" src="../../src/assets/images/site/rebar-harness-walkway.jpg" alt="">
+  <div class="c ph__in">
+    <ol class="crumbs"><li><a href="home.html">Home</a></li><li aria-current="page">HSE &amp; Quality</li></ol>
+    <span class="eyebrow">HSE &amp; Quality</span>
+    <h1 class="display ph__h">Safe operations, quality work</h1>
+    <p class="lead ph__lead">Safety and quality are planned into every mobilisation, from inducted crews and lift plans to inspected machines and checked work.</p>
+    <div class="ph__facts"><span class="ph__fact"><b>0</b> LTI target</span><span class="ph__fact"><b>Daily</b> toolbox talks</span><span class="ph__fact"><b>TÜV</b> certified scaffolders</span></div>
+  </div>
+</header>
+
+<!-- Policy -->
+<section class="sec"><div class="c">
+  <div class="hs-pol">
+    <div class="hs-pol__copy rv">
+      <span class="eyebrow">Our commitment</span>
+      <h2 class="h2">Everyone goes home safe</h2>
+      <p class="lead">Skill Bridge is committed to safe operations and quality services in the Kingdom of Saudi Arabia and globally. No job is so urgent that it cannot be done safely.</p>
+      <ul class="checks">
+        <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg><div><b>Plan every task</b><span>Risk assessments and method statements before work starts.</span></div></li>
+        <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg><div><b>Competent people only</b><span>Trade-tested, inducted and certified for the task.</span></div></li>
+        <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg><div><b>Stop work authority</b><span>Anyone on site can stop a job that looks unsafe.</span></div></li>
+      </ul>
+      <div style="display: flex; gap: 10px; flex-wrap: wrap"><a class="btn" href="#">Download HSE policy (PDF)</a><span class="tbc" style="align-self: center">Policy document to supply</span></div>
+    </div>
+    <figure class="hs-pol__fig rv"><img class="rv-img" src="../../src/assets/images/projects/neom-toolbox-talk.jpg" alt="Toolbox talk with the site crew at NEOM"><figcaption class="label">Toolbox talk before the shift · NEOM Green Hydrogen</figcaption></figure>
+  </div>
+</div></section>
+
+<!-- Practices -->
+<section class="sec alt"><div class="c">
+  <div class="head rv">
+    <div><span class="eyebrow">Safety in practice</span><h2 class="h2">How we keep sites safe</h2></div>
+    <p class="lead">The controls our crews apply every day, shown on our own projects.</p>
+  </div>
+  <div class="hs-grid rv">
+    <article class="hs-card"><img src="../../src/assets/images/site/toolbox-talk-sunrise.jpg" alt="Crew briefing at sunrise"><div><span class="label">Daily</span><b class="h4">Toolbox talks</b><p>Every shift starts with a briefing on the day's hazards and controls.</p></div></article>
+    <article class="hs-card"><img src="../../src/assets/images/site/rebar-harness-walkway.jpg" alt="Crew wearing full-body harnesses on a scaffold"><div><span class="label">Work at height</span><b class="h4">Harnesses and scaffold access</b><p>Full-body harnesses, guard rails and inspected scaffold on every deck.</p></div></article>
+    <article class="hs-card"><img src="../../src/assets/images/projects/neom-trench-backhoe.jpg" alt="Fenced trench with deep excavation signage"><div><span class="label">Excavation</span><b class="h4">Barriers and signage</b><p>Fenced, signed trenches with safe access and spoil set back from the edge.</p></div></article>
+    <article class="hs-card"><img src="../../src/assets/images/projects/tcf-tadano-lift-riggers.jpg" alt="Riggers guiding a crane lift with tag lines"><div><span class="label">Lifting</span><b class="h4">Planned lifts</b><p>Lift plans, certified riggers, tag lines and exclusion zones.</p></div></article>
+    <article class="hs-card"><img src="../../src/assets/images/projects/neom-jcb-backhoes.jpg" alt="Backhoe loaders parked in a row"><div><span class="label">Plant</span><b class="h4">Inspected equipment</b><p>Machines serviced between hires and checked before each shift.</p></div></article>
+    <article class="hs-card"><img src="../../src/assets/images/projects/neom-substation-digging.jpg" alt="Crew hand-digging near a substation"><div><span class="label">Live services</span><b class="h4">Hand digging near utilities</b><p>Hand excavation near cables and substations, under permit.</p></div></article>
+  </div>
+</div></section>
+</sc-if>
+
+<sc-if value="{{ showB }}" hint-placeholder-val="{{ true }}">
+<!-- Performance -->
+<section class="nb"><div class="c nb__in">
+  <div class="nb__item"><b class="nb__tbc"><span class="tbc">To confirm</span></b><span>LTI-free man-hours</span></div>
+  <div class="nb__item"><b class="nb__tbc"><span class="tbc">To confirm</span></b><span>Total recordable incident rate</span></div>
+  <div class="nb__item"><b class="nb__tbc"><span class="tbc">To confirm</span></b><span>Toolbox talks delivered</span></div>
+  <div class="nb__item"><b class="nb__tbc"><span class="tbc">To confirm</span></b><span>HSE training hours</span></div>
+</div></section>
+
+<!-- Quality -->
+<section class="sec"><div class="c">
+  <div class="hs-q">
+    <figure class="hs-q__fig rv"><img class="rv-img" src="../../src/assets/images/site/rebar-inspection-team.jpg" alt="Engineers inspecting epoxy-coated rebar before a pour"><figcaption class="label">Rebar inspection before a pour · GSSIP SPARK</figcaption></figure>
+    <div class="hs-q__copy rv">
+      <span class="eyebrow">Quality</span>
+      <h2 class="h2">Checked before it is covered</h2>
+      <p class="lead">QA/QC engineers and document controllers make sure the work matches the drawings and the paperwork matches the work.</p>
+      <ol class="cs-scope">
+        <li><span class="cs-scope__n">01</span><div><b>Inspection and test plans</b><p>Hold points agreed with the client before work starts.</p></div></li>
+        <li><span class="cs-scope__n">02</span><div><b>Material checks</b><p>Materials verified on delivery against the specification.</p></div></li>
+        <li><span class="cs-scope__n">03</span><div><b>Joint inspections</b><p>Rebar, formwork and trenches signed off before they are covered.</p></div></li>
+        <li><span class="cs-scope__n">04</span><div><b>Document control</b><p>Records, certificates and as-builts handed over with the work.</p></div></li>
+      </ol>
+    </div>
+  </div>
+</div></section>
+
+<!-- Certificates -->
+<section class="certs-sec alt"><div class="c">
+  <div class="certs__head rv"><div><span class="eyebrow">Certificates</span><h2 class="h2">Registrations and certifications</h2></div><a class="btn btn--ghost" href="#">Download documents pack</a></div>
+  <div class="certs rv">
+    <div class="cert"><span class="cert__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"></path><path d="M9 12l2 2 4-4"></path></svg></span><b>ISO 45001</b><span>Occupational health &amp; safety</span><span class="tbc">To confirm</span></div>
+    <div class="cert"><span class="cert__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"></path><path d="M9 12l2 2 4-4"></path></svg></span><b>ISO 9001</b><span>Quality management</span><span class="tbc">To confirm</span></div>
+    <div class="cert"><span class="cert__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"></path><path d="M9 12l2 2 4-4"></path></svg></span><b>ISO 14001</b><span>Environmental management</span><span class="tbc">To confirm</span></div>
+    <div class="cert"><span class="cert__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c1-4 4-6 8-6s7 2 8 6"></path></svg></span><b>TÜV scaffolders</b><span>Certified scaffolding crews</span><span class="tbc">To confirm</span></div>
+    <div class="cert"><span class="cert__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4h11"></path><path d="M16 4v5"></path><path d="M14 9h4v3h-4z"></path><path d="M2 21h7"></path></svg></span><b>Lifting inspection</b><span>Third-party certified cranes</span><span class="tbc">To confirm</span></div>
+    <div class="cert"><span class="cert__ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="1"></rect><path d="M8 8h8M8 12h8M8 16h5"></path></svg></span><b>Client approvals</b><span>Aramco and contractor vendor status</span><span class="tbc">To confirm</span></div>
+  </div>
+</div></section>
+</sc-if>
+
+</div>
+</div>
+
+<sc-if value="{{ showB }}" hint-placeholder-val="{{ true }}">
+<dc-import name="Main" part="cta" hint-size="100%,330px"></dc-import>
+<dc-import name="Main" part="ftr" hint-size="100%,580px"></dc-import>
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"part":{"editor":"enum","options":["all","a","b"],"default":"all"},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var part = this.props.part || 'all';
+    var has = function (k) { return part === 'all' || part.indexOf(k) >= 0; };
+    return { rootClass: part === 'all' ? 'sbh' : 'sbh sbh--static', showA: has('a'), showB: has('b') };
+  }
+}
+</script>
+</body>
+</html>

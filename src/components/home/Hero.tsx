@@ -1,18 +1,65 @@
-import { stats } from "@/data/home";
+import type { CSSProperties } from "react";
+import type { HomeContent } from "@/content/home";
+import { video } from "@/lib/media";
+import { AutoVideo } from "@/components/ui/AutoVideo";
+import { Icon } from "@/components/ui/Icon";
+import { QuickRequest } from "./QuickRequest";
 
-export function Hero() {
+/* Full-bleed site video with the headline over a dark gradient. Key figures count up on the
+   right and the quick request is docked along the base. */
+export function Hero({ t }: { t: HomeContent }) {
+  const h = t.hero;
   return (
-    <>
-      <section id="top" className="relative flex min-h-[96vh] items-center bg-[linear-gradient(100deg,rgba(16,27,63,.93),rgba(16,27,63,.74)_45%,rgba(16,27,63,.42)),url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=1920')] bg-cover bg-center pb-30 pt-38">
-        <div className="container-sb w-full"><div className="animate-up max-w-[760px]">
-          <p className="mb-5 font-display text-[13px] font-semibold uppercase tracking-[.18em] text-brand">Skill Bridge Contracting Company</p>
-          <h1 className="mb-5 font-display text-[clamp(38px,5vw,60px)] font-extrabold leading-[1.06] tracking-[-.02em] text-white">Integrated Workforce, Equipment &amp; Contracting Solutions</h1>
-          <p className="mb-8 max-w-[620px] text-[clamp(16px,1.4vw,19px)] leading-[1.7] text-white/80">Supporting Saudi Arabia&apos;s industrial, construction and infrastructure sectors with qualified manpower, reliable equipment and safe project delivery.</p>
-          <div className="mb-10 flex flex-wrap gap-3.5"><a href="#services" className="button-primary">Explore Our Services →</a><a href="#cta" className="button-outline">Request a Quote</a></div>
-          <div className="flex flex-wrap gap-2.5">{["Manpower Solutions", "Equipment Rental", "Industrial Contracting", "Logistics Support"].map((tag) => <span key={tag} className="rounded-md border border-white/20 bg-white/5 px-3.5 py-2 font-display text-[13px] font-medium text-white/85">{tag}</span>)}</div>
-        </div></div>
-      </section>
-      <section className="bg-mist"><div className="container-sb"><div className="relative z-10 -mt-[58px] grid overflow-hidden rounded-xl border border-line bg-white shadow-[0_24px_60px_rgba(16,27,63,.1)] sm:grid-cols-2 lg:grid-cols-4">{stats.map((item) => <div key={item.label} className="border-b border-line p-7 text-center sm:border-r lg:border-b-0"><div className="font-display text-[clamp(30px,3.4vw,42px)] font-extrabold leading-none text-navy">{item.value}</div><div className="mt-2.5 font-display text-[13px] font-semibold uppercase tracking-[.06em] text-muted">{item.label}</div></div>)}</div></div></section>
-    </>
+    <section className="hero on-dark">
+      <div className="hero__bg">
+        <AutoVideo src={video.excavator.src} poster={video.excavator.poster} controls={{ pause: h.pause, play: h.play }} />
+      </div>
+
+      <div className="c hero__top">
+        <span className="hero__tag">
+          <span className="hero__dot" aria-hidden="true" />
+          <span className="label">{h.footage} · {h.caption}</span>
+        </span>
+      </div>
+
+      <div className="c hero__in">
+        <div className="hero__copy">
+          <span className="eyebrow">{h.eyebrow}</span>
+          <h1 className="display">
+            <span className="ln"><span>{h.lines[0]}</span></span>
+            <span className="ln"><span>{h.lines[1]}</span></span>
+            <span className="ln"><span><mark>{h.lines[2]}</mark></span></span>
+          </h1>
+          <p className="lead fade">{h.lead}</p>
+          <div className="hero__ctas fade2">
+            <a className="btn btn--hivis btn--lg" href="#quote">
+              {h.quote} <Icon name="arrow" />
+            </a>
+            <a className="btn btn--ghost-inv btn--lg" href="#services">
+              {h.services}
+            </a>
+          </div>
+        </div>
+
+        <div className="hero__aside">
+          {h.facts.map((f) => (
+            <div className="hfact" key={f.label}>
+              {/* Counts up in CSS (@property --n); the text copy is for assistive tech. */}
+              <span className="hfact__n" style={{ "--to": Number(f.n) } as CSSProperties} aria-hidden="true" />
+              <span className="sr-only">{f.n}</span>
+              <span className="label">{f.label}</span>
+            </div>
+          ))}
+          <p className="hero__loc label">
+            <span>{h.place}</span>
+            <span dir="ltr">27.0° N · 49.6° E</span>
+          </p>
+        </div>
+      </div>
+
+      <div className="c hero__dock">
+        <QuickRequest t={t.quick} sites={t.sites} />
+      </div>
+    </section>
   );
 }

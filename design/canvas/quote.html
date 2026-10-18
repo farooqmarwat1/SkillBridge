@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Request a quote</title>
+<link rel="stylesheet" href="sb-home.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Sans+Arabic:wght@400;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#0a72a6}a:hover{color:#085b85}
+.sbh svg.i{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+</style>
+</helmet>
+<div style="width: 100%; background: #ffffff">
+
+<dc-import name="Main" part="hdr" hint-size="100%,120px"></dc-import>
+
+<div class="sbh-wrap" style="font-family: 'IBM Plex Sans', system-ui, sans-serif; color: #0b1220">
+<div class="{{ rootClass }}">
+
+<header class="ct-head ct-head--short"><div class="c ct-head__in">
+  <ol class="crumbs crumbs--dark"><li><a href="home.html">Home</a></li><li aria-current="page">Request a quote</li></ol>
+  <h1 class="display">Request a quote</h1>
+  <p class="lead">Four short steps. We reply with availability, CVs or equipment specs, and a priced quote.</p>
+</div></header>
+
+<section class="qz-sec"><div class="c">
+  <div class="qz">
+    <div class="qz__main">
+      <!-- Stepper -->
+      <ol class="qz-steps" aria-label="Progress">
+        <sc-for list="{{ steps }}" as="s" hint-placeholder-count="4">
+          <li class="{{ s.cls }}"><span class="qz-steps__n">{{ s.n }}</span><span class="qz-steps__t">{{ s.t }}</span></li>
+        </sc-for>
+      </ol>
+
+      <div class="qz-card">
+        <!-- Step 1 -->
+        <sc-if value="{{ s1 }}" hint-placeholder-val="{{ true }}">
+          <div class="qz-pane">
+            <div class="qz-pane__head"><span class="label">Step 1 of 4</span><h2 class="h3s">What do you need?</h2><p>Choose one or more services.</p></div>
+            <div class="qz-svcs">
+              <sc-for list="{{ svcs }}" as="v" hint-placeholder-count="7">
+                <button class="qz-svc" type="button" aria-pressed="{{ v.pressed }}" onClick="{{ v.toggle }}">
+                  <span class="qz-svc__tick" aria-hidden="true"><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"></path></svg></span>
+                  <b>{{ v.name }}</b><span>{{ v.sub }}</span>
+                </button>
+              </sc-for>
+            </div>
+          </div>
+        </sc-if>
+
+        <!-- Step 2 -->
+        <sc-if value="{{ s2 }}" hint-placeholder-val="{{ false }}">
+          <div class="qz-pane">
+            <div class="qz-pane__head"><span class="label">Step 2 of 4</span><h2 class="h3s">Tell us the details</h2><p>Pick what applies. Add anything else in the scope box.</p></div>
+            <sc-if value="{{ hasMp }}" hint-placeholder-val="{{ true }}">
+              <div class="qz-block">
+                <div class="qz-block__head"><b class="h4">Manpower roles</b><span class="label">{{ roleCount }}</span></div>
+                <div class="chips">
+                  <sc-for list="{{ roles }}" as="r" hint-placeholder-count="12"><button class="chip" type="button" aria-pressed="{{ r.pressed }}" onClick="{{ r.toggle }}">{{ r.name }}</button></sc-for>
+                </div>
+                <div class="qf__grid qz-mt"><div class="fld"><label for="qz-head">Total headcount</label><input id="qz-head" class="inp" type="number" min="1" value="12"></div><div class="fld"><label for="qz-other">Other roles <span class="qf__opt">(optional)</span></label><input id="qz-other" class="inp" placeholder="e.g. 2 instrument technicians"></div></div>
+              </div>
+            </sc-if>
+            <sc-if value="{{ hasEq }}" hint-placeholder-val="{{ true }}">
+              <div class="qz-block">
+                <div class="qz-block__head"><b class="h4">Equipment</b><span class="label">{{ eqCount }}</span></div>
+                <div class="chips">
+                  <sc-for list="{{ eqs }}" as="q" hint-placeholder-count="12"><button class="chip" type="button" aria-pressed="{{ q.pressed }}" onClick="{{ q.toggle }}">{{ q.name }}</button></sc-for>
+                </div>
+                <p class="qz-note">Need quantities or a specific model? Add them below, or build a detailed list on the <a href="equipment-fleet.html">equipment fleet page</a>.</p>
+              </div>
+            </sc-if>
+            <div class="fld"><label for="qz-scope">Scope of work</label><textarea id="qz-scope" class="inp inp--area" placeholder="Describe the work, quantities, site conditions or anything we should know"></textarea></div>
+          </div>
+        </sc-if>
+
+        <!-- Step 3 -->
+        <sc-if value="{{ s3 }}" hint-placeholder-val="{{ false }}">
+          <div class="qz-pane">
+            <div class="qz-pane__head"><span class="label">Step 3 of 4</span><h2 class="h3s">Site and schedule</h2><p>Where and when you need us.</p></div>
+            <div class="qf__grid">
+              <div class="fld"><label for="qz-site">Site location</label><select id="qz-site" class="inp" value="{{ site }}" onChange="{{ onSite }}"><option>Al Jubail</option><option>Dammam</option><option>Ras Tanura</option><option>Abqaiq / SPARK</option><option>Riyadh</option><option>NEOM</option><option>Other</option></select></div>
+              <div class="fld"><label for="qz-start">Start date</label><input id="qz-start" class="inp" type="date" value="{{ start }}" onChange="{{ onStart }}"></div>
+              <div class="fld"><label for="qz-dur">Duration</label><select id="qz-dur" class="inp" value="{{ dur }}" onChange="{{ onDur }}"><option>Under 1 month</option><option>1 to 3 months</option><option>3 to 6 months</option><option>6 months or more</option><option>Shutdown period</option></select></div>
+              <div class="fld"><span class="fld__lbl">Working pattern</span>
+                <div class="seg" role="group" aria-label="Working pattern">
+                  <sc-for list="{{ shifts }}" as="h" hint-placeholder-count="3"><button type="button" aria-pressed="{{ h.pressed }}" onClick="{{ h.pick }}">{{ h.label }}</button></sc-for>
+                </div>
+              </div>
+            </div>
+            <div class="fld qz-mt"><span class="fld__lbl">We should also provide</span>
+              <div class="chips">
+                <sc-for list="{{ extras }}" as="x" hint-placeholder-count="4"><button class="chip" type="button" aria-pressed="{{ x.pressed }}" onClick="{{ x.toggle }}">{{ x.label }}</button></sc-for>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+
+        <!-- Step 4 -->
+        <sc-if value="{{ s4 }}" hint-placeholder-val="{{ false }}">
+          <div class="qz-pane">
+            <div class="qz-pane__head"><span class="label">Step 4 of 4</span><h2 class="h3s">Your details</h2><p>So we can send the quote to the right person.</p></div>
+            <div class="qf__grid">
+              <div class="fld"><label for="qz-name">Full name</label><input id="qz-name" class="inp" autocomplete="name" placeholder="Your name"></div>
+              <div class="fld"><label for="qz-co">Company</label><input id="qz-co" class="inp" autocomplete="organization" placeholder="Company or contractor"></div>
+              <div class="fld"><label for="qz-title">Job title <span class="qf__opt">(optional)</span></label><input id="qz-title" class="inp" placeholder="e.g. Procurement manager"></div>
+              <div class="fld"><label for="qz-proj">Project <span class="qf__opt">(optional)</span></label><input id="qz-proj" class="inp" placeholder="Project or package name"></div>
+              <div class="fld"><label for="qz-mob">Mobile number</label><input id="qz-mob" class="inp" type="tel" autocomplete="tel" placeholder="05x xxx xxxx"></div>
+              <div class="fld"><label for="qz-email">Work email</label><input id="qz-email" class="inp" type="email" autocomplete="email" placeholder="name@company.com"></div>
+            </div>
+            <label class="qf__check qz-mt"><input id="qz-wa" type="checkbox"> Send the quote on WhatsApp as well</label>
+          </div>
+        </sc-if>
+
+        <!-- Done -->
+        <sc-if value="{{ s5 }}" hint-placeholder-val="{{ false }}">
+          <div class="qz-pane qz-done">
+            <span class="qf__tick"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg></span>
+            <h2 class="h2">Request received</h2>
+            <p class="lead">Our Al Jubail team is checking availability. You will hear from us with CVs, equipment specs and a priced quote.</p>
+            <div class="qz-ref"><span class="label">Your reference</span><b class="data">SB-Q-26-0142</b></div>
+            <ol class="qz-next">
+              <li><span>1</span>We confirm availability and ask any questions.</li>
+              <li><span>2</span>You receive CVs, specs and the priced quote.</li>
+              <li><span>3</span>On approval, we mobilise to your site.</li>
+            </ol>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap"><a class="btn" href="home.html">Back to home</a><a class="btn btn--ghost" href="projects.html">See our projects</a></div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ showNav }}" hint-placeholder-val="{{ true }}">
+          <div class="qz-nav">
+            <button class="{{ backCls }}" type="button" onClick="{{ back }}"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"></path></svg> Back</button>
+            <span class="qz-nav__hint">{{ navHint }}</span>
+            <button class="{{ nextCls }}" type="button" onClick="{{ next }}">{{ nextLabel }} <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+
+    <!-- Summary -->
+    <aside class="qz-sum">
+      <div class="qz-sum__card">
+        <div class="ql__head"><strong>Your request</strong><span class="ql__count">{{ sumBadge }}</span></div>
+        <dl class="qz-sum__list">
+          <div><dt class="label">Services</dt><dd>{{ sumServices }}</dd></div>
+          <sc-if value="{{ hasMp }}" hint-placeholder-val="{{ true }}"><div><dt class="label">Roles</dt><dd>{{ sumRoles }}</dd></div></sc-if>
+          <sc-if value="{{ hasEq }}" hint-placeholder-val="{{ true }}"><div><dt class="label">Equipment</dt><dd>{{ sumEq }}</dd></div></sc-if>
+          <div><dt class="label">Site</dt><dd>{{ site }}</dd></div>
+          <div><dt class="label">Start · duration</dt><dd>{{ sumWhen }}</dd></div>
+          <div><dt class="label">Working pattern</dt><dd>{{ sumShift }}</dd></div>
+          <div><dt class="label">Also provide</dt><dd>{{ sumExtras }}</dd></div>
+        </dl>
+      </div>
+      <div class="qz-help">
+        <span class="label">Prefer to talk?</span>
+        <b class="data">+966 53 905 1475</b>
+        <span>Call or WhatsApp our Al Jubail office.</span>
+      </div>
+      <div class="qz-trust"><span class="label">Recent clients</span><p>Larsen &amp; Toubro · Kalpataru International · Nesma United Industries · Sendan International · National Blue Company</p></div>
+    </aside>
+  </div>
+</div></section>
+
+</div>
+</div>
+
+<dc-import name="Main" part="ftr" hint-size="100%,580px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"step":{"editor":"int","min":1,"max":5,"default":1},"static":{"editor":"boolean","default":false},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = {
+      step: null,
+      svc: { 'Manpower Supply': 1, 'Equipment Rental': 1 },
+      roles: { 'Pipe Fitter': 1, '3G Welder': 1, 'Rigger L1–L3': 1, 'Safety Engineer': 1 },
+      eq: { 'Excavator': 1, 'Mobile crane': 1 },
+      site: 'Al Jubail', start: '2026-11-02', dur: '1 to 3 months', shift: 0,
+      extras: { 'Crew transport': 1 }
+    };
+  }
+  renderVals() {
+    var self = this, st = this.state;
+    var step = st.step || this.props.step || 1;
+    var go = function (n) { self.setState({ step: Math.max(1, Math.min(5, n)) }); };
+    var toggleIn = function (key, name) { var x = Object.assign({}, self.state[key]); if (x[name]) { delete x[name]; } else { x[name] = 1; } var u = {}; u[key] = x; self.setState(u); };
+    var SV = [['Manpower Supply', '39 roles, short or long term'], ['Equipment Rental', '29 types, bare or operated'], ['Civil & General Contracting', 'Civil works, design-build'], ['Plant Maintenance & Shutdowns', 'Refineries, power plants'], ['Fabrication & Workshop', 'Steel, machining, repairs'], ['Logistics & Transport', 'Low-beds, buses, haulage'], ['Trading & Supply', 'Site and safety materials']];
+    var RL = ['Civil Engineer', 'Safety Engineer', 'QA/QC Engineer', 'Piping Engineer', 'Document Controller', 'Pipe Fitter', '3G Welder', 'Rigger L1–L3', 'Crane Operator', 'Scaffolder (TÜV)', 'Steel Erector', 'Mason', 'Carpenter', 'Heavy Driver', 'Electrical Engineer', 'Assistant Safety Officer'];
+    var EQ = ['Excavator', 'Backhoe loader', 'Wheel loader', 'Dump truck', 'Grader', 'Mobile crane', 'Crawler crane', 'Forklift', 'Low-bed trailer', 'Generator', '55-seat bus', 'Pickups'];
+    var SH = ['Day shift', 'Night shift', '24-hour'];
+    var EX = ['Crew transport', 'Accommodation', 'Machine operators', 'Site supervision'];
+    var hasMp = !!st.svc['Manpower Supply'], hasEq = !!st.svc['Equipment Rental'];
+    var keys = function (o) { return Object.keys(o); };
+    var nSvc = keys(st.svc).length;
+    var labels = ['Services', 'Details', 'Site and schedule', 'Your details'];
+    var fmtDate = function (d) { var p = (d || '').split('-'); var m = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']; return p.length === 3 ? (+p[2]) + ' ' + m[(+p[1]) - 1] + ' ' + p[0] : d; };
+    var list = function (o, max) { var k = keys(o); if (!k.length) return 'None selected'; return k.length > max ? k.slice(0, max).join(', ') + ' +' + (k.length - max) : k.join(', '); };
+    return {
+      rootClass: this.props.static ? 'sbh sbh--static' : 'sbh',
+      s1: step === 1, s2: step === 2, s3: step === 3, s4: step === 4, s5: step === 5, showNav: step < 5,
+      steps: labels.map(function (t, i) { var n = i + 1; return { n: n < step ? '✓' : String(n), t: t, cls: n < step ? 'is-done' : (n === step ? 'is-on' : '') }; }),
+      svcs: SV.map(function (v) { var on = !!st.svc[v[0]]; return { name: v[0], sub: v[1], pressed: String(on), toggle: function () { toggleIn('svc', v[0]); } }; }),
+      hasMp: hasMp, hasEq: hasEq,
+      roles: RL.map(function (r) { return { name: r, pressed: String(!!st.roles[r]), toggle: function () { toggleIn('roles', r); } }; }),
+      roleCount: keys(st.roles).length + ' selected',
+      eqs: EQ.map(function (q) { return { name: q, pressed: String(!!st.eq[q]), toggle: function () { toggleIn('eq', q); } }; }),
+      eqCount: keys(st.eq).length + ' selected',
+      site: st.site, start: st.start, dur: st.dur,
+      onSite: function (e) { self.setState({ site: e.target.value }); },
+      onStart: function (e) { self.setState({ start: e.target.value }); },
+      onDur: function (e) { self.setState({ dur: e.target.value }); },
+      shifts: SH.map(function (h, i) { return { label: h, pressed: String(st.shift === i), pick: function () { self.setState({ shift: i }); } }; }),
+      extras: EX.map(function (x) { return { label: x, pressed: String(!!st.extras[x]), toggle: function () { toggleIn('extras', x); } }; }),
+      backCls: step === 1 ? 'btn btn--ghost is-hidden' : 'btn btn--ghost',
+      back: function () { go(step - 1); },
+      nextCls: nSvc ? 'btn btn--lg' : 'btn btn--lg is-off',
+      next: function () { if (nSvc) go(step + 1); },
+      nextLabel: step === 4 ? 'Send request' : 'Continue',
+      navHint: step === 1 ? (nSvc ? nSvc + (nSvc === 1 ? ' service selected' : ' services selected') : 'Select at least one service') : 'Step ' + step + ' of 4',
+      sumBadge: step === 5 ? 'Sent' : 'Step ' + Math.min(step, 4) + ' of 4',
+      sumServices: list(st.svc, 3), sumRoles: list(st.roles, 3), sumEq: list(st.eq, 3),
+      sumWhen: fmtDate(st.start) + ' · ' + st.dur, sumShift: SH[st.shift], sumExtras: list(st.extras, 3)
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Project case study template</title>
+<link rel="stylesheet" href="sb-home.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Sans+Arabic:wght@400;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#0a72a6}a:hover{color:#085b85}
+.sbh svg.i{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+</style>
+</helmet>
+<div style="width: 100%; background: #ffffff">
+
+<sc-if value="{{ showA }}" hint-placeholder-val="{{ true }}">
+<dc-import name="Main" part="hdr" hint-size="100%,120px"></dc-import>
+</sc-if>
+
+<div class="sbh-wrap" style="font-family: 'IBM Plex Sans', system-ui, sans-serif; color: #0b1220">
+<div class="{{ rootClass }}">
+
+<sc-if value="{{ showA }}" hint-placeholder-val="{{ true }}">
+<!-- Case hero -->
+<header class="cs-hero">
+  <div class="cs-hero__copy">
+    <ol class="crumbs"><li><a href="home.html">Home</a></li><li><a href="projects.html">Projects</a></li><li aria-current="page">{{ p.short }}</li></ol>
+    <span class="eyebrow">{{ p.eyebrow }}</span>
+    <h1 class="display cs-hero__h">{{ p.title }}</h1>
+    <p class="lead cs-hero__lead">{{ p.lead }}</p>
+    <div class="cs-chips">
+      <sc-for list="{{ p.chips }}" as="c" hint-placeholder-count="3"><span class="cs-chip">{{ c }}</span></sc-for>
+    </div>
+  </div>
+  <div class="cs-hero__media">
+    <img src="{{ p.hero }}" alt="{{ p.heroAlt }}">
+    <div class="cs-hero__tag"><span class="label">Client</span><b>{{ p.client }}</b></div>
+  </div>
+</header>
+
+<!-- Key facts -->
+<div class="cs-facts"><div class="c cs-facts__in">
+  <sc-for list="{{ p.facts }}" as="f" hint-placeholder-count="5">
+    <div class="cs-fact"><span class="label">{{ f.k }}</span><b><sc-if value="{{ f.tbc }}" hint-placeholder-val="{{ false }}"><span class="tbc">To confirm</span></sc-if><sc-if value="{{ f.known }}" hint-placeholder-val="{{ true }}">{{ f.v }}</sc-if></b></div>
+  </sc-for>
+</div></div>
+
+<!-- Brief + scope -->
+<section class="sec"><div class="c">
+  <div class="cs-brief">
+    <div class="cs-brief__copy rv">
+      <span class="eyebrow">The brief</span>
+      <h2 class="h2">{{ p.briefTitle }}</h2>
+      <p class="lead">{{ p.briefLead }}</p>
+      <p class="cs-p">{{ p.briefText }}</p>
+      <sc-if value="{{ p.hasBig }}" hint-placeholder-val="{{ true }}">
+        <div class="cs-big"><b>{{ p.bigNum }}</b><span>{{ p.bigLabel }}</span></div>
+      </sc-if>
+    </div>
+    <div class="rv">
+      <span class="label cs-scope__lbl">Scope of work</span>
+      <ol class="cs-scope">
+        <sc-for list="{{ p.steps }}" as="s" hint-placeholder-count="4">
+          <li><span class="cs-scope__n">{{ s.n }}</span><div><b>{{ s.t }}</b><p>{{ s.d }}</p></div></li>
+        </sc-for>
+      </ol>
+    </div>
+  </div>
+</div></section>
+</sc-if>
+
+<sc-if value="{{ showB }}" hint-placeholder-val="{{ true }}">
+<!-- Gallery -->
+<section class="sec alt"><div class="c">
+  <div class="head rv">
+    <div><span class="eyebrow">On site</span><h2 class="h2">Project gallery</h2></div>
+    <p class="lead">{{ galleryLead }}</p>
+  </div>
+  <div class="gal">
+    <figure class="gal__main">
+      <img src="{{ gImg }}" alt="{{ gAlt }}">
+      <figcaption class="gal__cap"><span class="label">{{ gCount }}</span><span>{{ gAlt }}</span></figcaption>
+      <button class="gal__nav gal__nav--prev" type="button" aria-label="Previous photo" onClick="{{ gPrev }}"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"></path></svg></button>
+      <button class="gal__nav gal__nav--next" type="button" aria-label="Next photo" onClick="{{ gNext }}"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+    </figure>
+    <div class="gal__thumbs">
+      <sc-for list="{{ thumbs }}" as="t" hint-placeholder-count="6">
+        <button class="gal__th" type="button" aria-label="{{ t.label }}" aria-pressed="{{ t.on }}" onClick="{{ t.pick }}"><img src="{{ t.img }}" alt=""></button>
+      </sc-for>
+    </div>
+  </div>
+</div></section>
+
+<!-- Resources -->
+<section class="sec"><div class="c">
+  <div class="head rv">
+    <div><span class="eyebrow">Resources on site</span><h2 class="h2">Equipment and crew we supplied</h2></div>
+    <p class="lead">One contract covered the machines and the people who ran them.</p>
+  </div>
+  <div class="cs-res rv">
+    <sc-for list="{{ p.res }}" as="r" hint-placeholder-count="4">
+      <div class="cs-res__item">
+        <span class="svc__ic">
+          <sc-if value="{{ r.isHat }}" hint-placeholder-val="{{ true }}"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 18h20"></path><path d="M4 18v-3a8 8 0 0 1 16 0v3"></path><path d="M10 7.5V12"></path><path d="M14 7.5V12"></path></svg></sc-if>
+          <sc-if value="{{ r.isDig }}" hint-placeholder-val="{{ false }}"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4h11"></path><path d="M5 4l4-2"></path><path d="M16 4v5"></path><path d="M14 9h4v3h-4z"></path><path d="M2 21h7"></path><path d="M5 9l5-5"></path></svg></sc-if>
+          <sc-if value="{{ r.isTruck }}" hint-placeholder-val="{{ false }}"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 6h12v10H2z"></path><path d="M14 9h4l4 4v3h-8"></path><circle cx="6" cy="17.5" r="2"></circle><circle cx="17" cy="17.5" r="2"></circle></svg></sc-if>
+          <sc-if value="{{ r.isShield }}" hint-placeholder-val="{{ false }}"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"></path><path d="M9 12l2 2 4-4"></path></svg></sc-if>
+        </span>
+        <span class="label">{{ r.cat }}</span><b class="h4">{{ r.t }}</b><p>{{ r.d }}</p>
+      </div>
+    </sc-for>
+  </div>
+  <div class="cs-figs rv">
+    <sc-for list="{{ p.figs }}" as="f" hint-placeholder-count="4">
+      <div class="cs-fig"><span class="label">{{ f.k }}</span><b><sc-if value="{{ f.tbc }}" hint-placeholder-val="{{ false }}"><span class="tbc">To confirm</span></sc-if><sc-if value="{{ f.known }}" hint-placeholder-val="{{ true }}"><span class="cs-fig__v">{{ f.v }}</span></sc-if></b></div>
+    </sc-for>
+  </div>
+</div></section>
+
+<!-- Next project -->
+<section class="cs-next"><div class="c">
+  <a class="cs-next__card" href="{{ next.href }}">
+    <img src="{{ next.card }}" alt="">
+    <div class="cs-next__body">
+      <span class="label">Next project · {{ next.client }}</span>
+      <b class="h2">{{ next.title }}</b>
+      <span class="link">View case study <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+    </div>
+  </a>
+</div></section>
+</sc-if>
+
+</div>
+</div>
+
+<sc-if value="{{ showB }}" hint-placeholder-val="{{ true }}">
+<dc-import name="Main" part="cta" hint-size="100%,330px"></dc-import>
+<dc-import name="Main" part="ftr" hint-size="100%,580px"></dc-import>
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"proj":{"editor":"enum","options":["neom","tcf","mgse","spark","dareen"],"default":"tcf"},"part":{"editor":"enum","options":["all","a","b","ab"],"default":"all"},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { g: 0, gFor: null };
+  }
+  renderVals() {
+    var self = this, st = this.state;
+    var B = function (id) { return '/_blob/' + id; };
+    var D = {
+      neom: {
+        short: 'NEOM Green Hydrogen', href: 'project-case-study.html', eyebrow: 'Case study · Renewables',
+        title: 'NEOM Green Hydrogen, Solar PV', client: 'Larsen & Toubro (L&T)',
+        lead: 'Trenching and cabling for the solar PV plant of the NEOM Green Hydrogen Project: 90 km of cable routes, including road crossings, backfilling and route markers, delivered for Larsen & Toubro.',
+        chips: ['Civil & General Contracting', 'Equipment Rental', 'Manpower Supply'],
+        hero: B('a7c823792d6668972d32c6d27b8b5448'), heroAlt: 'Cable trench with warning tape running beside rows of solar panels',
+        card: B('f54424d042595acfbf0fcf2f90945ea6'),
+        facts: [['Client', 'Larsen & Toubro (L&T)'], ['Project', 'NEOM Green Hydrogen, Solar PV'], ['Cable routes', '90 km'], ['Location', 'NEOM'], ['Duration', null]],
+        briefTitle: '90 km of cable routes through the desert',
+        briefLead: 'The solar field needed cable routes cut, filled and marked across open desert and under live site roads.',
+        briefText: 'Skill Bridge supplied trenching crews and backhoe loaders, laid cables and ducts with warning tape, built the road crossings, then backfilled the routes and installed route markers.',
+        bigNum: '90 km', bigLabel: 'of trenching and cabling, with road crossings, backfill and route markers',
+        steps: [['Excavate', 'Trenches cut with backhoe loaders, fenced and signed as deep excavations.'], ['Lay cables and ducts', 'Cables and duct banks laid in the trench under power-cable warning tape.'], ['Road crossings', 'Ducted crossings built under the site access roads.'], ['Backfill and mark', 'Trenches backfilled, compacted and fitted with route markers.']],
+        res: [['dig', 'Equipment Rental', 'Backhoe loaders', 'A fleet of backhoe loaders cutting trench along the PV rows.'], ['hat', 'Manpower Supply', 'Trenching and cable crews', 'Crews for excavation, cable laying and backfill.'], ['hat', 'Civil works', 'Road crossing team', 'Duct installation under live access roads.'], ['shield', 'HSE', 'Excavation safety', 'Barriers, signage and daily toolbox talks on site.']],
+        figs: [['Cable routes', '90 km'], ['Road crossings', null], ['Man-hours', null], ['Lost-time incidents', null]],
+        pics: [['a7c823792d6668972d32c6d27b8b5448', 'Cable trench with warning tape beside a row of solar panels'], ['f54424d042595acfbf0fcf2f90945ea6', 'Crew laying power-cable warning tape in the trench'], ['c4ab4ba08c5606e354877e50da0ff2c0', 'Crew placing a duct bank in a deep trench'], ['c3bf900b0d9e0a1d1c2eac9dde1789d6', 'Backhoe cutting a long cable trench across the solar field'], ['c79b4fb884bdc76b0fa7e789af7fce12', 'Backhoe loader fleet parked beside the PV plant'], ['9c63de75c1660bb5e562c356cb9aa1ec', 'Cables laid along the bottom of the trench'], ['343f2b290ce727e6f9fee9cbd01aa662', 'Toolbox talk with the site crew before work'], ['1f4fb80aa3d4e524f3c289b6e1eb5a18', 'Crew hand-digging near the substation'], ['f8450e8ceba35f7479dc1ccd846cec91', 'Solar PV rows along a site access road']]
+      },
+      tcf: {
+        short: 'Aramco TCF', href: 'project-case-study.html', eyebrow: 'Case study · Oil & gas',
+        title: 'Aramco TCF', client: 'Nesma United Industries',
+        lead: 'Construction of 10,000 m² of temporary construction facilities for a Saudi Aramco project, delivered for Nesma United Industries.',
+        chips: ['Equipment Rental', 'Logistics & Transport', 'Manpower Supply'],
+        hero: B('becb15150bd9994aececdbf6a13efec2'), heroAlt: 'Mobile crane lifting a portable site building while riggers guide it into place',
+        card: B('becb15150bd9994aececdbf6a13efec2'),
+        facts: [['Client', 'Nesma United Industries'], ['End client', 'Saudi Aramco'], ['Facilities', '10,000 m²'], ['Location', null], ['Duration', null]],
+        briefTitle: 'Site facilities across 10,000 m²',
+        briefLead: 'The project needed temporary construction facilities built quickly, without slowing the main works around them.',
+        briefText: 'Skill Bridge supplied the lifting equipment, haulage and crew, and coordinated each building module from the truck to its final position.',
+        bigNum: '10,000 m²', bigLabel: 'of temporary construction facilities',
+        steps: [['Transport', 'Building modules hauled to site on low-bed trailers with prime movers.'], ['Lift', 'Hydraulic mobile crane with spreader bar, slings and certified riggers.'], ['Set in place', 'Modules landed on prepared concrete blocks and aligned by the ground crew.'], ['Hand over', 'Buildings joined into a working compound, ready for the site team.']],
+        res: [['dig', 'Equipment Rental', 'Hydraulic mobile crane', 'Operated crane with spreader bar and lifting slings.'], ['truck', 'Logistics & Transport', 'Low-bed trailers', 'Prime movers and trailers moving modules to site.'], ['hat', 'Manpower Supply', 'Riggers and banksman', 'Certified rigging crew guiding every lift.'], ['shield', 'HSE', 'Lift planning', 'Exclusion zones, tag lines and a coordinator on every lift.']],
+        figs: [['Facilities', '10,000 m²'], ['Buildings installed', null], ['Crane lifts', null], ['Lost-time incidents', null]],
+        pics: [['becb15150bd9994aececdbf6a13efec2', 'Mobile crane lifting a site building as riggers guide it'], ['34e0904286b9bc9f7ffef5539257d56e', 'Wide view of a module lift with the crew clear of the load'], ['0261294441eabc77d15c708cff157263', 'Building module lifted off a low-bed trailer with a spreader bar'], ['d75e2e4bc3448ee4e496dd2c2635180a', 'Crane unloading a module beside an installed building'], ['9708fcefc16aa799b9f3db54d8e91155', 'Installed site building with entrance and assembly-point signs'], ['512903eb48d0c34893857e6141220926', 'Finished site office with steel access stairs']]
+      },
+      mgse: {
+        short: 'MGSE Phase-3', href: 'project-case-study.html', eyebrow: 'Case study · Oil & gas pipeline',
+        title: 'MGSE Phase-3, Package 13', client: 'Kalpataru International',
+        lead: 'Construction of 160 km of pipeline civil works for MGSE Phase-3, Package 13: right-of-way, bedding, trenching and berm construction, delivered for Kalpataru International.',
+        chips: ['Civil & General Contracting', 'Equipment Rental', 'Manpower Supply'],
+        hero: B('b57ec08e23faaa889fe9ed926827b7e2'), heroAlt: 'Pipe string beside a trench with excavators breaking rock',
+        card: B('b57ec08e23faaa889fe9ed926827b7e2'),
+        facts: [['Client', 'Kalpataru International'], ['Package', 'MGSE Phase-3, PKG-13'], ['Civil works', '160 km'], ['Location', null], ['Duration', null]],
+        briefTitle: '160 km of pipeline civil works',
+        briefLead: 'The pipeline needed its right-of-way, trench, bedding and berms built across long stretches of rocky desert.',
+        briefText: 'Skill Bridge ran excavators with hydraulic breakers through rock, prepared the bedding for the pipe and built berms along the route.',
+        bigNum: '160 km', bigLabel: 'of ROW, bedding, trenching and berm construction',
+        steps: [['Right-of-way', 'ROW cleared and graded along the pipeline route.'], ['Trenching', 'Trench cut through rock with excavators and hydraulic breakers.'], ['Bedding', 'Bedding material placed in the trench to receive the pipe.'], ['Berm construction', 'Berms built along the route to finish the corridor.']],
+        res: [['dig', 'Equipment Rental', 'Excavators with breakers', 'Heavy excavators breaking rock along the trench line.'], ['truck', 'Equipment Rental', 'Loaders and dump trucks', 'Material moved for bedding and berms.'], ['hat', 'Manpower Supply', 'Civil crews', 'Operators, banksmen and labour along the ROW.'], ['shield', 'HSE', 'Safety on the ROW', 'Crew briefings and exclusion zones around lifting.']],
+        figs: [['Civil works', '160 km'], ['Trench excavated', null], ['Man-hours', null], ['Lost-time incidents', null]],
+        pics: [['b57ec08e23faaa889fe9ed926827b7e2', 'Pipe string beside a trench with excavators breaking rock'], ['b2e16d99fc2c8eb29fc2be2917e7eb54', 'Line of excavators working along the pipeline'], ['a6b4b9a575718dc43a73eaaa61ef2aff', 'Excavator with a hydraulic breaker cutting the trench'], ['138f94ac3aa549e1cdc145bbaa6004c1', 'Excavator and loader preparing the right-of-way'], ['0386f56aa19fd64ba08781ed01b15737', 'Banksman signalling a sideboom lift beside the pipe']]
+      },
+      spark: {
+        short: 'GSSIP SPARK', href: 'project-case-study.html', eyebrow: 'Case study · Industrial',
+        title: 'GSSIP, SPARK', client: 'Sendan International',
+        lead: 'Civil works for the GSSIP project at King Salman Energy Park (SPARK): excavations, machine foundations, the powerhouse and steel structure, delivered for Sendan International.',
+        chips: ['Civil & General Contracting', 'Manpower Supply', 'Equipment Rental'],
+        hero: B('1d986f5d3703910a78d26f9f66b9ad8c'), heroAlt: 'Rebar cages and formwork for machine foundations beside a plant building',
+        card: B('1d986f5d3703910a78d26f9f66b9ad8c'),
+        facts: [['Client', 'Sendan International'], ['Project', 'GSSIP'], ['Location', 'SPARK, Eastern Province'], ['Scope', 'Civil works'], ['Duration', null]],
+        briefTitle: 'Civil works for an industrial plant',
+        briefLead: 'The plant needed excavations, heavy machine foundations, a powerhouse and steel structure delivered on a busy industrial site.',
+        briefText: 'Skill Bridge supplied civil crews for excavation, rebar, formwork, waterproofing and concrete, working at height on scaffold with full fall protection.',
+        bigNum: '4', bigLabel: 'civil scopes: excavation, machine foundations, powerhouse and steel structure',
+        steps: [['Excavations', 'Deep excavations for foundations, shored and fenced.'], ['Machine foundations', 'Epoxy-coated rebar cages, formwork and membrane waterproofing.'], ['Powerhouse', 'Concrete pours with pump and crane support.'], ['Steel structure', 'Support for steel erection on the finished foundations.']],
+        res: [['hat', 'Manpower Supply', 'Steel fixers and carpenters', 'Rebar and formwork crews for heavy foundations.'], ['dig', 'Equipment Rental', 'Crane and concrete pump', 'Lifting and placing concrete on the pours.'], ['hat', 'Civil works', 'Waterproofing team', 'Torch-applied membranes on walls and slabs.'], ['shield', 'HSE', 'Work at height', 'Scaffold access and full-body harnesses on every deck.']],
+        figs: [['Foundations', null], ['Concrete poured', null], ['Man-hours', null], ['Lost-time incidents', null]],
+        pics: [['1d986f5d3703910a78d26f9f66b9ad8c', 'Rebar cages and formwork for machine foundations'], ['629ac7662e0578e90b4c6fa9203b8cdd', 'Crew fixing epoxy-coated rebar cages'], ['d6992090eec43237ccc15e67c0a258d5', 'Engineers inspecting rebar before a pour'], ['a312a6934d6e5a61ababee97559cf798', 'Crew on a scaffold walkway in full-body harnesses'], ['f958f8c2794b60e607974c0b67d68785', 'Scaffold and formwork around a foundation block'], ['a8a980fa6f80ea020eca5aca526116c7', 'Concrete pump boom over the foundation pour'], ['3bdec5662adb64b1bf4b076859b708ed', 'Steel fixers working between rebar cages'], ['f86ef6c61a70985b2656bc9ab32ab91d', 'Rebar mat inside the plant hall'], ['e383bb8e74995aab0f1a9db7f484c9b2', 'Torch-applied waterproofing on a foundation wall'], ['8fab981557b8666be1616a86810bb263', 'Waterproofing membrane across a foundation slab'], ['57b017ddf5e624c43d93fece3c81810a', 'Crawler crane beside a waterproofed slab']]
+      },
+      dareen: {
+        short: 'Dareen Park', href: 'project-case-study.html', eyebrow: 'Case study · Public infrastructure',
+        title: 'Dareen Park, Al Fanateer', client: 'National Blue Company',
+        lead: 'Maintenance of Dareen Park in Al Fanateer, Jubail, for the Royal Commission: walkway paving, kerbs and drainage frames restored. Delivered for National Blue Company.',
+        chips: ['Civil & General Contracting', 'Manpower Supply'],
+        hero: B('0249fefdca417bacb6c2c7612ef89035'), heroAlt: 'Crew bedding a new walkway in Dareen Park',
+        card: B('2914cf59833bb2728feacb5d710b1a26'),
+        facts: [['Client', 'National Blue Company'], ['Authority', 'Royal Commission Jubail'], ['Location', 'Al Fanateer, Jubail'], ['Type', 'Park maintenance'], ['Duration', null]],
+        briefTitle: 'Park maintenance for the Royal Commission',
+        briefLead: 'Walkways and plazas in Dareen Park needed damaged paving, kerbs and services restored.',
+        briefText: 'Skill Bridge crews lifted and re-laid stone paving, reset manhole frames and kerbs, and cleared each area ready for public use.',
+        bigNum: '', bigLabel: '',
+        steps: [['Break out', 'Damaged paving and kerbs lifted along the walkways.'], ['Services', 'Manholes and drainage frames reset to the new levels.'], ['Re-lay', 'Bedding and stone paving re-laid to line and level.'], ['Clean and hand back', 'Each area cleared and reopened for public use.']],
+        res: [['hat', 'Manpower Supply', 'Paving crews', 'Masons and labour for bedding and stone paving.'], ['dig', 'Equipment Rental', 'Compact plant', 'Skid-steer loader and tipper for materials and debris.'], ['hat', 'Civil works', 'Drainage works', 'Manhole frames and covers reset.'], ['shield', 'HSE', 'Public-area safety', 'Barriers and clear routes around work in a live park.']],
+        figs: [['Paving restored', null], ['Area', null], ['Man-hours', null], ['Lost-time incidents', null]],
+        pics: [['0249fefdca417bacb6c2c7612ef89035', 'Crew bedding a new walkway'], ['2914cf59833bb2728feacb5d710b1a26', 'Stone paving laid around a manhole frame'], ['8828c68f70267848c5886f055089d1a0', 'Walkway broken out for re-laying'], ['50bb40a6602598fcd61d16d7510d5ce4', 'Seafront promenade paving works'], ['4757f2c7fcfda2bb7349b0279331872d', 'Finished stone paving in the park plaza']]
+      }
+    };
+    var order = ['neom', 'tcf', 'mgse', 'spark', 'dareen'];
+    var key = D[this.props.proj] ? this.props.proj : 'tcf';
+    var src = D[key];
+    var nextKey = order[(order.indexOf(key) + 1) % order.length];
+    var gi = st.gFor === key ? st.g : 0;
+    var n = src.pics.length, cur = src.pics[Math.min(gi, n - 1)];
+    var part = this.props.part || 'all';
+    var has = function (k) { return part === 'all' || part.indexOf(k) >= 0; };
+    var kv = function (a) { return { k: a[0], v: a[1], tbc: a[1] === null, known: a[1] !== null }; };
+    var p = {
+      short: src.short, eyebrow: src.eyebrow, title: src.title, client: src.client, lead: src.lead, chips: src.chips,
+      hero: src.hero, heroAlt: src.heroAlt, briefTitle: src.briefTitle, briefLead: src.briefLead, briefText: src.briefText,
+      hasBig: !!src.bigNum, bigNum: src.bigNum, bigLabel: src.bigLabel,
+      facts: src.facts.map(kv), figs: src.figs.map(kv),
+      steps: src.steps.map(function (s, i) { return { n: '0' + (i + 1), t: s[0], d: s[1] }; }),
+      res: src.res.map(function (r) { return { isHat: r[0] === 'hat', isDig: r[0] === 'dig', isTruck: r[0] === 'truck', isShield: r[0] === 'shield', cat: r[1], t: r[2], d: r[3] }; })
+    };
+    var go = function (i) { self.setState({ g: (i + n) % n, gFor: key }); };
+    return {
+      rootClass: part === 'all' ? 'sbh' : 'sbh sbh--static',
+      showA: has('a'), showB: has('b'),
+      p: p,
+      next: { href: D[nextKey].href, card: D[nextKey].card, client: D[nextKey].client, title: D[nextKey].title },
+      galleryLead: 'Real photos from the ' + src.short + ' site.',
+      gImg: B(cur[0]), gAlt: cur[1], gCount: (Math.min(gi, n - 1) + 1) + ' / ' + n,
+      gPrev: function () { go(gi - 1); },
+      gNext: function () { go(gi + 1); },
+      thumbs: src.pics.map(function (x, i) { return { img: B(x[0]), label: 'Show photo ' + (i + 1), on: String(gi === i), pick: function () { go(i); } }; })
+    };
+  }
+}
+</script>
+</body>
+</html>

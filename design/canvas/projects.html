@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Projects</title>
+<link rel="stylesheet" href="sb-home.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Sans+Arabic:wght@400;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#0a72a6}a:hover{color:#085b85}
+.sbh svg.i{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+</style>
+</helmet>
+<div style="width: 100%; background: #ffffff">
+
+<dc-import name="Main" part="hdr" hint-size="100%,120px"></dc-import>
+
+<div class="sbh-wrap" style="font-family: 'IBM Plex Sans', system-ui, sans-serif; color: #0b1220">
+<div class="{{ rootClass }}">
+
+<!-- Page header -->
+<header class="ph">
+  <img class="ph__img" src="../../src/assets/images/projects/neom-jcb-backhoes.jpg" alt="">
+  <div class="c ph__in">
+    <ol class="crumbs"><li><a href="home.html">Home</a></li><li aria-current="page">Projects</li></ol>
+    <span class="eyebrow">Track record</span>
+    <h1 class="display ph__h">Projects</h1>
+    <p class="lead ph__lead">Pipelines, solar fields, plant foundations, site facilities and public parks: projects where Skill Bridge crews and equipment worked for the Kingdom's leading contractors.</p>
+    <div class="ph__facts"><span class="ph__fact"><b>5</b> projects</span><span class="ph__fact"><b>250 km</b> linear works</span><span class="ph__fact"><b>10,000 m²</b> facilities</span></div>
+  </div>
+</header>
+
+<!-- Project list -->
+<section class="sec"><div class="c">
+  <div class="pl-bar">
+    <div class="filters" role="group" aria-label="Filter projects by sector">
+      <sc-for list="{{ filters }}" as="f" hint-placeholder-count="5">
+        <button class="filter" type="button" aria-pressed="{{ f.pressed }}" onClick="{{ f.pick }}">{{ f.label }} <span class="cnt">{{ f.count }}</span></button>
+      </sc-for>
+    </div>
+    <span class="label">{{ countText }}</span>
+  </div>
+  <div class="pl-grid">
+    <sc-for list="{{ cards }}" as="c" hint-placeholder-count="5">
+      <a class="pcard" href="{{ c.href }}">
+        <div class="pcard__ph"><img src="{{ c.img }}" alt="{{ c.alt }}"><span class="proj__tag">{{ c.tag }}</span></div>
+        <div class="pcard__body">
+          <span class="label">{{ c.client }}</span>
+          <h3 class="h4">{{ c.title }}</h3>
+          <div class="pcard__fig"><b>{{ c.fig }}</b><span>{{ c.figLabel }}</span></div>
+          <span class="link">View project <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+        </div>
+      </a>
+    </sc-for>
+  </div>
+</div></section>
+
+</div>
+</div>
+
+<dc-import name="Main" part="cta" hint-size="100%,330px"></dc-import>
+<dc-import name="Main" part="ftr" hint-size="100%,580px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"static":{"editor":"boolean","default":false},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { sector: 'All' };
+  }
+  renderVals() {
+    var self = this, st = this.state;
+    var B = function (id) { return '/_blob/' + id; };
+    var all = [
+      { sector: 'Renewables', href: 'project-case-study.html', img: B('f54424d042595acfbf0fcf2f90945ea6'), alt: 'Crew laying cable warning tape beside solar panels', tag: 'Renewables · Solar PV', client: 'Larsen & Toubro (L&T)', title: 'NEOM Green Hydrogen, Solar PV', fig: '90 km', figLabel: 'cable trenching, road crossings and route markers' },
+      { sector: 'Oil & gas', href: 'project-case-study.html', img: B('b57ec08e23faaa889fe9ed926827b7e2'), alt: 'Excavators breaking rock beside a pipe string', tag: 'Oil & gas · Pipeline', client: 'Kalpataru International', title: 'MGSE Phase-3, Package 13', fig: '160 km', figLabel: 'ROW, bedding, trenching and berm construction' },
+      { sector: 'Oil & gas', href: 'project-case-study.html', img: B('becb15150bd9994aececdbf6a13efec2'), alt: 'Mobile crane lifting a site building', tag: 'Oil & gas · Facilities', client: 'Nesma United Industries', title: 'Aramco TCF', fig: '10,000 m²', figLabel: 'temporary construction facilities' },
+      { sector: 'Industrial', href: 'project-case-study.html', img: B('1d986f5d3703910a78d26f9f66b9ad8c'), alt: 'Rebar cages and formwork for machine foundations', tag: 'Industrial · Civil', client: 'Sendan International', title: 'GSSIP, SPARK', fig: 'Civil', figLabel: 'excavations, machine foundations, powerhouse, steel structure' },
+      { sector: 'Public infrastructure', href: 'project-case-study.html', img: B('2914cf59833bb2728feacb5d710b1a26'), alt: 'Stone paving laid around a manhole frame in the park', tag: 'Public · Maintenance', client: 'National Blue Company', title: 'Dareen Park, Al Fanateer', fig: 'Park', figLabel: 'paving and drainage maintenance for the Royal Commission Jubail' }
+    ];
+    var sectors = ['All', 'Oil & gas', 'Renewables', 'Industrial', 'Public infrastructure'];
+    var shown = all.filter(function (c) { return st.sector === 'All' || c.sector === st.sector; });
+    return {
+      rootClass: this.props.static ? 'sbh sbh--static' : 'sbh',
+      filters: sectors.map(function (s) {
+        return { label: s, count: s === 'All' ? all.length : all.filter(function (c) { return c.sector === s; }).length, pressed: String(st.sector === s), pick: function () { self.setState({ sector: s }); } };
+      }),
+      countText: shown.length + (shown.length === 1 ? ' project' : ' projects'),
+      cards: shown
+    };
+  }
+}
+</script>
+</body>
+</html>
