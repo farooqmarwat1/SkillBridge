@@ -110,7 +110,7 @@ export type HomeContent = {
     all: string;
     read: string;
     date: string;
-    items: { tag: string; title: string; text: string; img: StaticImageData }[];
+    items: { slug: string; tag: string; title: string; text: string; img: StaticImageData }[];
   };
   faq: { eyebrow: string; title: string; lead: string; call: string; items: { q: string; a: string }[] };
   quote: {
@@ -357,11 +357,11 @@ const en: HomeContent = {
     lead: "Practical guides for planning crews, machines and shutdowns in the Eastern Province.",
     all: "All articles",
     read: "Read article",
-    date: "[Date]",
+    date: "October 2026",
     items: [
-      { tag: "Guide", title: "Planning manpower for a refinery shutdown", text: "Which trades to book first, how long mobilisation takes and what the site gate will ask for.", img: site.plantFoundations },
-      { tag: "Checklist", title: "Crane rental checklist for industrial sites", text: "Lift plans, third-party inspection, operator cards and ground conditions in one list.", img: site.crawlerCraneSlab },
-      { tag: "Explainer", title: "What Saudization means for contract manpower", text: "How Nitaqat bands affect the crews you hire and what to ask a supplier.", img: site.toolboxTalkSunrise },
+      { slug: "planning-manpower-refinery-shutdown", tag: "Guide", title: "Planning manpower for a refinery shutdown", text: "Which trades to book first, how long mobilisation takes and what the site gate will ask for.", img: site.plantFoundations },
+      { slug: "crane-rental-checklist-industrial-sites", tag: "Checklist", title: "Crane rental checklist for industrial sites", text: "Lift plans, third-party inspection, operator cards and ground conditions in one list.", img: site.crawlerCraneSlab },
+      { slug: "saudization-and-contract-manpower", tag: "Explainer", title: "What Saudization means for contract manpower", text: "How Nitaqat bands affect the crews you hire and what to ask a supplier.", img: site.toolboxTalkSunrise },
     ],
   },
   faq: {
@@ -627,11 +627,11 @@ const ar: HomeContent = {
     lead: "أدلة عملية لتخطيط الفرق والمعدات والإيقافات في المنطقة الشرقية.",
     all: "جميع المقالات",
     read: "اقرأ المقال",
-    date: "[التاريخ]",
+    date: "أكتوبر ٢٠٢٦",
     items: [
-      { tag: "دليل", title: "تخطيط القوى العاملة لإيقاف مصفاة", text: "أي الحرف تُحجز أولاً، وكم تستغرق التعبئة، وما الذي ستطلبه بوابة الموقع.", img: site.plantFoundations },
-      { tag: "قائمة تحقق", title: "قائمة تحقق لتأجير الرافعات في المواقع الصناعية", text: "خطط الرفع والفحص من طرف ثالث وبطاقات المشغلين وحالة الأرض في قائمة واحدة.", img: site.crawlerCraneSlab },
-      { tag: "شرح", title: "ماذا يعني التوطين لعقود القوى العاملة", text: "كيف تؤثر نطاقات على الفرق التي تستعين بها، وما الذي تسأل عنه المورّد.", img: site.toolboxTalkSunrise },
+      { slug: "planning-manpower-refinery-shutdown", tag: "دليل", title: "تخطيط القوى العاملة لإيقاف مصفاة", text: "أي الحرف تُحجز أولاً، وكم تستغرق التعبئة، وما الذي ستطلبه بوابة الموقع.", img: site.plantFoundations },
+      { slug: "crane-rental-checklist-industrial-sites", tag: "قائمة تحقق", title: "قائمة تحقق لتأجير الرافعات في المواقع الصناعية", text: "خطط الرفع والفحص من طرف ثالث وبطاقات المشغلين وحالة الأرض في قائمة واحدة.", img: site.crawlerCraneSlab },
+      { slug: "saudization-and-contract-manpower", tag: "شرح", title: "ماذا يعني التوطين لعقود القوى العاملة", text: "كيف تؤثر نطاقات على الفرق التي تستعين بها، وما الذي تسأل عنه المورّد.", img: site.toolboxTalkSunrise },
     ],
   },
   faq: {

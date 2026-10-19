@@ -373,11 +373,71 @@ a:hover { color: #085b85; }
 @container sbh (max-width: 1000px) { .foot__g { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @container sbh (max-width: 560px) { .foot__g { grid-template-columns: minmax(0, 1fr); padding-block: 56px 40px; } }
 
-/* whatsapp */
-.wa { position: fixed; right: 24px; bottom: 24px; z-index: 40; width: 58px; height: 58px; display: grid; place-items: center; border-radius: 50%; background: #1f8a4c; color: #fff; box-shadow: var(--shadow-float); text-decoration: none; animation: pop .5s var(--ease) 1.4s both; }
-.wa svg { width: 28px; height: 28px; }
-.wa::after { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 2px solid #1f8a4c; animation: ping 2.4s ease-out 2s infinite; }
-@container sbh (max-width: 600px) { .wa { right: 16px; bottom: 16px; width: 54px; height: 54px; } }
+/* whatsapp floating button */
+.wa,
+.sbh a.wa,
+.sbh a.wa:visited {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 40;
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #1f8a4c;
+  color: #ffffff !important;
+  box-shadow: var(--shadow-float);
+  text-decoration: none;
+  animation: pop .5s var(--ease) 1.4s both;
+  transition: transform .2s var(--ease), background .2s var(--ease);
+}
+.wa:hover,
+.sbh a.wa:hover {
+  background: #166e3b;
+  color: #ffffff !important;
+  transform: scale(1.06);
+}
+.wa:focus-visible,
+.sbh a.wa:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+}
+.wa svg,
+.sbh a.wa svg,
+.sbh a.wa svg.i,
+.wa svg.i {
+  width: 32px;
+  height: 32px;
+  fill: #ffffff !important;
+  stroke: none !important;
+  color: #ffffff !important;
+}
+.wa::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid #1f8a4c;
+  animation: ping 2.4s ease-out 2s infinite;
+  pointer-events: none;
+}
+@container sbh (max-width: 600px) {
+  .wa,
+  .sbh a.wa {
+    right: 16px;
+    bottom: 16px;
+    width: 54px;
+    height: 54px;
+  }
+  .wa svg,
+  .sbh a.wa svg,
+  .sbh a.wa svg.i {
+    width: 28px;
+    height: 28px;
+  }
+}
 
 /* scroll reveals: content is always visible; supporting browsers add a short rise and wipe */
 @supports (animation-timeline: view()) {
@@ -1218,8 +1278,8 @@ a:hover { color: #085b85; }
 
 /* quote form + footer + floating button */
 [dir="rtl"] .qf__side::after { right: auto; left: -120px; }
-[dir="rtl"] .wa { right: auto; left: 24px; }
-@container sbh (max-width: 600px) { [dir="rtl"] .wa { left: 16px; } }
+[dir="rtl"] .wa, [dir="rtl"] .sbh a.wa { right: auto; left: 24px; }
+@container sbh (max-width: 600px) { [dir="rtl"] .wa, [dir="rtl"] .sbh a.wa { left: 16px; } }
 [dir="rtl"] .hazard { transform: scaleX(-1); }
 
 /* ===== Leadership (About) ===== */

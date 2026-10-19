@@ -100,7 +100,7 @@ export function SiteFooter({ lang, t }: { lang: Locale; t: SiteContent }) {
           <div className="foot__legal">
             <span>© {new Date().getFullYear()} {f.rights}</span>
             <span>
-              <Link href={href(lang, "/privacy")}>{f.privacy}</Link> · <Link href={href(lang, "/terms")}>{f.terms}</Link> · <OtherLangLink lang={lang} />
+              <Link href={href(lang, routes.privacy)}>{f.privacy}</Link> · <Link href={href(lang, routes.terms)}>{f.terms}</Link> · <OtherLangLink lang={lang} />
             </span>
           </div>
         </div>

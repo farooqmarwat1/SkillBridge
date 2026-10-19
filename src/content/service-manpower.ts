@@ -8,8 +8,8 @@ export type ServiceContent = {
   hero: { home: string; services: string; index: string; title: string; lead: string; facts: { value: string; label: string }[]; choose: string; chooseAnchor: string; profile: string; image: StaticImageData };
   nav: { label: string; id: string }[];
   overview: { eyebrow: string; title: string; lead: string; includes: { title: string; text: string; tbc?: boolean }[]; image: StaticImageData; imageAlt: string; caption: string };
-  request: { title: string; selected: string; one: string; many: string; none: string; site: string; start: string; continue: string; call: string };
-  directory: { eyebrow: string; title: string; lead: string; searchLabel: string; searchPlaceholder: string; disciplines: { label: string; roles: string[] }[]; all: string; add: string; added: string; emptyBefore: string; emptyAfter: string; yourRequest: string; cta: string; preselected: string[]; scopePrefix: string };
+  request: { title: string; selected?: string; one?: string; many?: string; none?: string; site: string; start: string; continue: string; call: string; note?: string };
+  directory?: { eyebrow: string; title: string; lead: string; searchLabel: string; searchPlaceholder: string; disciplines: { label: string; roles: string[] }[]; all: string; add: string; added: string; emptyBefore: string; emptyAfter: string; yourRequest: string; cta: string; preselected: string[]; scopePrefix: string };
   models: { eyebrow: string; title: string; lead: string; length: string; best: string; items: { code: string; icon: "clock" | "wrench"; title: string; text: string; length: string; best: string }[] };
   process: { eyebrow: string; title: string; lead: string; steps: { title: string; text: string }[] };
   documents: { eyebrow: string; title: string; lead: string; items: string[] };
@@ -18,7 +18,17 @@ export type ServiceContent = {
   faq: { eyebrow: string; title: string; lead: string; items: { q: string; a: string }[] };
 };
 
-const en: ServiceContent = {
+export type ManpowerContent = ServiceContent & {
+  directory: NonNullable<ServiceContent["directory"]>;
+  request: ServiceContent["request"] & {
+    selected: string;
+    one: string;
+    many: string;
+    none: string;
+  };
+};
+
+const en: ManpowerContent = {
   meta: { title: "Manpower Supply", description: "Engineering, office, trade and site roles for industrial projects across Saudi Arabia." },
   hero: { home: "Home", services: "Services", index: "Service 01 of 07", title: "Manpower supply", lead: "Engineers, office staff, skilled trades and site crews for oil & gas, petrochemical and construction projects, on short-term, long-term or shutdown contracts.", facts: [{ value: "39", label: "roles" }, { value: "4", label: "disciplines" }, { value: "3", label: "supply models" }], choose: "Choose roles", chooseAnchor: "roles", profile: "Download company profile", image: site.toolboxTalkSunrise },
   nav: [{ label: "Overview", id: "overview" }, { label: "Roles", id: "roles" }, { label: "Supply models", id: "models" }, { label: "Process", id: "process" }, { label: "Documents", id: "docs" }, { label: "FAQ", id: "svc-faq" }],
@@ -66,7 +76,7 @@ const en: ServiceContent = {
   ] },
 };
 
-const ar: ServiceContent = {
+const ar: ManpowerContent = {
   meta: { title: "توريد القوى العاملة", description: "مهندسون وموظفو مكاتب وحرفيون وفرق مواقع للمشاريع الصناعية في المملكة العربية السعودية." },
   hero: { home: "الرئيسية", services: "الخدمات", index: "الخدمة 01 من 07", title: "توريد القوى العاملة", lead: "مهندسون وموظفو مكاتب وحرفيون وفرق مواقع لمشاريع النفط والغاز والبتروكيماويات والإنشاءات، بعقود قصيرة أو طويلة الأجل أو لدعم الإيقافات.", facts: [{ value: "39", label: "وظيفة" }, { value: "4", label: "تخصصات" }, { value: "3", label: "نماذج توريد" }], choose: "اختر الوظائف", chooseAnchor: "roles", profile: "تنزيل ملف الشركة", image: site.toolboxTalkSunrise },
   nav: [{ label: "نظرة عامة", id: "overview" }, { label: "الوظائف", id: "roles" }, { label: "نماذج التوريد", id: "models" }, { label: "آلية العمل", id: "process" }, { label: "المستندات", id: "docs" }, { label: "الأسئلة الشائعة", id: "svc-faq" }],

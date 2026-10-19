@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useContext, useId, useState, type ReactNode } from "react";
-import type { ServiceContent } from "@/content/service-manpower";
+import type { ManpowerContent } from "@/content/service-manpower";
 import { contact } from "@/content/site";
 import { prefillQuote } from "@/lib/quote-bus";
 import { Icon } from "@/components/ui/Icon";
@@ -23,7 +23,7 @@ function useSelection() {
   return selection;
 }
 
-export function ManpowerSelectionProvider({ t, sites, children }: { t: ServiceContent; sites: string[]; children: ReactNode }) {
+export function ManpowerSelectionProvider({ t, sites, children }: { t: ManpowerContent; sites: string[]; children: ReactNode }) {
   const [picked, setPicked] = useState(t.directory.preselected);
   const [site, setSite] = useState(sites[0]);
   const [start, setStart] = useState("");
@@ -31,11 +31,11 @@ export function ManpowerSelectionProvider({ t, sites, children }: { t: ServiceCo
   return <SelectionContext.Provider value={{ picked, toggle, site, setSite, start, setStart }}>{children}</SelectionContext.Provider>;
 }
 
-function pickedText(t: ServiceContent, count: number) {
+function pickedText(t: ManpowerContent, count: number) {
   return (count === 1 ? t.request.one : t.request.many).replace("{n}", String(count));
 }
 
-function useContinue(t: ServiceContent) {
+function useContinue(t: ManpowerContent) {
   const { picked, site, start } = useSelection();
   return () => prefillQuote({
     type: "manpower",
@@ -45,7 +45,7 @@ function useContinue(t: ServiceContent) {
   }, true);
 }
 
-export function ManpowerRequestCard({ t, sites }: { t: ServiceContent; sites: string[] }) {
+export function ManpowerRequestCard({ t, sites }: { t: ManpowerContent; sites: string[] }) {
   const { picked, site, setSite, start, setStart } = useSelection();
   const continueRequest = useContinue(t);
   const id = useId();
@@ -61,7 +61,7 @@ export function ManpowerRequestCard({ t, sites }: { t: ServiceContent; sites: st
   </div></aside>;
 }
 
-export function ManpowerDirectory({ t }: { t: ServiceContent }) {
+export function ManpowerDirectory({ t }: { t: ManpowerContent }) {
   const { picked, toggle } = useSelection();
   const continueRequest = useContinue(t);
   const [discipline, setDiscipline] = useState(t.directory.all);
