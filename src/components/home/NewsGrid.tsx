@@ -23,7 +23,7 @@ export function NewsGrid({ lang, t }: { lang: Locale; t: HomeContent["news"] }) 
         </div>
         <div className="news rv">
           {t.items.map((p) => (
-            <Link className="post" href={href(lang, routes.news)} key={p.title}>
+            <Link className="post" href={href(lang, `${routes.news}/${p.slug}`)} key={p.title}>
               <div className="post__ph">
                 <Image src={p.img} alt="" sizes="(max-width: 1000px) 100vw, 420px" />
               </div>

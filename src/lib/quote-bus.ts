@@ -7,9 +7,24 @@ export type QuotePrefill = {
   scope?: string;
   site?: string;
   start?: string;
+  duration?: string;
 };
 
 export const QUOTE_EVENT = "sb:quote-prefill";
+const QUOTE_STORAGE = "sb:quote-prefill-next-page";
+
+/** Preserve a catalogue request while navigating to the Home quote form. */
+export function queueQuotePrefill(detail: QuotePrefill) {
+  window.sessionStorage.setItem(QUOTE_STORAGE, JSON.stringify(detail));
+}
+
+export function takeQueuedQuotePrefill(): QuotePrefill | null {
+  const queued = window.sessionStorage.getItem(QUOTE_STORAGE);
+  window.sessionStorage.removeItem(QUOTE_STORAGE);
+  if (!queued) return null;
+  try { return JSON.parse(queued) as QuotePrefill; }
+  catch { return null; }
+}
 
 export function prefillQuote(detail: QuotePrefill, scroll = false) {
   window.dispatchEvent(new CustomEvent<QuotePrefill>(QUOTE_EVENT, { detail }));
